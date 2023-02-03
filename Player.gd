@@ -8,20 +8,23 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	position.x = 100
+	position.y = get_viewport_rect().size.y / 2
+	scale.x = 0.1
+	scale.y = 0.1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var speed = 500 * delta
 	var count = 0
-	if (Input.is_action_pressed("ui_left")):
+	if (Input.is_action_pressed("ui_left") && position.x > 100):
 		move_local_x(-speed)
-	if (Input.is_action_pressed("ui_up")):
+	if (Input.is_action_pressed("ui_up") && position.y > 100):
 		move_local_y(-speed)
-	if (Input.is_action_pressed("ui_right")):
+	if (Input.is_action_pressed("ui_right") && position.x < 600):
 		move_local_x(speed)
-	if (Input.is_action_pressed("ui_down")):
+	if (Input.is_action_pressed("ui_down") && position.y < 500):
 		move_local_y(speed)
 	if (Input.is_mouse_button_pressed(BUTTON_LEFT)):
 		print("Left mouse button pressed!")
