@@ -8,7 +8,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position.x = get_viewport_rect().size.x - 100
+	position.x = get_viewport_rect().size.x - 200
 	position.y = get_viewport_rect().size.y / 2
 	scale.x = 0.1
 	scale.y = 0.1
