@@ -18,7 +18,15 @@ Game Plan
 
 The roots of all evil  
 
-
+MainMenu
+Game / Level
+ BackgroundLayer
+ InterfaceLayer
+ Player : KinematicBody2D 
+	Sprite2D
+	ColissionShape2D
+ Enemies
+ 
 # Chat GPT Ideen zu unserem Spiel
 ## provide a game idea for a space side scrolling game where a spaceship shoots on mathematic roots
 In this side-scrolling space shooter, players control a spaceship that must navigate through an asteroid field while shooting at various math-based enemies. The enemies take the form of roots, such as square roots and cube roots, and they are constantly approaching the player's ship. To defeat them, players must use their laser weapons to shoot at the roots and reduce them to their simplified form. For example, to defeat a square root, players must shoot it until it becomes a 1. As they progress through the levels, the roots become increasingly complex and difficult to defeat. Power-ups and upgrades can be collected along the way to help the player's ship become stronger and more equipped to handle the challenges ahead. The goal of the game is to reach the end of the asteroid field and defeat the final boss, which takes the form of an extremely complex root.
