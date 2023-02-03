@@ -10,8 +10,8 @@ extends Area2D
 func _ready():
 	position.x = 100
 	position.y = get_viewport_rect().size.y / 2
-	scale.x = 0.1
-	scale.y = 0.1
+	scale.x = 0.05
+	scale.y = 0.05
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
