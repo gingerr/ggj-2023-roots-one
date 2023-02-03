@@ -1,4 +1,4 @@
-# ggj-2023-roots-one - Space shRooter
+# ggj-2023-roots-one - shRooter
 
 Game Plan
 
@@ -9,11 +9,11 @@ Game Plan
 	- [ ] Sterne
 	- [ ] Kometen
 - [ ] Mathematische Wurzeln sind Gegner -> fliegen auf den Spieler zu
-	- [ ] ansteigender Schwierigkeisgrad (Sqrt 1-100, Sqrt 100-1000, Geschwindigkeit...)
-- [ ] Bewegung auf einer Linie
+	- [ ] ansteigender Schwierigkeitsgrad (Sqrt 1-100, Sqrt 100-1000, Geschwindigkeit...)
+- [ ] --Bewegung auf einer Linie--
 - [ ] böse Wurzeln abschießen
-- [ ] Leben verlieren, wenn die Wurzeln bestimmte Linie überschreiten oder falsche Wurzeln getroffen
+- [ ] Leben verlieren, wenn die Wurzeln bestimmte Linie überschreiten oder falsche Wurzeln getroffen oder Schiff kollidiert
 - [ ] (Ergebnis der Wurzel ist prozentualer Schaden von Max HP)
 - [ ] getroffene Wurzeln lassen Ergebnis zurück
 
-  
+The roots of all evil  
