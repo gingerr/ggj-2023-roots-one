@@ -18,14 +18,14 @@ Game Plan
 
 The roots of all evil  
 
-MainMenu
-Game / Level
- BackgroundLayer
- InterfaceLayer
- Player : KinematicBody2D 
-	Sprite2D
-	ColissionShape2D
- Enemies
+- MainMenu
+- Game / Level
+	- BackgroundLayer
+	- InterfaceLayer
+ 	- Player : KinematicBody2D 
+ 		- Sprite2D
+ 		- ColissionShape2D
+ 	- Enemies
  
 # Chat GPT Ideen zu unserem Spiel
 ## provide a game idea for a space side scrolling game where a spaceship shoots on mathematic roots
