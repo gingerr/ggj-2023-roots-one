@@ -7,6 +7,7 @@ export var muzzle_velocity = 350
 onready var muzzle: Position2D = $Muzzle
 
 var bullet_factory = preload("res://Bullet.tscn")
+var timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,7 +35,13 @@ func _process(delta):
 		print("Left and right mouse buttons pressed!")
 	if (Input.is_key_pressed(KEY_ESCAPE)):
 		get_tree().quit()
-	return delta
+	
+	# Spaceship is drifting slightly
+	timer += delta;
+	if timer > 0.2:
+		position.x += int(rand_range(1,4)) - 2
+		position.y += int(rand_range(1,4)) - 2
+		timer = 0
 
 func shoot():
 	var b = bullet_factory.instance()
