@@ -11,6 +11,7 @@ Game Plan
     - [ ] Explosionen
 - [ ] Mathematische Wurzeln sind Gegner -> fliegen auf den Spieler zu
     - [ ] ansteigender Schwierigkeitsgrad (Sqrt 1-100, Sqrt 100-1000, Geschwindigkeit...)
+    - [ ] Idee von Patrick: Wurzeln die der User oft genug richtig gelöst hat, werden vom Schiff automatisch markiert als gute Wurzeln
 - [ ] ~~Bewegung auf einer Linie~~
 - [ ] böse Wurzeln abschießen
 - [ ] Leben verlieren, wenn die Wurzeln bestimmte Linie überschreiten oder falsche Wurzeln getroffen oder Schiff
