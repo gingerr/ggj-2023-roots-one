@@ -1,4 +1,3 @@
-class_name HUD
 extends CanvasLayer
 
 export var topHeight: int
@@ -15,7 +14,7 @@ func _process(delta: float):
 	updateHUD()
 	
 func increaseScore(value: int) :
-	score = value
+	score += value
 	updateHUD()
 
 func updateHUD():

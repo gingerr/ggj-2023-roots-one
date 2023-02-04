@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Bullet.gd"
 }, {
-"base": "Reference",
-"class": "HUD",
-"language": "GDScript",
-"path": "res://HUD.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -31,7 +26,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Bullet": "",
-"HUD": "",
 "Player": "",
 "Utils": ""
 }
@@ -41,6 +35,10 @@ _global_script_class_icons={
 config/name="shRooter"
 run/main_scene="res://Game.tscn"
 config/icon="res://resources/icon.png"
+
+[autoload]
+
+HUD="*res://HUD.tscn"
 
 [display]
 

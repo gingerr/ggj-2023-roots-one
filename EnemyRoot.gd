@@ -44,6 +44,7 @@ func set_text(value: String):
 	$Label.text = value
 	
 func explode():
+	HUD.increaseScore(1)
 	print('boom')
 
 func _on_area_entered(area):
