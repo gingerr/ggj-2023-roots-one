@@ -12,6 +12,9 @@ func _ready():
 	setTopBottomHeight()
 	setVisibility(false)
 	resetGameValues()
+	Utils.default_font_color(get_node('%Fps'))
+	Utils.default_font_color(get_node('%Score'))
+	Utils.default_font_color(get_node('%Time'))
 
 func _process(delta: float):
 	time += delta

@@ -4,6 +4,7 @@ func _ready():
 	var text = load_text_file('res://resources/story.tres')
 	var node: Label = get_node('%Label')
 	node.set_text(text)
+	Utils.default_font_color(node)
 
 func _input(event: InputEvent):
 	if event.get('pressed') and event.pressed:

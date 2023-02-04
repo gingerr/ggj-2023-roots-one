@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://resources/retro-gaming.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://resources/retro-gaming.tres" type="DynamicFont" id=2]
@@ -20,6 +20,8 @@ corner_radius_bottom_left = 5
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=7]
 
 [node name="HUD" type="CanvasLayer"]
 follow_viewport_enable = true
@@ -109,6 +111,7 @@ margin_left = 664.0
 margin_right = 726.0
 margin_bottom = 21.0
 custom_fonts/font = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
 text = "Sanity"
 align = 1
 valign = 1

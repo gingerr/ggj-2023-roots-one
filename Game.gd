@@ -40,7 +40,7 @@ func _process(delta):
 func spawnEnemy():
 	var mob = squareRootFactory.instance()
 	mob.configure(max_root_number)
-	get_tree().root.add_child(mob)
+	add_child(mob)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.scancode == KEY_ESCAPE:
@@ -48,3 +48,4 @@ func _input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
 		get_tree().change_scene("res://MainMenu.tscn")
+
