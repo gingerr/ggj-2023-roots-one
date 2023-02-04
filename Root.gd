@@ -1,25 +1,18 @@
 extends Area2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var spin_direction = 1
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	#position.x = get_viewport_rect().size.x - 200
-	#position.y = get_viewport_rect().size.y / 2
-	#scale.x = 1
-	#scale.y = 1
-	pass
+	position.y = rand_range(50,get_viewport_rect().size.y - 50)
+	randomize()
+	if int(rand_range(1, 3)) == 1:
+		spin_direction *= -1
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#var speed = 500 * delta
-	#return delta
-	pass
-	
+	position.x -= 10 * delta
+	rotate(0.3 * delta * spin_direction)
+
+
 func set_text(value: String):
 	$Label.text = value
