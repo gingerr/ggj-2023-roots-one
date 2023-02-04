@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://resources/spaceship2.png" type="Texture" id=2]
 [ext_resource path="res://BehaviorHovering.gd" type="Script" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
 
 [node name="Player" type="KinematicBody2D"]
 rotation = 1.5708
@@ -17,9 +15,8 @@ position = Vector2( 0, -753 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 42, -147 )
-shape = SubResource( 1 )
-
 [node name="BehaviorHovering" type="Node" parent="."]
 script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 680.001, 399.997, 540.002, 439.998, 440.001, 399.998, 300, 139.999, 119.998, -460, 39.997, -820, -60.0029, -800, -100.002, -460, -239.999, 160.001, -459.998, 420.002, -639.998, 400.002, -799.999, 260.003, -759.997, 720.003, -699.998, 640.003, -635.923, 657.477, -579.997, 760.002, -519.997, 760.002, -379.998, 620.001, -191.256, 768.297, 240.003, 759.999, 420.002, 659.998, 520.003, 759.998, 660.002, 679.998, 760.002, 679.997, 800.002, 479.997, 780.001, 239.997 )

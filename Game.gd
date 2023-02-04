@@ -6,7 +6,10 @@ enum DISPLAY_MODE {
 	FULLSCREEN
 }
 
-var globa_difficulty_level = 100;
+
+const spawn_interval_in_seconds = 3
+var spawn_timer 				= 0
+var difficulty_level = 100;
 
 var DEFAULT_SCREEN_MODE = DISPLAY_MODE.FULLSCREEN
 onready var squareRootFactory = preload("res://EnemyRoot.tscn")
@@ -38,8 +41,14 @@ func _process(delta):
 		#get_tree().quit()
 		get_tree().paused = true
 		get_tree().change_scene("res://MainMenu.tscn")
+	
+	spawn_timer += delta;
+	if (spawn_timer > spawn_interval_in_seconds):
+		spawn_timer = 0;
+		call_deferred("spawnEnemy")
+		
 
 func spawnEnemy():
 	var mob = squareRootFactory.instance()
-	mob.configure(globa_difficulty_level)
+	mob.configure(difficulty_level)
 	get_tree().root.add_child(mob)
