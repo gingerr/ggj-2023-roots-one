@@ -22,7 +22,6 @@ func _process(delta):
 		spawn_timer = 0;
 		for i in range(spawn_amount):
 			call_deferred("spawnEnemy")
-		max_root_number += 10
 
 func spawnEnemy():
 	var mob = squareRootFactory.instance()
