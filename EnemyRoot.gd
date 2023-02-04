@@ -9,7 +9,7 @@ var difficulty     = 0
 
 func _ready():
 	# position
-	var x = get_viewport_rect().size.x + 100
+	var x = get_viewport_rect().size.x + 50
 	var y = rand_range(50,get_viewport_rect().size.y - 50)
 	position = Vector2(x, y)
 
@@ -21,7 +21,6 @@ func _ready():
 	# speed
 	# the bigger the screen, the fast to horizontal speed
 	velocity.x = -get_viewport_rect().size.x / 30
-	print(velocity.x)
 	velocity.y = rand_range(0, velocity.x /3) * pow(-1, randi() % 2)
 	
 	var boostSpeed = randf() + 1
@@ -78,8 +77,12 @@ func _on_area_entered(area : Area2D):
 func _on_player_colission(body: Node):
 	# hit player and despawn
 	if (body is Player):
+		$CrashSound.play(0.0)	
 		explode()
 		body.change_health(-1)
+		body.current_speed.x = -body.current_speed.x / 2
+		body.current_speed.y = -body.current_speed.y / 2
+		
 	# despawn on left screen side
 	if "DeathZone" in body.get_name():
 		if !is_enemy_good():

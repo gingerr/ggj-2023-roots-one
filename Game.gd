@@ -9,7 +9,7 @@ var max_root_number 			= intial_root_number
 export var level 				= 1
 
 # timer variables
-var spawn_timer 				= 5
+var spawn_timer 				= 3
 var level_timer 				= 0
 
 onready var squareRootFactory = preload("res://EnemyRoot.tscn")
