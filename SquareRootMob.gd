@@ -16,3 +16,17 @@ func _process(delta):
 
 func set_text(value: String):
 	$Label.text = value
+	
+func explode():
+	print('boom')
+
+func _on_SquareRootMob_child_entered_tree(node):
+	print('_on_SquareRootMob_child_entered_tree')
+	print(node)
+	
+	if (node is Bullet): 
+		print('is bullet')
+	
+	explode()
+
+
