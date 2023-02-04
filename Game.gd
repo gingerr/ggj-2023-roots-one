@@ -1,9 +1,11 @@
 extends Node2D
 
+const spawn_amount 				= 2
+const spawn_interval_in_seconds = 5
+var difficulty_level 			= 100;
 
-const spawn_interval_in_seconds = 4
+
 var spawn_timer 				= 5
-var difficulty_level = 100;
 
 onready var squareRootFactory = preload("res://EnemyRoot.tscn")
 
@@ -11,10 +13,17 @@ func _process(delta):
 	spawn_timer += delta;
 	if (spawn_timer > spawn_interval_in_seconds):
 		spawn_timer = 0;
+<<<<<<< Updated upstream
 		call_deferred("spawnEnemy")
 		call_deferred("spawnEnemy")
 		call_deferred("spawnEnemy")
 
+=======
+		for i in range(spawn_amount):
+			print(i)
+			call_deferred("spawnEnemy")
+		
+>>>>>>> Stashed changes
 
 func spawnEnemy():
 	var mob = squareRootFactory.instance()

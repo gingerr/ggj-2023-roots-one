@@ -32,9 +32,6 @@ func configure(difficulty_level):
 			enemy_difficulty +=1
 	difficulty = enemy_difficulty;
 	set_text(str(difficulty))
-	print(is_enemy_good())
-	print(randi() %2)
-
 
 func _process(delta):
 	position += velocity * delta
