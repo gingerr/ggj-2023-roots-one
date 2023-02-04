@@ -7,7 +7,6 @@
 [sub_resource type="CapsuleShape2D" id=4]
 
 [node name="Bullet" type="Area2D"]
-collision_mask = 0
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -16,6 +15,7 @@ scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.57382
 shape = SubResource( 4 )
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]

@@ -2,17 +2,15 @@ extends KinematicBody2D
 
 signal shoot
 
+export var health = 4
 export var muzzle_velocity = 350
 
 onready var muzzle: Position2D = $Muzzle
 
 var bullet_factory = preload("res://Bullet.tscn")
-var timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	scale.x = 0.05
-	scale.y = 0.05
 	position.x = 100
 	position.y = get_viewport_rect().size.y / 2
 
@@ -36,12 +34,7 @@ func _process(delta):
 	if (Input.is_key_pressed(KEY_ESCAPE)):
 		get_tree().quit()
 	
-	# Spaceship is drifting slightly
-	timer += delta;
-	if timer > 0.2:
-		position.x += int(rand_range(1,4)) - 2
-		position.y += int(rand_range(1,4)) - 2
-		timer = 0
+
 
 func shoot():
 	var b = bullet_factory.instance()
