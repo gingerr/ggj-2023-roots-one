@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://resources/spaceship2.png" type="Texture" id=2]
+[ext_resource path="res://BehaviorHovering.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -19,3 +20,6 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 42, -147 )
 shape = SubResource( 1 )
+
+[node name="BehaviorHovering" type="Node" parent="."]
+script = ExtResource( 3 )
