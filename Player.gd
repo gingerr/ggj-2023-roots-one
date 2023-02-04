@@ -29,11 +29,6 @@ func _process(delta):
 	if (Input.is_action_just_pressed("ui_select")):
 		shoot()
 		emit_signal("shoot", Bullet, rotation, position)
-	if (Input.get_mouse_button_mask() == 0x03):
-		print("Left and right mouse buttons pressed!")
-	if (Input.is_key_pressed(KEY_ESCAPE)):
-		get_tree().quit()
-	
 
 
 func shoot():

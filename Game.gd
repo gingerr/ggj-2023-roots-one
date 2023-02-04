@@ -25,6 +25,12 @@ func _init():
 	if (DEFAULT_SCREEN_MODE == DISPLAY_MODE.FULLSCREEN):
 		OS.window_fullscreen = true
 
+func _process(delta):
+	if (Input.is_key_pressed(KEY_ESCAPE)):
+		#get_tree().quit()
+		get_tree().paused = true
+		get_tree().change_scene("res://MainMenu.tscn")
+
 func spawnEnemy():
 	var text = "123"
 	var mob = squareRootFactory.instance()
