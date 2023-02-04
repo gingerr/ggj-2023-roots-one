@@ -7,14 +7,14 @@ enum DISPLAY_MODE {
 }
 
 var DEFAULT_SCREEN_MODE = DISPLAY_MODE.FULLSCREEN
-onready var squareRootFactory = preload("res://SquareRootMob.tscn")
+onready var squareRootFactory = preload("res://EnemyRoot.tscn")
 onready var background = preload("res://BackgroundLayer.tscn")
 
 func _ready():
 	add_child(background.instance())
 	# todo extract into mob spawn manager
-	call_deferred("spawnSquareRoot", 0.2, 0.1, '361')
-	call_deferred("spawnSquareRoot", 0.7, 0.05, '256')
+	call_deferred("spawnEnemy")
+	call_deferred("spawnEnemy")
 
 func _init():
 	if (DEFAULT_SCREEN_MODE == DISPLAY_MODE.WINDOW):
@@ -25,11 +25,12 @@ func _init():
 	if (DEFAULT_SCREEN_MODE == DISPLAY_MODE.FULLSCREEN):
 		OS.window_fullscreen = true
 
-func spawnSquareRoot(verticalPosition: float, scale: float, text: String):
+func spawnEnemy():
+	var text = "123"
 	var mob = squareRootFactory.instance()
 	var x = get_viewport_rect().size.x
-	var y = get_viewport_rect().size.y * verticalPosition
+	var y = get_viewport_rect().size.y * 0.5
 	mob.global_position = Vector2(x, y)
-	mob.scale = Vector2(scale, scale)
+	#mob.scale = Vector2(scale, scale)
 	mob.set_text(text)
 	get_tree().root.add_child(mob)
