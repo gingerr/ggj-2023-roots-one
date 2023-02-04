@@ -4,9 +4,14 @@ extends KinematicBody2D
 signal shoot
 
 var health: int
+
 export var muzzle_velocity: int = 350
 
 onready var muzzle: Position2D = $Muzzle
+
+const max_speed     = 300
+const acceleration  = 5
+var   current_speed = Vector2(0, 0)
 
 var bullet_factory = preload("res://Bullet.tscn")
 
@@ -19,15 +24,26 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var speed = 500 * delta
-	if (Input.is_action_pressed("ui_left") && position.x > 100):
-		move_local_y(speed)
-	if (Input.is_action_pressed("ui_up") && position.y > 100):
-		move_local_x(-speed)
-	if (Input.is_action_pressed("ui_right") && position.x < get_viewport_rect().size.x / 1):
-		move_local_y(-speed)
-	if (Input.is_action_pressed("ui_down") && position.y < get_viewport_rect().size.y - 100):
-		move_local_x(speed)
+	# accelerate and decelerate
+	if Input.is_action_pressed("ui_left"):
+		current_speed.x = max(-max_speed, current_speed.x - acceleration)
+	if Input.is_action_pressed("ui_up"):
+		current_speed.y = max(-max_speed, current_speed.y - acceleration)
+	if Input.is_action_pressed("ui_right"):
+		current_speed.x = min(max_speed, current_speed.x + acceleration)
+	if Input.is_action_pressed("ui_down"):
+		current_speed.y = min(max_speed, current_speed.y + acceleration)
+	
+	# bounce on scren side
+	if position.x < 50:
+		current_speed.x = abs(current_speed.x)
+	elif position.x > get_viewport_rect().size.x - 50:
+		current_speed.x = -abs(current_speed.x)
+	if position.y < 50:
+		current_speed.y = abs(current_speed.y)
+	elif position.y > get_viewport_rect().size.y - 50:
+		current_speed.y = -abs(current_speed.y)
+	position += current_speed * delta;
 
 
 func _input(event: InputEvent) -> void:

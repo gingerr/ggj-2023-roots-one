@@ -105,10 +105,10 @@ percent_visible = false
 
 [node name="Health" type="Label" parent="MainContainer/VBoxContainer/Bottom"]
 unique_name_in_owner = true
-margin_left = 661.0
-margin_right = 728.0
+margin_left = 664.0
+margin_right = 726.0
 margin_bottom = 21.0
 custom_fonts/font = SubResource( 6 )
-text = "HP: 123"
+text = "Sanity"
 align = 1
 valign = 1

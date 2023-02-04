@@ -1,6 +1,6 @@
 extends Node
 
-const drift_in_pixel = 1
+const drift_in_pixel = 2
 
 var timer = 0
 

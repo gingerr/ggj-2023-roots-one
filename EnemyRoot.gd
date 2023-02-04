@@ -43,6 +43,8 @@ func _process(delta):
 		velocity.y = abs(velocity.y)
 	elif position.y + 50 > get_viewport_rect().size.y - HUD.bottomHeight:
 		velocity.y = -abs(velocity.y)
+	if position.x < -50 && is_enemy_good():
+		queue_free()
 	
 	rotate(spin_speed * delta * spin_direction)
 
@@ -76,8 +78,8 @@ func _on_player_colission(body: Node):
 		body.change_health(-1)
 	# despawn on left screen side
 	if "DeathZone" in body.get_name():
-		explode()
 		if !is_enemy_good():
+			explode()
 			get_node("/root/Game/Player").change_health(-1)
 		else:
 			HUD.increaseScore(1)
