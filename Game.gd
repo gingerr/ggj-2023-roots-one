@@ -1,30 +1,18 @@
 extends Node2D
 
 
-const spawn_interval_in_seconds = 3
-var spawn_timer 				= 0
+const spawn_interval_in_seconds = 4
+var spawn_timer 				= 5
 var difficulty_level = 100;
 
 onready var squareRootFactory = preload("res://EnemyRoot.tscn")
-
-func _ready():
-	# todo extract into mob spawn manager
-	call_deferred("spawnEnemy")
-	call_deferred("spawnEnemy")
-	call_deferred("spawnEnemy")
-	call_deferred("spawnEnemy")
-	call_deferred("spawnEnemy")
-	call_deferred("spawnEnemy")
-	call_deferred("spawnEnemy")
-	call_deferred("spawnEnemy")
-
-func _init():
-	pass
 
 func _process(delta):
 	spawn_timer += delta;
 	if (spawn_timer > spawn_interval_in_seconds):
 		spawn_timer = 0;
+		call_deferred("spawnEnemy")
+		call_deferred("spawnEnemy")
 		call_deferred("spawnEnemy")
 		
 

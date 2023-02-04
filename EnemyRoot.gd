@@ -7,10 +7,10 @@ var difficulty     = 0
 
 func _ready():
 	# position
-	var x = get_viewport_rect().size.x
+	var x = get_viewport_rect().size.x + 100
 	var y = rand_range(50,get_viewport_rect().size.y - 50)
 	position = Vector2(x, y)
-
+	
 	# spin
 	randomize()
 	spin_direction = pow(-1, randi() % 2)
@@ -32,6 +32,8 @@ func configure(difficulty_level):
 			enemy_difficulty +=1
 	difficulty = enemy_difficulty;
 	set_text(str(difficulty))
+	print(is_enemy_good())
+	print(randi() %2)
 
 
 func _process(delta):

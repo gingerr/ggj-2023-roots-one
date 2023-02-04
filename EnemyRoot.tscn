@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://EnemyRoot.gd" type="Script" id=1]
 [ext_resource path="res://resources/retro-gaming.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://resources/sqroot.png" type="Texture" id=3]
+[ext_resource path="res://resources/asteroid1.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=4]
 size = 400
@@ -14,6 +15,9 @@ extents = Vector2( 691.5, 343.5 )
 [node name="EnemyRoot" type="Area2D"]
 scale = Vector2( 0.1, 0.1 )
 script = ExtResource( 1 )
+
+[node name="Asteroid" type="Sprite" parent="."]
+texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 72.0
