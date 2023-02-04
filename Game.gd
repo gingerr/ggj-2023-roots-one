@@ -13,17 +13,9 @@ func _process(delta):
 	spawn_timer += delta;
 	if (spawn_timer > spawn_interval_in_seconds):
 		spawn_timer = 0;
-<<<<<<< Updated upstream
-		call_deferred("spawnEnemy")
-		call_deferred("spawnEnemy")
-		call_deferred("spawnEnemy")
-
-=======
 		for i in range(spawn_amount):
 			print(i)
 			call_deferred("spawnEnemy")
-		
->>>>>>> Stashed changes
 
 func spawnEnemy():
 	var mob = squareRootFactory.instance()
