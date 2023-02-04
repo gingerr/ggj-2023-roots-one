@@ -7,7 +7,7 @@ enum DISPLAY_MODE {
 }
 
 var DEFAULT_SCREEN_MODE = DISPLAY_MODE.FULLSCREEN
-onready var squareRootFactory = preload("res://SquareRootMob.tscn")
+onready var squareRootFactory = preload("res://EnemyRoot.tscn")
 onready var background = preload("res://BackgroundLayer.tscn")
 
 func _ready():
