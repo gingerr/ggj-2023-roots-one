@@ -1,10 +1,7 @@
 extends Node
 
-<<<<<<< HEAD
-=======
 const drift_in_pixel = 1
 
->>>>>>> 09ecef3 (.)
 var timer = 0
 
 func _process(delta):
