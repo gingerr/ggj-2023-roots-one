@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sqroot.png-0167f14caeeca4ad9e5b1f0bc5f9176a.stex"
+path="res://.import/sqroot.png-14565b7a11e087c43e18e0735d536c2b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sqroot.png"
-dest_files=[ "res://.import/sqroot.png-0167f14caeeca4ad9e5b1f0bc5f9176a.stex" ]
+source_file="res://resources/sqroot.png"
+dest_files=[ "res://.import/sqroot.png-14565b7a11e087c43e18e0735d536c2b.stex" ]
 
 [params]
 
