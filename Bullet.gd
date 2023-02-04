@@ -4,14 +4,13 @@ extends Area2D
 var velocity = Vector2(1000, 0)
 
 func _ready():
-	pass
+	$ShootSound.play(0.1)
 
 func _physics_process(delta):
 	position += velocity * delta
 
 func _process(delta):
 	if is_outside_view_bounds():
-		print("bullet outside screen")
 		queue_free()
 	position += velocity * delta
 	rotation = velocity.angle()

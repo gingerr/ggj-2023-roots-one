@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/photon-sound.mp3-a67e7353a0a783f0ead63c9ee8061b7b.mp3str"
+
+[deps]
+
+source_file="res://photon-sound.mp3"
+dest_files=[ "res://.import/photon-sound.mp3-a67e7353a0a783f0ead63c9ee8061b7b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

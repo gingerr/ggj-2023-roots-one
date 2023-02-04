@@ -30,7 +30,6 @@ func _process(delta):
 	if (Input.is_action_just_pressed("ui_select")):
 		shoot()
 		emit_signal("shoot", Bullet, rotation, position)
-		print("shoot")
 	if (Input.get_mouse_button_mask() == 0x03):
 		print("Left and right mouse buttons pressed!")
 	if (Input.is_key_pressed(KEY_ESCAPE)):
@@ -39,9 +38,5 @@ func _process(delta):
 
 func shoot():
 	var b = bullet_factory.instance()
-	
 	b.global_position = muzzle.global_position
-	#b.transform = transform
 	get_tree().root.add_child(b)
-	#b.velocity = b.transform.x * muzzle_velocity
-	#b.show()
