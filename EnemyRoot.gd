@@ -3,7 +3,7 @@ extends Area2D
 
 var spin_speed     = 0.3
 var spin_direction = 1
-var velocity       = Vector2(-100, 0)
+var velocity       = Vector2(-50, 0)
 var difficulty     = 0
 
 func _ready():

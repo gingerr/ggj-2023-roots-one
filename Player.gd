@@ -14,7 +14,7 @@ var bullet_factory = preload("res://Bullet.tscn")
 func _ready():
 	position.x = 100
 	position.y = get_viewport_rect().size.y / 2
-	change_health(4)
+	change_health(10)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

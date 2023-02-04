@@ -1,8 +1,10 @@
 extends Node2D
 
-const spawn_amount 				= 2
-const spawn_interval_in_seconds = 5 
-var difficulty_level 			= 100;
+# difficulty configuration
+var spawn_amount 				= 4
+var spawn_interval_in_seconds   = 5 
+var max_root_number 			= 100
+var level 						= 1
 
 var spawn_timer 				= 5
 
@@ -14,11 +16,11 @@ func _process(delta):
 		spawn_timer = 0;
 		for i in range(spawn_amount):
 			call_deferred("spawnEnemy")
-		difficulty_level += 10
+		max_root_number += 10
 
 func spawnEnemy():
 	var mob = squareRootFactory.instance()
-	mob.configure(difficulty_level)
+	mob.configure(max_root_number)
 	get_tree().root.add_child(mob)
 
 func _input(event: InputEvent) -> void:

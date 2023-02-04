@@ -92,16 +92,16 @@ size_flags_vertical = 3
 
 [node name="Health" type="Label" parent="MarginContainer/VBoxContainer/Bottom/HBoxContainer"]
 unique_name_in_owner = true
-margin_right = 106.0
+margin_right = 62.0
 margin_bottom = 21.0
 custom_fonts/font = ExtResource( 2 )
-text = "Health: 123"
+text = "Sanity"
 align = 1
 valign = 2
 
 [node name="Bar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Bottom/HBoxContainer"]
 unique_name_in_owner = true
-margin_left = 110.0
+margin_left = 66.0
 margin_right = 1390.0
 margin_bottom = 21.0
 size_flags_horizontal = 3

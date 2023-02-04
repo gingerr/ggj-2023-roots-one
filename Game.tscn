@@ -25,7 +25,6 @@ layer = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 50, 0 )
-z_index = 1
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
