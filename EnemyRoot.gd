@@ -43,10 +43,7 @@ func set_text(value: String):
 	$Label.text = value
 	
 func explode():
-	HUD.increaseScore(1)
 	print('boom')
-
-
 
 func _on_area_entered(area):
 	if (area is Bullet): 
@@ -56,7 +53,7 @@ func _on_area_entered(area):
 		if is_enemy_good():
 			print("Reduce Player Health")
 		else:
-			print("Score Player increased")
+			HUD.increaseScore(1)
 
 func is_enemy_good():
 	if int(sqrt(difficulty)) == sqrt(difficulty):
