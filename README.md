@@ -5,9 +5,10 @@ Game Plan
 - [x] Left-right / Top-down
 - [x] SpaceShip/Hirn ist Spieler
 - [ ] Geile Hintergrundgrafiken
-    - [ ] Nebel
+    - [x] Nebel
     - [x] Sterne
     - [ ] Kometen
+    - [ ] Explosionen
 - [ ] Mathematische Wurzeln sind Gegner -> fliegen auf den Spieler zu
     - [ ] ansteigender Schwierigkeitsgrad (Sqrt 1-100, Sqrt 100-1000, Geschwindigkeit...)
 - [ ] ~~Bewegung auf einer Linie~~
@@ -26,6 +27,8 @@ The roots of all evil
         - HealthBar
         - Score
         - GameTime
+        - HUD oben mit Leben und Score
+        - HUD unten evtl. leer
         - (Ammo)
     - Player : KinematicBody2D
         - Sprite2D

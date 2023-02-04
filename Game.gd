@@ -15,6 +15,7 @@ func _ready():
 	call_deferred("spawnSquareRoot", 0.7, 0.05, '256')
 	
 	if (DEFAULT_SCREEN_MODE == DISPLAY_MODE.WINDOW):
+		
 		OS.set_window_size(OS.get_screen_size() * 0.9)
 		OS.set_window_position(
 			OS.get_screen_position(OS.get_current_screen()) + 
