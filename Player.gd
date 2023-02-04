@@ -23,7 +23,7 @@ func _process(delta):
 		move_local_y(speed)
 	if (Input.is_action_pressed("ui_up") && position.y > 100):
 		move_local_x(-speed)
-	if (Input.is_action_pressed("ui_right") && position.x < get_viewport_rect().size.x / 4):
+	if (Input.is_action_pressed("ui_right") && position.x < get_viewport_rect().size.x / 1):
 		move_local_y(-speed)
 	if (Input.is_action_pressed("ui_down") && position.y < get_viewport_rect().size.y - 100):
 		move_local_x(speed)

@@ -18,7 +18,6 @@ func _ready():
 	# speed
 	var boostSpeed = randf() + 1
 	velocity *= boostSpeed
-	print(velocity)
 	
 
 func configure(difficulty_level):
@@ -47,17 +46,25 @@ func explode():
 	HUD.increaseScore(1)
 	print('boom')
 
+
+
 func _on_area_entered(area):
 	if (area is Bullet): 
 		area.queue_free()
 		queue_free();
 		explode()
 		if is_enemy_good():
-			print("Reduce Health")
+			print("Reduce Player Health")
 		else:
-			print("Score increased")
+			print("Score Player increased")
 
 func is_enemy_good():
 	if int(sqrt(difficulty)) == sqrt(difficulty):
 		return true	
 	return false
+
+
+func _on_player_colission(body):
+	if (body is Player):
+		queue_free();
+		print("Reduce Player Health")
