@@ -6,7 +6,7 @@ enum DISPLAY_MODE {
 	FULLSCREEN
 }
 
-var difficulty_level = 10;
+var globa_difficulty_level = 100;
 
 var DEFAULT_SCREEN_MODE = DISPLAY_MODE.FULLSCREEN
 onready var squareRootFactory = preload("res://EnemyRoot.tscn")
@@ -15,6 +15,12 @@ onready var background = preload("res://BackgroundLayer.tscn")
 func _ready():
 	add_child(background.instance())
 	# todo extract into mob spawn manager
+	call_deferred("spawnEnemy")
+	call_deferred("spawnEnemy")
+	call_deferred("spawnEnemy")
+	call_deferred("spawnEnemy")
+	call_deferred("spawnEnemy")
+	call_deferred("spawnEnemy")
 	call_deferred("spawnEnemy")
 	call_deferred("spawnEnemy")
 
@@ -28,11 +34,6 @@ func _init():
 		OS.window_fullscreen = true
 
 func spawnEnemy():
-	var text = "123"
 	var mob = squareRootFactory.instance()
-	var x = get_viewport_rect().size.x
-	var y = get_viewport_rect().size.y * 0.5
-	mob.global_position = Vector2(x, y)
-	#mob.scale = Vector2(scale, scale)
-	mob.set_text(text)
+	mob.configure(globa_difficulty_level)
 	get_tree().root.add_child(mob)
