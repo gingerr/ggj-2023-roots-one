@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://resources/retro-gaming.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://MainMenu.gd" type="Script" id=2]
@@ -17,7 +17,25 @@ font_data = ExtResource( 1 )
 size = 30
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 1 )
+
 [sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="ButtonGroup" id=9]
+
+[sub_resource type="DynamicFont" id=8]
 size = 30
 font_data = ExtResource( 1 )
 
@@ -25,50 +43,118 @@ font_data = ExtResource( 1 )
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 120.0
-margin_top = 80.0
-margin_right = -120.0
-margin_bottom = -80.0
 script = ExtResource( 2 )
 
-[node name="Selection" type="VBoxContainer" parent="."]
-margin_right = 784.0
-margin_bottom = 440.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 alignment = 1
 
-[node name="Name" type="Label" parent="Selection"]
-margin_top = 62.0
-margin_right = 784.0
-margin_bottom = 230.0
+[node name="Name" type="Label" parent="VBoxContainer"]
+margin_top = 118.0
+margin_right = 1024.0
+margin_bottom = 286.0
 custom_fonts/font = SubResource( 1 )
 text = "shRooter"
 align = 1
 
-[node name="Continue" type="Button" parent="Selection"]
-margin_top = 234.0
-margin_right = 784.0
-margin_bottom = 279.0
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 290.0
+margin_right = 1024.0
+margin_bottom = 482.0
+
+[node name="Selection" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 192.0
+alignment = 1
+
+[node name="Continue" type="Button" parent="VBoxContainer/MarginContainer/Selection"]
+margin_right = 1024.0
+margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
 disabled = true
 text = "Continue"
 flat = true
 
-[node name="NewGame" type="Button" parent="Selection"]
-margin_top = 283.0
-margin_right = 784.0
-margin_bottom = 328.0
+[node name="NewGame" type="Button" parent="VBoxContainer/MarginContainer/Selection"]
+margin_top = 49.0
+margin_right = 1024.0
+margin_bottom = 94.0
 custom_fonts/font = SubResource( 2 )
 text = "New Game"
 flat = true
 
-[node name="Exit" type="Button" parent="Selection"]
-margin_top = 332.0
-margin_right = 784.0
-margin_bottom = 377.0
+[node name="Options" type="Button" parent="VBoxContainer/MarginContainer/Selection"]
+margin_top = 98.0
+margin_right = 1024.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 5 )
+text = "Options"
+flat = true
+
+[node name="Exit" type="Button" parent="VBoxContainer/MarginContainer/Selection"]
+margin_top = 147.0
+margin_right = 1024.0
+margin_bottom = 192.0
 custom_fonts/font = SubResource( 3 )
 text = "Exit"
 flat = true
 
-[connection signal="pressed" from="Selection/Continue" to="." method="_on_Continue_pressed"]
-[connection signal="pressed" from="Selection/NewGame" to="." method="_on_ButtonNewGame_pressed"]
-[connection signal="pressed" from="Selection/Exit" to="." method="_on_Exit_pressed"]
+[node name="OptionsMenu" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+visible = false
+margin_right = 1024.0
+margin_bottom = 192.0
+
+[node name="DifficultyOpt" type="HBoxContainer" parent="VBoxContainer/MarginContainer/OptionsMenu"]
+margin_right = 784.0
+margin_bottom = 47.0
+alignment = 1
+
+[node name="Difficulty" type="Label" parent="VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
+margin_left = 102.0
+margin_top = 4.0
+margin_right = 280.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 6 )
+text = "Difficulty"
+
+[node name="Easy" type="CheckBox" parent="VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
+margin_left = 284.0
+margin_right = 404.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 7 )
+group = SubResource( 9 )
+text = "Easy"
+
+[node name="Normal" type="CheckBox" parent="VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
+margin_left = 408.0
+margin_right = 560.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 7 )
+pressed = true
+group = SubResource( 9 )
+text = "Normal"
+
+[node name="Hard" type="CheckBox" parent="VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
+margin_left = 564.0
+margin_right = 681.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 7 )
+group = SubResource( 9 )
+text = "Hard"
+
+[node name="BackToMain" type="Button" parent="VBoxContainer/MarginContainer/OptionsMenu"]
+margin_top = 51.0
+margin_right = 784.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 8 )
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Selection/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Selection/NewGame" to="." method="_on_ButtonNewGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Selection/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Selection/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/OptionsMenu/BackToMain" to="." method="_on_BackToMain_pressed"]
