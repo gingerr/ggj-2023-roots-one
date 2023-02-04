@@ -1,6 +1,8 @@
 class_name EnemyRoot
 extends Area2D
 
+var explosionPreload = preload("res://Explosion.tscn")
+
 var spin_speed     = 0.3
 var spin_direction = 1
 
@@ -56,6 +58,10 @@ func set_text(value: String):
 	$Label.text = value
 	
 func explode():
+	var explosion = explosionPreload.instance()
+	explosion.global_position = self.global_position
+	explosion.scale = Vector2(5, 5)
+	get_tree().root.add_child(explosion)
 	queue_free();
 
 func is_enemy_good():
