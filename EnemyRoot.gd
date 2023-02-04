@@ -1,8 +1,9 @@
+class_name EnemyRoot
 extends Area2D
 
 var spin_speed     = 0.3
 var spin_direction = 1
-var velocity       = Vector2(-60, 0)
+var velocity       = Vector2(-100, 0)
 var difficulty     = 0
 
 func _ready():
@@ -13,15 +14,15 @@ func _ready():
 
 	# spin
 	randomize()
+	spin_speed = randf();
 	spin_direction = pow(-1, randi() % 2)
 	
 	# speed
+	velocity.y = rand_range(0, velocity.x /3) * pow(-1, randi() % 2)
+	
 	var boostSpeed = randf() + 1
-	velocity.y = rand_range(0, velocity.x /2) - velocity.x /2
 	velocity *= boostSpeed
 	
-	
-
 func configure(difficulty_level):
 	# difficulty
 	var enemy_difficulty = randi() % difficulty_level + 1
@@ -38,6 +39,10 @@ func configure(difficulty_level):
 func _process(delta):
 	# calulate new position
 	position += velocity * delta
+	if (position.y - 50 < HUD.topHeight):
+		velocity.y = abs(velocity.y)
+	elif position.y + 50 > get_viewport_rect().size.y - HUD.bottomHeight:
+		velocity.y = -abs(velocity.y)
 	
 	rotate(spin_speed * delta * spin_direction)
 
@@ -48,7 +53,12 @@ func set_text(value: String):
 func explode():
 	queue_free();
 
-func _on_area_entered(area):
+func is_enemy_good():
+	if int(sqrt(difficulty)) == sqrt(difficulty):
+		return true	
+	return false
+
+func _on_area_entered(area : Area2D):
 	if (area is Bullet): 
 		area.queue_free()
 		explode()
@@ -56,22 +66,48 @@ func _on_area_entered(area):
 			get_node("/root/Game/Player").change_health(-1)
 		else:
 			HUD.increaseScore(1)
-
-func is_enemy_good():
-	if int(sqrt(difficulty)) == sqrt(difficulty):
-		return true	
-	return false
-
-
+	elif "EnemyRoot" in area.get_name():
+		collide(area, self)
+			
 func _on_player_colission(body: Node):
 	# hit player and despawn
 	if (body is Player):
 		explode()
 		body.change_health(-1)
 	# despawn on left screen side
-	if body.get_name() == "DeathZone":
+	if "DeathZone" in body.get_name():
 		explode()
 		if !is_enemy_good():
 			get_node("/root/Game/Player").change_health(-1)
 		else:
 			HUD.increaseScore(1)
+			
+func collide(a, b):
+	var xDist = a.position.x - b.position.x
+	var yDist = a.position.y - b.position.y
+	var distSquared = xDist * xDist + yDist * yDist
+	
+	var speedXocity = b.velocity.x - a.velocity.x
+	var speedYocity = b.velocity.y - a.velocity.y
+	var dotProduct = xDist * speedXocity + yDist * speedYocity;
+	# vector maths, used for checking if the objects moves towards
+	# one another.
+	if dotProduct > 0:
+		var collisionScale = dotProduct / distSquared;
+		var xCollision = xDist * collisionScale;
+		var yCollision = yDist * collisionScale;
+		# The Collision vector is the speed difference projected on the
+		# Dist vector,
+		# thus it is the component of the speed difference needed for
+		# the collision.
+
+		# simplified for mass.. so far both 1 
+		var massA = 1
+		var massB = 1;
+		var combinedMass = massA + massB;
+		var collisionWeightA = 2 * massB / combinedMass;
+		var collisionWeightB = 2 * massA / combinedMass;
+		a.velocity.x += (collisionWeightA * xCollision);
+		a.velocity.y += (collisionWeightA * yCollision);
+		b.velocity.x -= (collisionWeightB * xCollision);
+		b.velocity.y -= (collisionWeightB * yCollision);

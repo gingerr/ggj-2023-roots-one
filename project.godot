@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Bullet.gd"
 }, {
+"base": "Area2D",
+"class": "EnemyRoot",
+"language": "GDScript",
+"path": "res://EnemyRoot.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Bullet": "",
+"EnemyRoot": "",
 "Player": "",
 "Utils": ""
 }
@@ -33,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="shRooter"
-run/main_scene="res://MainMenu.tscn"
+run/main_scene="res://Game.tscn"
 config/icon="res://resources/icon.png"
 
 [autoload]

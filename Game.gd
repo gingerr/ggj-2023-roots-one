@@ -1,7 +1,7 @@
 extends Node2D
 
-const spawn_amount 				= 2
-const spawn_interval_in_seconds = 5
+const spawn_amount 				= 4
+const spawn_interval_in_seconds = 3 
 var difficulty_level 			= 100;
 
 
