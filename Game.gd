@@ -10,6 +10,12 @@ var spawn_timer 				= 5
 
 onready var squareRootFactory = preload("res://EnemyRoot.tscn")
 
+func _enter_tree():
+	HUD.setVisibility(true)
+	
+func _exit_tree():
+	HUD.setVisibility(false)
+
 func _process(delta):
 	spawn_timer += delta;
 	if (spawn_timer > spawn_interval_in_seconds):

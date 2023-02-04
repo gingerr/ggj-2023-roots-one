@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://resources/retro-gaming.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://BackgroundLayer.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -44,6 +45,8 @@ pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
+
+[node name="BackgroundLayer" parent="." instance=ExtResource( 3 )]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 1400.0
@@ -112,21 +115,21 @@ margin_right = 1400.0
 margin_bottom = 192.0
 
 [node name="DifficultyOpt" type="HBoxContainer" parent="VBoxContainer/MarginContainer/OptionsMenu"]
-margin_right = 1024.0
+margin_right = 1400.0
 margin_bottom = 47.0
 alignment = 1
 
 [node name="Difficulty" type="Label" parent="VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
-margin_left = 222.0
+margin_left = 410.0
 margin_top = 4.0
-margin_right = 400.0
+margin_right = 588.0
 margin_bottom = 43.0
 custom_fonts/font = SubResource( 6 )
 text = "Difficulty"
 
 [node name="Easy" type="CheckBox" parent="VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
-margin_left = 404.0
-margin_right = 524.0
+margin_left = 592.0
+margin_right = 712.0
 margin_bottom = 47.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 7 )
@@ -134,8 +137,8 @@ group = SubResource( 9 )
 text = "Easy"
 
 [node name="Normal" type="CheckBox" parent="VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
-margin_left = 528.0
-margin_right = 680.0
+margin_left = 716.0
+margin_right = 868.0
 margin_bottom = 47.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 7 )
@@ -144,8 +147,8 @@ group = SubResource( 9 )
 text = "Normal"
 
 [node name="Hard" type="CheckBox" parent="VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
-margin_left = 684.0
-margin_right = 801.0
+margin_left = 872.0
+margin_right = 989.0
 margin_bottom = 47.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 7 )
@@ -154,7 +157,7 @@ text = "Hard"
 
 [node name="BackToMain" type="Button" parent="VBoxContainer/MarginContainer/OptionsMenu"]
 margin_top = 51.0
-margin_right = 1024.0
+margin_right = 1400.0
 margin_bottom = 96.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 8 )

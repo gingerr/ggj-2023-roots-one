@@ -1,12 +1,5 @@
 extends MarginContainer
 
-
-onready var background = preload("res://BackgroundLayer.tscn")
-
-
-func _ready():
-	add_child(background.instance())
-
 func _process(delta):
 	if (get_tree().paused):
 		$VBoxContainer/MarginContainer/Selection/Continue.disabled = false

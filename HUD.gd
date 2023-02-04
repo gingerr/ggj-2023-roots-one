@@ -9,11 +9,15 @@ var maxHealth: int
 
 func _ready():
 	setTopBottomHeight()
+	setVisibility(false)
 	resetGameValues()
 
 func _process(delta: float):
 	time += delta
 	updateHUD()
+	
+func setVisibility(value: bool):
+	get_node("MainContainer").visible = value
 	
 func increaseScore(value: int):
 	score += value
