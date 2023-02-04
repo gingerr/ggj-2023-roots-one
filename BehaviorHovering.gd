@@ -1,5 +1,7 @@
 extends Node
 
+const drift_in_pixel = 1
+
 var timer = 0
 
 func _process(delta):
@@ -7,6 +9,8 @@ func _process(delta):
 	timer += delta;
 	if timer > 0.2:
 		var parent = get_parent();
-		parent.position.x += int(rand_range(1,4)) - 2
-		parent.position.y += int(rand_range(1,4)) - 2
+		var drift_x = int(rand_range(0, 2*drift_in_pixel + 1)) - drift_in_pixel
+		var drift_y = int(rand_range(0, 2*drift_in_pixel + 1)) - drift_in_pixel
+		parent.position.x += drift_x
+		parent.position.y += drift_y
 		timer = 0
