@@ -4,6 +4,7 @@
 [ext_resource path="res://Stars.gd" type="Script" id=2]
 
 [node name="BackgroundLayer" type="CanvasLayer"]
+layer = -1
 
 [node name="Stars" type="Node2D" parent="."]
 script = ExtResource( 2 )

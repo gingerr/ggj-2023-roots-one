@@ -5,6 +5,8 @@ const drift_in_pixel = 1
 var timer = 0
 
 func _process(delta):
+	if (1 == 1):
+		return
 		# objects in space are drifting slightly
 	timer += delta;
 	if timer > 0.2:
