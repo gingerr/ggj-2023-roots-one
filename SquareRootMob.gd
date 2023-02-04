@@ -2,6 +2,7 @@ extends Area2D
 
 
 var spin_direction = 1
+var velocity       = Vector2(-20, 0)
 
 func _ready():
 	position.y = rand_range(50,get_viewport_rect().size.y - 50)
@@ -10,7 +11,7 @@ func _ready():
 		spin_direction *= -1
 
 func _process(delta):
-	position.x -= 10 * delta
+	position += velocity * delta
 	rotate(0.3 * delta * spin_direction)
 
 
@@ -20,13 +21,10 @@ func set_text(value: String):
 func explode():
 	print('boom')
 
-func _on_SquareRootMob_child_entered_tree(node):
-	print('_on_SquareRootMob_child_entered_tree')
-	print(node)
-	
-	if (node is Bullet): 
-		print('is bullet')
-	
-	explode()
 
-
+func _on_area_entered(area):
+	if (area is Bullet): 
+		queue_free();
+		area.queue_free()
+		explode()
+	

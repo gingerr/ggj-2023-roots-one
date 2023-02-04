@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal shoot
 
+export var health = 4
 export var muzzle_velocity = 350
 
 onready var muzzle: Position2D = $Muzzle
@@ -11,8 +12,6 @@ var timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	scale.x = 0.05
-	scale.y = 0.05
 	position.x = 100
 	position.y = get_viewport_rect().size.y / 2
 
