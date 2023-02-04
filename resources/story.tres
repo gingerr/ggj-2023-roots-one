@@ -1,7 +1,8 @@
 The root of all evil
 
-TLDR: Shoot on quadratic roots that don't solve into natural numbers and let the others pass.
-Controls: Use arrow keys and space bar.
+[TLDR} Kill the evil square roots (results are no natural numbers)
+and let the others pass.
+
 
 The intergalactic brain has chosen you for an important mission:
 
@@ -14,3 +15,5 @@ sure, that all the citizens of the universe preserve their sanity.
 You are now the last defense between madness and sanity. With your
 trustworthy battleship you have to shoot down all mad roots and make 
 sure they don't reach the intergalactic gateway.
+
+Controls: Use arrow keys or wasd and space bar.
