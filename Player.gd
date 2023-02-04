@@ -27,10 +27,12 @@ func _process(delta):
 		move_local_y(-speed)
 	if (Input.is_action_pressed("ui_down") && position.y < get_viewport_rect().size.y - 100):
 		move_local_x(speed)
-	if (Input.is_action_just_pressed("ui_select")):
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and event.scancode == KEY_SPACE:
 		shoot()
 		emit_signal("shoot", Bullet, rotation, position)
-
 
 func shoot():
 	var b = bullet_factory.instance()

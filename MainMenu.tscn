@@ -108,29 +108,29 @@ margin_right = 1024.0
 margin_bottom = 192.0
 
 [node name="DifficultyOpt" type="HBoxContainer" parent="VBoxContainer/MarginContainer/OptionsMenu"]
-margin_right = 784.0
+margin_right = 1024.0
 margin_bottom = 47.0
 alignment = 1
 
 [node name="Difficulty" type="Label" parent="VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
-margin_left = 102.0
+margin_left = 222.0
 margin_top = 4.0
-margin_right = 280.0
+margin_right = 400.0
 margin_bottom = 43.0
 custom_fonts/font = SubResource( 6 )
 text = "Difficulty"
 
 [node name="Easy" type="CheckBox" parent="VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
-margin_left = 284.0
-margin_right = 404.0
+margin_left = 404.0
+margin_right = 524.0
 margin_bottom = 47.0
 custom_fonts/font = SubResource( 7 )
 group = SubResource( 9 )
 text = "Easy"
 
 [node name="Normal" type="CheckBox" parent="VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
-margin_left = 408.0
-margin_right = 560.0
+margin_left = 528.0
+margin_right = 680.0
 margin_bottom = 47.0
 custom_fonts/font = SubResource( 7 )
 pressed = true
@@ -138,8 +138,8 @@ group = SubResource( 9 )
 text = "Normal"
 
 [node name="Hard" type="CheckBox" parent="VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
-margin_left = 564.0
-margin_right = 681.0
+margin_left = 684.0
+margin_right = 801.0
 margin_bottom = 47.0
 custom_fonts/font = SubResource( 7 )
 group = SubResource( 9 )
@@ -147,14 +147,16 @@ text = "Hard"
 
 [node name="BackToMain" type="Button" parent="VBoxContainer/MarginContainer/OptionsMenu"]
 margin_top = 51.0
-margin_right = 784.0
+margin_right = 1024.0
 margin_bottom = 96.0
 custom_fonts/font = SubResource( 8 )
 text = "Back"
 flat = true
 
+[connection signal="gui_input" from="VBoxContainer" to="." method="_on_VBoxContainer_gui_input"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Selection/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Selection/NewGame" to="." method="_on_ButtonNewGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Selection/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Selection/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Selection/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/OptionsMenu/BackToMain" to="." method="_on_BackToMain_pressed"]

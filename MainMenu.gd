@@ -6,7 +6,6 @@ onready var background = preload("res://BackgroundLayer.tscn")
 
 func _ready():
 	add_child(background.instance())
-	OS.window_fullscreen = true
 
 func _process(delta):
 	if (get_tree().paused):
@@ -14,7 +13,7 @@ func _process(delta):
 	else:
 		$VBoxContainer/MarginContainer/Selection/Continue.disabled = true
 
-func _on_ButtonNewGame_pressed():
+func _on_NewGame_pressed():
 	get_tree().paused = false
 	get_tree().change_scene("res://Game.tscn")
 
@@ -36,3 +35,7 @@ func _on_Options_pressed():
 func _on_BackToMain_pressed():
 	$VBoxContainer/MarginContainer/OptionsMenu.visible = false
 	$VBoxContainer/MarginContainer/Selection.visible = true
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and event.scancode == KEY_ESCAPE:
+		_on_Continue_pressed()
