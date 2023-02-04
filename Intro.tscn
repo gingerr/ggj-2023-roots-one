@@ -1,8 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://resources/retro-gaming.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://BackgroundLayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Intro.gd" type="Script" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=4]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.144531, 0.110092, 0.110092, 1, 0.480469, 0.437302, 0.437302, 1 )
+
+[sub_resource type="GradientTexture2D" id=3]
+gradient = SubResource( 2 )
+width = 900
+height = 600
+use_hdr = true
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -26,6 +37,11 @@ margin_right = 727.0
 margin_bottom = 411.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer"]
+material = SubResource( 4 )
+position = Vector2( 400, 275 )
+texture = SubResource( 3 )
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
