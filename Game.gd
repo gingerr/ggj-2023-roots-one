@@ -8,8 +8,10 @@ enum DISPLAY_MODE {
 
 var DEFAULT_SCREEN_MODE = DISPLAY_MODE.FULLSCREEN
 onready var squareRootFactory = preload("res://SquareRootMob.tscn")
+onready var background = preload("res://BackgroundLayer.tscn")
 
 func _ready():
+	add_child(background.instance())
 	# todo extract into mob spawn manager
 	call_deferred("spawnSquareRoot", 0.2, 0.1, '361')
 	call_deferred("spawnSquareRoot", 0.7, 0.05, '256')

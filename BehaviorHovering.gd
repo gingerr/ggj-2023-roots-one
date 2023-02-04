@@ -1,6 +1,5 @@
 extends Node
 
-const 
 var timer = 0
 
 func _process(delta):
