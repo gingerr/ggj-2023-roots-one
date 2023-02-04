@@ -1,15 +1,40 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/spacedeb.mp3" type="AudioStream" id=2]
 [ext_resource path="res://Game.gd" type="Script" id=3]
+[ext_resource path="res://DeathZone.gd" type="Script" id=4]
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 0.186523, 0.00655746, 0.00655746, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture2D" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 77 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -495, 340 )
+position = Vector2( 50, 0 )
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
+
+[node name="DeathZone" type="StaticBody2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="DeathZone"]
+material = SubResource( 2 )
+position = Vector2( 32, 77 )
+scale = Vector2( 1, 2.40625 )
+texture = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2( 32, 77 )
+shape = SubResource( 1 )

@@ -43,12 +43,12 @@ func set_text(value: String):
 	$Label.text = value
 	
 func explode():
+	queue_free();
 	print('boom')
 
 func _on_area_entered(area):
 	if (area is Bullet): 
 		area.queue_free()
-		queue_free();
 		explode()
 		if is_enemy_good():
 			print("Reduce Player Health")
@@ -62,6 +62,13 @@ func is_enemy_good():
 
 
 func _on_player_colission(body):
+	# hit player and despawn
 	if (body is Player):
-		queue_free();
+		explode()
 		print("Reduce Player Health")
+	# despawn on left screen side
+	if body.get_name() == "DeathZone":
+		explode()
+		if !is_enemy_good():
+			print("Reduce Player Health")
+			
