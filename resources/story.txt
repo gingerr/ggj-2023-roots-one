@@ -1,5 +1,8 @@
 The root of all evil
 
+TLDR: Shoot on quadratic roots that don't solve into natural numbers and let the others pass.
+Controls: Use arrow keys and space bar.
+
 The intergalactic brain has chosen you for an important mission:
 
 The natural order is danger. On the planet "SquareRoot" the 
