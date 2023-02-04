@@ -1,6 +1,5 @@
 extends Area2D
 
-
 var spin_direction = 1
 var velocity       = Vector2(-20, 0)
 

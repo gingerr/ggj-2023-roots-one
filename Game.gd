@@ -13,9 +13,9 @@ func _ready():
 	# todo extract into mob spawn manager
 	call_deferred("spawnSquareRoot", 0.2, 0.1, '361')
 	call_deferred("spawnSquareRoot", 0.7, 0.05, '256')
-	
+
+func _init():
 	if (DEFAULT_SCREEN_MODE == DISPLAY_MODE.WINDOW):
-		
 		OS.set_window_size(OS.get_screen_size() * 0.9)
 		OS.set_window_position(
 			OS.get_screen_position(OS.get_current_screen()) + 
@@ -23,10 +23,6 @@ func _ready():
 	if (DEFAULT_SCREEN_MODE == DISPLAY_MODE.FULLSCREEN):
 		OS.window_fullscreen = true
 
-#func _process(delta):
-#	pass
-
-# todo wip
 func spawnSquareRoot(verticalPosition: float, scale: float, text: String):
 	var mob = squareRootFactory.instance()
 	var x = get_viewport_rect().size.x
