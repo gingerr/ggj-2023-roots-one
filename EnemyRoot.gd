@@ -71,4 +71,5 @@ func _on_player_colission(body):
 		explode()
 		if !is_enemy_good():
 			print("Reduce Player Health")
-			
+		else:
+			HUD.increaseScore(1)

@@ -6,10 +6,8 @@ var spawn_timer 				= 0
 var difficulty_level = 100;
 
 onready var squareRootFactory = preload("res://EnemyRoot.tscn")
-onready var background = preload("res://BackgroundLayer.tscn")
 
 func _ready():
-	add_child(background.instance())
 	# todo extract into mob spawn manager
 	call_deferred("spawnEnemy")
 	call_deferred("spawnEnemy")
