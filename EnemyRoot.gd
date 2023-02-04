@@ -52,6 +52,7 @@ func _on_area_entered(area):
 		explode()
 		if is_enemy_good():
 			print("Reduce Player Health")
+			get_node("/root/Game/Player").change_health(-1)
 		else:
 			HUD.increaseScore(1)
 
@@ -61,11 +62,12 @@ func is_enemy_good():
 	return false
 
 
-func _on_player_colission(body):
+func _on_player_colission(body: Node):
 	# hit player and despawn
 	if (body is Player):
 		explode()
 		print("Reduce Player Health")
+		body.change_health(-1)
 	# despawn on left screen side
 	if body.get_name() == "DeathZone":
 		explode()

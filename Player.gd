@@ -3,8 +3,8 @@ extends KinematicBody2D
 
 signal shoot
 
-export var health = 4
-export var muzzle_velocity = 350
+var health: int
+export var muzzle_velocity: int = 350
 
 onready var muzzle: Position2D = $Muzzle
 
@@ -14,6 +14,7 @@ var bullet_factory = preload("res://Bullet.tscn")
 func _ready():
 	position.x = 100
 	position.y = get_viewport_rect().size.y / 2
+	change_health(4)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,3 +39,10 @@ func shoot():
 	var b = bullet_factory.instance()
 	b.global_position = muzzle.global_position
 	get_tree().root.add_child(b)
+	
+func get_health() -> int:
+	return health
+
+func change_health(value: int):
+	health += value
+	HUD.setHealth(health)
