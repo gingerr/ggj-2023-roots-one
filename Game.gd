@@ -14,7 +14,6 @@ func _process(delta):
 	if (spawn_timer > spawn_interval_in_seconds):
 		spawn_timer = 0;
 		for i in range(spawn_amount):
-			print(i)
 			call_deferred("spawnEnemy")
 
 func spawnEnemy():

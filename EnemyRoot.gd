@@ -17,7 +17,9 @@ func _ready():
 	
 	# speed
 	var boostSpeed = randf() + 1
+	velocity.y = rand_range(0, velocity.x /2) - velocity.x /2
 	velocity *= boostSpeed
+	
 	
 
 func configure(difficulty_level):
@@ -34,7 +36,9 @@ func configure(difficulty_level):
 	set_text(str(difficulty))
 
 func _process(delta):
+	# calulate new position
 	position += velocity * delta
+	
 	rotate(spin_speed * delta * spin_direction)
 
 
@@ -43,14 +47,12 @@ func set_text(value: String):
 	
 func explode():
 	queue_free();
-	print('boom')
 
 func _on_area_entered(area):
 	if (area is Bullet): 
 		area.queue_free()
 		explode()
 		if is_enemy_good():
-			print("Reduce Player Health")
 			get_node("/root/Game/Player").change_health(-1)
 		else:
 			HUD.increaseScore(1)
@@ -65,12 +67,11 @@ func _on_player_colission(body: Node):
 	# hit player and despawn
 	if (body is Player):
 		explode()
-		print("Reduce Player Health")
 		body.change_health(-1)
 	# despawn on left screen side
 	if body.get_name() == "DeathZone":
 		explode()
 		if !is_enemy_good():
-			print("Reduce Player Health")
+			get_node("/root/Game/Player").change_health(-1)
 		else:
 			HUD.increaseScore(1)
