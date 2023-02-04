@@ -6,6 +6,8 @@ enum DISPLAY_MODE {
 	FULLSCREEN
 }
 
+var difficulty_level = 10;
+
 var DEFAULT_SCREEN_MODE = DISPLAY_MODE.FULLSCREEN
 onready var squareRootFactory = preload("res://EnemyRoot.tscn")
 onready var background = preload("res://BackgroundLayer.tscn")
