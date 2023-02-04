@@ -10,7 +10,7 @@ func _ready():
 	var x = get_viewport_rect().size.x + 100
 	var y = rand_range(50,get_viewport_rect().size.y - 50)
 	position = Vector2(x, y)
-	
+
 	# spin
 	randomize()
 	spin_direction = pow(-1, randi() % 2)

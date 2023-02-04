@@ -14,7 +14,7 @@ func _process(delta):
 		call_deferred("spawnEnemy")
 		call_deferred("spawnEnemy")
 		call_deferred("spawnEnemy")
-		
+
 
 func spawnEnemy():
 	var mob = squareRootFactory.instance()

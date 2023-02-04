@@ -31,7 +31,6 @@ func _on_Options_pressed():
 	$VBoxContainer/MarginContainer/OptionsMenu.visible = true
 	$VBoxContainer/MarginContainer/Selection.visible = false
 
-
 func _on_BackToMain_pressed():
 	$VBoxContainer/MarginContainer/OptionsMenu.visible = false
 	$VBoxContainer/MarginContainer/Selection.visible = true
