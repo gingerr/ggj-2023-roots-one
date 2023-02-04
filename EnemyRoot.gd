@@ -53,6 +53,8 @@ func _on_area_entered(area):
 		explode()
 		if is_enemy_good():
 			print("Reduce Health")
+		else:
+			print("Score increased")
 
 func is_enemy_good():
 	if int(sqrt(difficulty)) == sqrt(difficulty):
