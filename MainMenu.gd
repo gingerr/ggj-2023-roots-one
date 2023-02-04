@@ -13,3 +13,7 @@ func _ready():
 
 func _on_ButtonNewGame_pressed():
 	get_tree().change_scene("res://Game.tscn")
+
+
+func _on_Exit_pressed():
+	get_tree().quit()
