@@ -6,8 +6,8 @@ var velocity = Vector2(1000, 0)
 func _ready():
 	#position.x = 100
 #	position.y = get_viewport_rect().size.y / 2
-	scale.x = 0.01
-	scale.y = 0.01
+	scale.x = 0.05
+	scale.y = 0.05
 
 func _physics_process(delta):
 	position += velocity * delta
