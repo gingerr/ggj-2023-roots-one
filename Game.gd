@@ -6,7 +6,7 @@ enum DISPLAY_MODE {
 	FULLSCREEN
 }
 
-var DEFAULT_SCREEN_MODE = DISPLAY_MODE.WINDOW
+var DEFAULT_SCREEN_MODE = DISPLAY_MODE.FULLSCREEN
 onready var squareRootFactory = preload("res://SquareRootMob.tscn")
 
 func _ready():
