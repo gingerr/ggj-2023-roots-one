@@ -5,6 +5,7 @@ export var bottomHeight: int
 export var time: float
 export var score: int
 var health: int
+var maxHealth: int
 
 func _ready():
 	setTopBottomHeight()
@@ -17,16 +18,24 @@ func _process(delta: float):
 func increaseScore(value: int):
 	score += value
 	updateHUD()
+
+func setMaxHealth(value: int):
+	maxHealth = value
+	updateHUD()
 	
 func setHealth(value: int):
-	health = value
-	updateHUD()
+	if (value >= 0):
+		health = value
+		updateHUD()
 
 func updateHUD():
 	get_node('%Fps').set_text("FPS: " + String(Engine.get_frames_per_second()))
 	get_node('%Score').set_text('Score: ' + String(score))
 	get_node('%Time').set_text('Time: ' + getTimeString())
-	get_node('%Health').set_text('Health: ' + String(health))
+	get_node('%Health').set_text('HP: ' + String(health))
+	var bar: ProgressBar = get_node('%Bar')
+	bar.max_value = maxHealth
+	bar.value = health
 	
 func getTimeString() -> String:
 	var minutes := time / 60

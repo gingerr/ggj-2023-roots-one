@@ -44,5 +44,8 @@ func get_health() -> int:
 	return health
 
 func change_health(value: int):
+	if(value > 0 && (health == 0 || health == null)):
+		HUD.setMaxHealth(value)
+	
 	health += value
 	HUD.setHealth(health)
