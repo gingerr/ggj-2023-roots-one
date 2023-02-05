@@ -24,15 +24,28 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$thrust_left.visible = false
+	$thrust_right.visible = false
+	$thrust_back_left.visible = false 
+	$thrust_back_right.visible = false 
+	$thrust_front_left.visible = false 
+	$thrust_front_right.visible = false 
+	
 	# accelerate and decelerate
 	if Input.is_action_pressed("ui_left"):
 		current_speed.x = max(-max_speed, current_speed.x - acceleration)
+		$thrust_front_left.visible = true 
+		$thrust_front_right.visible = true 
 	if Input.is_action_pressed("ui_up"):
 		current_speed.y = max(-max_speed, current_speed.y - acceleration)
+		$thrust_right.visible = true
 	if Input.is_action_pressed("ui_right"):
 		current_speed.x = min(max_speed, current_speed.x + acceleration)
+		$thrust_back_left.visible = true 
+		$thrust_back_right.visible = true 
 	if Input.is_action_pressed("ui_down"):
 		current_speed.y = min(max_speed, current_speed.y + acceleration)
+		$thrust_left.visible = true
 	
 	# bounce on scren side
 	if position.x < 50:
