@@ -9,15 +9,15 @@ Game Plan
     - [x] Sterne
     - [ ] Kometen
     - [ ] Explosionen
-- [ ] Mathematische Wurzeln sind Gegner -> fliegen auf den Spieler zu
+- [x] Mathematische Wurzeln sind Gegner -> fliegen auf den Spieler zu
     - [ ] ansteigender Schwierigkeitsgrad (Sqrt 1-100, Sqrt 100-1000, Geschwindigkeit...)
     - [ ] Idee von Patrick: Wurzeln die der User oft genug richtig gelöst hat, werden vom Schiff automatisch markiert als gute Wurzeln
 - [ ] ~~Bewegung auf einer Linie~~
-- [ ] böse Wurzeln abschießen
-- [ ] Leben verlieren, wenn die Wurzeln bestimmte Linie überschreiten oder falsche Wurzeln getroffen oder Schiff
+- [x] böse Wurzeln abschießen
+- [x] Leben verlieren, wenn die Wurzeln bestimmte Linie überschreiten oder falsche Wurzeln getroffen oder Schiff
   kollidiert
 - [ ] (Ergebnis der Wurzel ist prozentualer Schaden von Max HP)
-- [ ] getroffene Wurzeln lassen Ergebnis zurück
+- [x] getroffene Wurzeln lassen Ergebnis zurück
 
 The roots of all evil
 
