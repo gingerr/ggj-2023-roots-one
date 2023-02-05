@@ -14,6 +14,7 @@ const acceleration  = 5
 var   current_speed = Vector2(0, 0)
 
 var bullet_factory = preload("res://Bullet.tscn")
+var explosionPreload = preload("res://Explosion.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +25,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if (health <= 0):
+		return
+	
 	$thrust_left.visible = false
 	$thrust_right.visible = false
 	$thrust_back_left.visible = false 
@@ -57,9 +61,12 @@ func _process(delta):
 	elif position.y > get_viewport_rect().size.y - 50:
 		current_speed.y = -abs(current_speed.y)
 	position += current_speed * delta;
-
+	
 
 func _input(event: InputEvent) -> void:
+	if (health <= 0):
+		return
+		
 	if event is InputEventKey and event.pressed and event.scancode == KEY_SPACE:
 		shoot()
 		emit_signal("shoot", Bullet, rotation, position)
@@ -79,6 +86,11 @@ func change_health(value: int):
 	health += value
 	HUD.setHealth(health)
 	if health == 0:
-		visible = false
+		explode()
 		
-	
+func explode():
+	var explosion = explosionPreload.instance()
+	explosion.global_position = self.global_position
+	explosion.scale = Vector2(5, 5)
+	explosion.one_shot = false
+	get_tree().root.add_child(explosion)
