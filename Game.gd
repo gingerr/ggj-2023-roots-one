@@ -25,7 +25,7 @@ func _exit_tree():
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	HUD.resetGameValues()
-	print(234)
+	HUD.setLevel(level)
 	
 func _process(delta):
 	spawn_timer += delta;
