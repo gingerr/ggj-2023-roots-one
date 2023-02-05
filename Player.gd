@@ -28,12 +28,7 @@ func _process(delta):
 	if (health <= 0):
 		return
 	
-	$thrust_left.visible = false
-	$thrust_right.visible = false
-	$thrust_back_left.visible = false 
-	$thrust_back_right.visible = false 
-	$thrust_front_left.visible = false 
-	$thrust_front_right.visible = false 
+	hideThrusters()
 	
 	# accelerate and decelerate
 	if Input.is_action_pressed("ui_left"):
@@ -89,8 +84,19 @@ func change_health(value: int):
 		explode()
 		
 func explode():
+	hideThrusters()
 	var explosion = explosionPreload.instance()
 	explosion.global_position = self.global_position
 	explosion.scale = Vector2(5, 5)
 	explosion.one_shot = false
 	get_tree().root.add_child(explosion)
+
+func hideThrusters():
+	$thrust_left.visible = false
+	$thrust_right.visible = false
+	$thrust_back_left.visible = false 
+	$thrust_back_right.visible = false 
+	$thrust_front_left.visible = false 
+	$thrust_front_right.visible = false 
+	
+	
