@@ -2,9 +2,10 @@ extends Node2D
 
 # difficulty configuration
 const intial_root_number 		= 100;
-const spawn_interval_in_seconds = 5 
 const level_interval_in_seconds = 10
-var spawn_amount 				= 4
+var spawn_interval_in_seconds = 5 
+
+var spawn_amount 				= 2
 var max_root_number 			= intial_root_number
 export var level 				= 1
 
@@ -33,9 +34,20 @@ func _process(delta):
 			call_deferred("spawnEnemy")
 	if (level_timer > level_interval_in_seconds):
 		level_timer = 0;
-		level +=1
-		HUD.setLevel(level)
+		increaseLevel()
 
+func increaseLevel():
+	level +=1
+	HUD.setLevel(level)
+	if level == 5:
+		spawn_amount += 1
+	elif level == 10:
+		spawn_interval_in_seconds -= 1
+	elif level == 15:
+		spawn_amount += 1
+	elif level == 20:
+		spawn_amount += 1
+		
 
 func spawnEnemy():
 	var mob = squareRootFactory.instance()
