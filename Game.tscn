@@ -37,11 +37,12 @@ script = ExtResource( 4 )
 [node name="Sprite" type="Sprite" parent="DeathZone"]
 material = SubResource( 2 )
 position = Vector2( 32, 77 )
-scale = Vector2( 1, 2.40625 )
+scale = Vector2( 1, 2.406 )
 texture = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2( 32, 77 )
+position = Vector2( 16, 78 )
+scale = Vector2( 0.5, 1 )
 shape = SubResource( 1 )
 
 [node name="WorldEnvironment" parent="." instance=ExtResource( 6 )]
