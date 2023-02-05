@@ -28,17 +28,17 @@ size_flags_vertical = 3
 script = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 650.0
-margin_top = 400.0
-margin_right = 902.0
-margin_bottom = 475.0
+margin_left = 574.0
+margin_top = 362.0
+margin_right = 826.0
+margin_bottom = 437.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Sprite" type="Sprite" parent="VBoxContainer"]
-self_modulate = Color( 0.14902, 0.00784314, 0.278431, 0.396078 )
+self_modulate = Color( 0.333333, 0.176471, 0.47451, 0.513726 )
 material = SubResource( 4 )
-position = Vector2( 124, 32 )
+position = Vector2( 133, 39 )
 scale = Vector2( 0.344028, 0.214167 )
 texture = SubResource( 3 )
 
