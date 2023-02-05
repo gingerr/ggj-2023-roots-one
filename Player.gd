@@ -83,6 +83,7 @@ func change_health(value: int):
 	HUD.setHealth(health)
 	if health == 0:
 		explode()
+		visible = false
 		
 func explode():
 	hideThrusters()
