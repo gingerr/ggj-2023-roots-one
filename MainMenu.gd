@@ -23,7 +23,6 @@ func _on_BackToMain_pressed():
 	$HBoxContainer/VBoxContainer/MarginContainer/Selection.visible = true
 
 func _input(event: InputEvent) -> void:
-	
 	if event is InputEventMouse: 
 		if $HBoxContainer/VBoxContainer/MarginContainer/Selection/NewGame.is_hovered():
 			selectionIndex = 0;
@@ -38,10 +37,9 @@ func _input(event: InputEvent) -> void:
 		
 	if event is InputEventKey and event.pressed and event.scancode == KEY_DOWN:
 		selectionIndex = min(selectionIndex + 1, 1)
-		visualize_selection()
 	if event is InputEventKey and event.pressed and event.scancode == KEY_UP:
 		selectionIndex = max(selectionIndex - 1, 0)
-		visualize_selection()
+	visualize_selection()
 
 func visualize_selection():
 	Utils.button_not_selected($HBoxContainer/VBoxContainer/MarginContainer/Selection/NewGame)

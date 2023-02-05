@@ -1,6 +1,7 @@
 extends Node
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	var text = load_text_file('res://resources/story.tres')
 	var node: Label = get_node('%Label')
 	node.set_text(text)
