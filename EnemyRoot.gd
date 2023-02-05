@@ -70,6 +70,7 @@ func explode():
 	if is_enemy_good():
 		var hint = hintPreload.instance()
 		hint.position = self.global_position
+		hint.position.x -= 30   
 		hint.set_text("= " + str(sqrt(difficulty)))
 		get_tree().root.add_child(hint)
 

@@ -49,8 +49,12 @@ func updateHUD():
 	get_node('%Score').set_text('Score: ' + String(score) + ' (Level ' + String(level) + ')')
 	get_node('%Time').set_text('Time: ' + getTimeString())
 	var bar: ProgressBar = get_node('%Bar')
-	bar.max_value = maxHealth
+	
+	
+	bar.max_value = max(maxHealth, 1)
 	bar.value = health
+	var percentage = float(health) / float(max(maxHealth, 1))
+	bar.get("custom_styles/fg").set_bg_color(Color (1.0 - percentage, percentage, 0))
 	
 func getTimeString() -> String:
 	var minutes := time / 60
