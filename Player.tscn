@@ -25,25 +25,25 @@ script = ExtResource( 3 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 40.9999, -35.0001, 0.999772, -63, -33.0001, -36.9999, -66, 5.00024, -57.9998, 58.0002, 1.00024, 67, 42.0002, 62.9998, 69, 7.99975 )
 
-[node name="thrust_back_left" type="Sprite" parent="." groups=["thrust_back"]]
+[node name="thrust_back_left" type="Sprite" parent="."]
 position = Vector2( -26.6664, 68.889 )
 rotation = 4.71239
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 5 )
 
-[node name="thrust_back_right" type="Sprite" parent="." groups=["thrust_back"]]
+[node name="thrust_back_right" type="Sprite" parent="."]
 position = Vector2( 28.8892, 68.8888 )
 rotation = 4.71239
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 5 )
 
-[node name="thrust_front_left" type="Sprite" parent="." groups=["thrust_front"]]
+[node name="thrust_front_left" type="Sprite" parent="."]
 position = Vector2( -26.6667, -26.6671 )
 rotation = 1.5708
 scale = Vector2( 0.025, 0.025 )
 texture = ExtResource( 4 )
 
-[node name="thrust_front_right" type="Sprite" parent="." groups=["thrust_front"]]
+[node name="thrust_front_right" type="Sprite" parent="."]
 position = Vector2( 31.1111, -26.6667 )
 rotation = 1.5708
 scale = Vector2( 0.025, 0.025 )
