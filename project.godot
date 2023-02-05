@@ -43,7 +43,8 @@ run/main_scene="res://MainMenu.tscn"
 boot_splash/image="res://resources/splash.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://resources/icon.png"
+config/icon="res://resources/spaceship1.png"
+config/windows_native_icon="res://resources/shRooter.ico"
 
 [autoload]
 
@@ -55,11 +56,10 @@ window/size/width=1400
 window/size/height=800
 window/size/resizable=false
 window/size/fullscreen=true
-window/vsync/use_vsync=false
 
 [global]
 
-vsync=false
+vsync=true
 
 [gui]
 
