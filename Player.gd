@@ -89,6 +89,8 @@ func explode():
 	explosion.global_position = self.global_position
 	explosion.scale = Vector2(5, 5)
 	explosion.one_shot = false
+	explosion.lifetime = 4
+	explosion.speed_scale = 0.5
 	get_tree().root.add_child(explosion)
 
 func hideThrusters():
