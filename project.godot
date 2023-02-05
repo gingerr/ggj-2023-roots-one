@@ -49,6 +49,7 @@ config/windows_native_icon="res://resources/shRooter.ico"
 [autoload]
 
 HUD="*res://HUD.tscn"
+BoomBox="*res://BoomBox.tscn"
 
 [display]
 
