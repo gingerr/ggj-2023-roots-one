@@ -2,6 +2,7 @@ class_name EnemyRoot
 extends Area2D
 
 var explosionPreload = preload("res://Explosion.tscn")
+var hintPreload = preload("res://Hint.tscn")
 
 var spin_speed     = 0.3
 var spin_direction = 1
@@ -65,6 +66,12 @@ func explode():
 	explosion.scale = Vector2(5, 5)
 	get_tree().root.add_child(explosion)
 	queue_free();
+	
+	if is_enemy_good():
+		var hint = hintPreload.instance()
+		hint.position = self.global_position
+		hint.set_text("= " + str(sqrt(difficulty)))
+		get_tree().root.add_child(hint)
 
 func is_enemy_good():
 	if int(sqrt(difficulty)) == sqrt(difficulty):
