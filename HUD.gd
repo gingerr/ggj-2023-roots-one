@@ -23,6 +23,9 @@ func _process(delta: float):
 func setVisibility(value: bool):
 	get_node("MainContainer").visible = value
 	
+func get_score():
+	return score
+		
 func increaseScore(value: int):
 	score += value
 	updateHUD()

@@ -21,7 +21,7 @@ var explosionPreload = preload("res://Explosion.tscn")
 func _ready():
 	position.x = 100
 	position.y = get_viewport_rect().size.y / 2
-	change_health(10)
+	change_health(2)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

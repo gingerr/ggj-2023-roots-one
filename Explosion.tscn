@@ -7,6 +7,8 @@ offsets = PoolRealArray( 0.258454, 0.548309, 0.852657, 0.949275 )
 colors = PoolColorArray( 1, 1, 1, 1, 0.9375, 0.814552, 0.150634, 1, 1, 0, 0, 1, 0.503906, 0, 0, 1 )
 
 [node name="Explosion" type="CPUParticles2D"]
+pause_mode = 2
+physics_interpolation_mode = 2
 emitting = false
 amount = 256
 one_shot = true
