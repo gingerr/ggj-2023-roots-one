@@ -50,5 +50,4 @@ shape = SubResource( 1 )
 [node name="PauseScreen" parent="." instance=ExtResource( 7 )]
 pause_mode = 2
 visible = false
-margin_right = 1400.0
-margin_bottom = 800.0
+rect_min_size = Vector2( 1400, 800 )
