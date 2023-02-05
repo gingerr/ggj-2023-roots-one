@@ -66,6 +66,6 @@ func change_health(value: int):
 	health += value
 	HUD.setHealth(health)
 	if health == 0:
-		queue_free()
+		visible = false
 		
 	
