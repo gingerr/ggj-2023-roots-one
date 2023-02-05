@@ -7,10 +7,10 @@ static func randomBoolean():
 	return false
 	
 static func default_font_color(label : Label):
-	label.set("custom_colors/font_color", Color(0.2,0.9,0.2))
+	label.set("custom_colors/font_color", Color(1,0.7,0.0))
 
 static func button_selected(label : Button):
-	label.set("custom_colors/font_color", Color(0.2,0.9,0.2))
+	label.set("custom_colors/font_color", Color(1.0,0.7,0.0))
 
 static func button_not_selected(label : Button):
 	label.set("custom_colors/font_color", Color(1,1,1))
