@@ -12,8 +12,8 @@ z_index = -4096
 script = ExtResource( 2 )
 
 [node name="Nebula" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0.494118 )
-scale = Vector2( 0.3, 0.3 )
+self_modulate = Color( 1, 1, 1, 0.298039 )
+scale = Vector2( 9, 9 )
 z_index = -4095
 z_as_relative = false
 texture = ExtResource( 3 )

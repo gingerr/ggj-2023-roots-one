@@ -9,7 +9,7 @@ func _ready():
 
 func _physics_process(delta):
 	position.x -= 10 * delta
-	rotate(0.1 * delta)
+	rotate(0.03 * delta)
 	
 	if (position.x <= -50):
 			position.x = int(get_viewport_rect().size.x) + 50

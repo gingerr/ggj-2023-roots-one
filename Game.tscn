@@ -10,7 +10,7 @@
 [sub_resource type="CanvasItemMaterial" id=2]
 
 [sub_resource type="Gradient" id=3]
-colors = PoolColorArray( 0.186523, 0.00655746, 0.00655746, 1, 0, 0, 0, 1 )
+colors = PoolColorArray( 0.186523, 0.00655746, 0.00655746, 1, 0.0507812, 0.0507812, 0.0507812, 0 )
 
 [sub_resource type="GradientTexture2D" id=4]
 gradient = SubResource( 3 )
