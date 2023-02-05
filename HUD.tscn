@@ -31,6 +31,8 @@ script = ExtResource( 3 )
 [node name="MainContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 5.0
+margin_bottom = 5.0
 mouse_filter = 2
 size_flags_horizontal = 2
 size_flags_vertical = 2
@@ -42,20 +44,20 @@ custom_constants/margin_bottom = 5
 [node name="VBoxContainer" type="VBoxContainer" parent="MainContainer"]
 margin_left = 5.0
 margin_top = 5.0
-margin_right = 1395.0
-margin_bottom = 795.0
+margin_right = 1390.0
+margin_bottom = 800.0
 mouse_filter = 2
 
 [node name="Top" type="HBoxContainer" parent="MainContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_right = 1390.0
+margin_right = 1385.0
 margin_bottom = 21.0
 mouse_filter = 2
 size_flags_vertical = 0
 
 [node name="Fps" type="Label" parent="MainContainer/VBoxContainer/Top"]
 unique_name_in_owner = true
-margin_right = 460.0
+margin_right = 459.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 4 )
@@ -63,8 +65,8 @@ text = "FPS"
 
 [node name="Score" type="Label" parent="MainContainer/VBoxContainer/Top"]
 unique_name_in_owner = true
-margin_left = 665.0
-margin_right = 724.0
+margin_left = 663.0
+margin_right = 722.0
 margin_bottom = 21.0
 size_flags_horizontal = 6
 custom_fonts/font = ExtResource( 2 )
@@ -73,8 +75,8 @@ align = 1
 
 [node name="Time" type="Label" parent="MainContainer/VBoxContainer/Top"]
 unique_name_in_owner = true
-margin_left = 1349.0
-margin_right = 1390.0
+margin_left = 1344.0
+margin_right = 1385.0
 margin_bottom = 21.0
 size_flags_horizontal = 10
 custom_fonts/font = ExtResource( 2 )
@@ -83,22 +85,22 @@ text = "Time"
 [node name="Middle" type="HBoxContainer" parent="MainContainer/VBoxContainer"]
 unique_name_in_owner = true
 margin_top = 25.0
-margin_right = 1390.0
-margin_bottom = 764.0
+margin_right = 1385.0
+margin_bottom = 769.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Bottom" type="CenterContainer" parent="MainContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 768.0
-margin_right = 1390.0
-margin_bottom = 790.0
+margin_top = 773.0
+margin_right = 1385.0
+margin_bottom = 795.0
 
 [node name="Bar" type="ProgressBar" parent="MainContainer/VBoxContainer/Bottom"]
 unique_name_in_owner = true
-margin_left = 545.0
-margin_right = 845.0
+margin_left = 542.0
+margin_right = 842.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 300, 22 )
 size_flags_vertical = 3
@@ -108,8 +110,8 @@ percent_visible = false
 
 [node name="Health" type="Label" parent="MainContainer/VBoxContainer/Bottom"]
 unique_name_in_owner = true
-margin_left = 664.0
-margin_right = 726.0
+margin_left = 661.0
+margin_right = 723.0
 margin_bottom = 21.0
 custom_fonts/font = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
