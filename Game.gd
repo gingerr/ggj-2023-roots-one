@@ -1,4 +1,4 @@
-extends Node2D
+extends CenterContainer
 
 # difficulty configuration
 const intial_root_number 		= 100;
@@ -23,7 +23,6 @@ func _exit_tree():
 	HUD.setVisibility(false)
 
 func _ready():
-	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 func _process(delta):
