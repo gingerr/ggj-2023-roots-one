@@ -5,7 +5,7 @@ func _ready():
 
 func _process(delta):
 	get_tree().paused = true;
-	$VBoxContainer/Countdown.text = "You scored " + str(HUD.get_score()) + "\nExiting in " + String(round($Timer.time_left)) + "\n"
+	$VBoxContainer/Countdown.text = "Your score:\n" + str(HUD.get_score()) + " points\n\n  Exiting in " + String(round($Timer.time_left)) + " seconds  \n"
 
 func _on_Timer_timeout():
 	get_tree().paused = false;
