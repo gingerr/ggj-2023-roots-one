@@ -6,7 +6,7 @@
 
 [node name="Player" type="KinematicBody2D"]
 rotation = 1.5708
-scale = Vector2( 0.35, 0.35 )
+scale = Vector2( 0.45, 0.45 )
 z_index = 1
 script = ExtResource( 1 )
 
