@@ -11,7 +11,7 @@ export var muzzle_velocity: int = 350
 onready var muzzle: Position2D = $Muzzle
 
 const max_speed     = 300
-const acceleration  = 5
+const acceleration  = 10
 var   current_speed = Vector2(0, 0)
 
 var bullet_factory = preload("res://Bullet.tscn")

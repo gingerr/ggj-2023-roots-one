@@ -87,8 +87,10 @@ func _on_area_entered(area : Area2D):
 			get_node("/root/Game/Player").change_health(-1)
 		else:
 			HUD.increaseScore(1)
+		get_tree().set_input_as_handled()
 	elif "EnemyRoot" in area.get_name():
 		collide(area, self)
+		get_tree().set_input_as_handled()
 			
 func _on_player_colission(body: Node):
 	# hit player and despawn
