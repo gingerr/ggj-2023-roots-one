@@ -25,7 +25,6 @@ script = ExtResource( 3 )
 position = Vector2( 50, 0 )
 
 [node name="BackgroundLayer" parent="." instance=ExtResource( 5 )]
-layer = 0
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Nebula.gd" type="Script" id=1]
 [ext_resource path="res://Stars.gd" type="Script" id=2]
+[ext_resource path="res://resources/nebulaSmall.png" type="Texture" id=3]
 
 [node name="BackgroundLayer" type="CanvasLayer"]
 layer = -1
@@ -10,5 +11,8 @@ layer = -1
 script = ExtResource( 2 )
 
 [node name="Nebula" type="Sprite" parent="."]
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.3, 0.3 )
+z_index = -4096
+z_as_relative = false
+texture = ExtResource( 3 )
 script = ExtResource( 1 )
