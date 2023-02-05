@@ -9,8 +9,6 @@ func _ready():
 func _input(event: InputEvent):
 	if event.get('pressed') and event.pressed:
 		get_tree().change_scene("res://Game.tscn")
-		
-	pass
 
 func load_text_file(path):
 	var f = File.new()
