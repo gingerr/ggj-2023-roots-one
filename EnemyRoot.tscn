@@ -10,6 +10,8 @@
 
 [sub_resource type="DynamicFont" id=4]
 size = 400
+outline_size = 18
+outline_color = Color( 0.258824, 0.258824, 0.258824, 1 )
 font_data = ExtResource( 2 )
 
 [node name="EnemyRoot" type="Area2D"]
