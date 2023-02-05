@@ -17,24 +17,25 @@ scale = Vector2( 0.05, 0.05 )
 script = ExtResource( 6 )
 
 [node name="Asteroid" type="Sprite" parent="."]
-position = Vector2( 185, 10 )
 scale = Vector2( 38.125, 35.4167 )
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = -128.0
+margin_left = -228.0
 margin_top = -232.0
-margin_right = 894.0
+margin_right = 794.0
 margin_bottom = 405.0
 custom_fonts/font = SubResource( 4 )
 text = "196"
+align = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 10, 10 )
 texture = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -160, -40 )
 polygon = PoolVector2Array( -640, -180, -480, -540, 140, -740, 660, -560, 1000, -160, 900, 380, 520, 740, -240, 700, -620, 360 )
 
 [node name="BehaviorHovering" type="Node" parent="."]
