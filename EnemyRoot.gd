@@ -56,8 +56,10 @@ func _process(delta):
 
 func set_text(value: String):
 	$Label.text = value
-	
+
+
 func explode():
+	HUD.playExplosion()
 	var explosion = explosionPreload.instance()
 	explosion.global_position = self.global_position
 	explosion.scale = Vector2(5, 5)
@@ -83,7 +85,6 @@ func _on_area_entered(area : Area2D):
 func _on_player_colission(body: Node):
 	# hit player and despawn
 	if (body is Player):
-		$CrashSound.play(0.0)	
 		explode()
 		body.change_health(-1)
 		body.current_speed.x = -body.current_speed.x / 2

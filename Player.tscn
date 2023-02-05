@@ -7,6 +7,7 @@
 [ext_resource path="res://resources/red-thruster-effect-clipart-md.png" type="Texture" id=5]
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( -2.27374e-13, -1 )
 rotation = 1.5708
 scale = Vector2( 0.45, 0.45 )
 z_index = 1

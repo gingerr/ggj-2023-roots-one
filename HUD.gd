@@ -41,6 +41,9 @@ func setHealth(value: int):
 		health = value
 		updateHUD()
 
+func playExplosion():
+	$ExplosionSound.play()
+
 func updateHUD():
 	get_node('%Fps').set_text("FPS: " + String(Engine.get_frames_per_second()))
 	get_node('%Score').set_text('Score: ' + String(score) + ' (Level ' + String(level) + ')')

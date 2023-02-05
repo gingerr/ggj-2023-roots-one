@@ -2,8 +2,9 @@ extends Node2D
 
 
 # Declare member variables here. Examples:
-const NUMBER_OF_STARS = 300
-const draw_primitive_dummy = PoolVector2Array()
+const NUMBER_OF_STARS = 400
+const singleton_vector = Vector2(1, 1)
+const singleton_color = Color(1, 1, 1)
 
 var stars:PoolVector2Array = []
 
@@ -31,9 +32,12 @@ func _draw():
 	for i in range(NUMBER_OF_STARS):
 		var intensity = float(i % 5 + 1) / 5 # 0.2, 0.4, 0.6, 0.8, 1.0
 		var star = stars[i]
-		var point = PoolVector2Array( [star] ) 
-		var color = PoolColorArray( [Color(intensity, intensity, intensity)] ) 
-		draw_primitive(point, color, draw_primitive_dummy) 
+		singleton_color.r = intensity 
+		singleton_color.g = intensity 
+		singleton_color.b = intensity 
+		singleton_vector.x = star.x + 2
+		singleton_vector.y = star.y
+		draw_line(star, singleton_vector, singleton_color, 2.0, false) 
 		
 	
 #func _process(delta):
