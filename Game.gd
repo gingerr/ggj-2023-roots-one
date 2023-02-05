@@ -14,6 +14,7 @@ var spawn_timer 				= 3
 var level_timer 				= 0
 
 onready var squareRootFactory = preload("res://EnemyRoot.tscn")
+onready var gameOverPreload = preload("res://GameOver.tscn")
 
 func _enter_tree():
 	HUD.setVisibility(true)
@@ -22,6 +23,7 @@ func _exit_tree():
 	HUD.setVisibility(false)
 
 func _ready():
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 func _process(delta):
@@ -60,3 +62,5 @@ func _input(event: InputEvent) -> void:
 		get_tree().paused = true
 		$PauseScreen.visible = true
 		
+func _on_Player_dead():
+	add_child(gameOverPreload.instance())

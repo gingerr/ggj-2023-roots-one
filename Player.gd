@@ -2,6 +2,7 @@ class_name Player
 extends KinematicBody2D
 
 signal shoot
+signal dead
 
 var health: int
 
@@ -85,10 +86,10 @@ func change_health(value: int):
 		
 func explode():
 	hideThrusters()
+	emit_signal('dead')
 	var explosion = explosionPreload.instance()
 	explosion.global_position = self.global_position
 	explosion.scale = Vector2(5, 5)
-	explosion.one_shot = false
 	explosion.lifetime = 4
 	explosion.speed_scale = 0.5
 	get_tree().root.add_child(explosion)

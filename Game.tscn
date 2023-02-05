@@ -50,3 +50,5 @@ shape = SubResource( 1 )
 [node name="PauseScreen" parent="." instance=ExtResource( 7 )]
 pause_mode = 2
 visible = false
+
+[connection signal="dead" from="Player" to="." method="_on_Player_dead"]
