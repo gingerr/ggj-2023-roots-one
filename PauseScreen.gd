@@ -1,4 +1,4 @@
-extends Node
+extends CanvasLayer
 
 func _ready():
 	var node: Label = get_node('%Label')
@@ -10,5 +10,4 @@ func _input(event: InputEvent):
 		get_tree().paused = false;
 		self.visible = false
 		get_tree().set_input_as_handled()
-		
-
+	

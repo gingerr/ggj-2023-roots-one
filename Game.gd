@@ -1,4 +1,4 @@
-extends CenterContainer
+extends CanvasLayer
 
 # difficulty configuration
 const intial_root_number 		= 100;

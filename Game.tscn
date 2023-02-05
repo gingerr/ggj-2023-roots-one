@@ -19,11 +19,7 @@ gradient = SubResource( 3 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 77 )
 
-[node name="Game" type="CenterContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="Game" type="CanvasLayer"]
 script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -54,9 +50,5 @@ shape = SubResource( 1 )
 [node name="PauseScreen" parent="." instance=ExtResource( 7 )]
 pause_mode = 2
 visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1400.0
-margin_bottom = 800.0
 
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
