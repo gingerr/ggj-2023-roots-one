@@ -3,7 +3,7 @@ extends CanvasLayer
 # difficulty configuration
 const intial_root_number 		= 100;
 const level_interval_in_seconds = 10
-var spawn_interval_in_seconds 	= 5 
+var spawn_interval_in_seconds 	= 5
 
 var spawn_amount 				= 2
 var max_root_number 			= intial_root_number
