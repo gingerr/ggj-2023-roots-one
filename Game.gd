@@ -48,9 +48,8 @@ func increaseLevel():
 		spawn_interval_in_seconds -= 1
 	elif level == 15:
 		spawn_amount += 1
-	elif level == 20:
-		spawn_amount += 1
-		
+		spawn_interval_in_seconds += 1
+	
 
 func spawnEnemy():
 	var mob = squareRootFactory.instance()
