@@ -1,9 +1,18 @@
 class_name EnemyRoot
 extends Area2D
 
-var explosionPreload = preload("res://Explosion.tscn")
-var hintPreload = preload("res://Hint.tscn")
-
+const explosionPreload = preload("res://Explosion.tscn")
+const hintPreload = preload("res://Hint.tscn")
+const texture_root = 	preload("resources/sqroot.png")
+const textures_asteroid = Array ([
+	preload("resources/asteroid1.png"), 
+	preload("resources/asteroid2.png"),
+	preload("resources/asteroid3.png"),
+	preload("resources/asteroid4.png"),
+	preload("resources/asteroid5.png"),
+	preload("resources/asteroid6.png"),
+	preload("resources/asteroid7.png"),
+	])
 var spin_speed     = 0.3
 var spin_direction = 1
 
@@ -11,6 +20,12 @@ var velocity       = Vector2(-50, 0)
 var difficulty     = 0
 
 func _ready():
+	# init preloaded textures
+	$RootSprite.texture = texture_root
+	randomize()
+	var rand_index:int = randi() % textures_asteroid.size()
+	$AsteroidSprite.texture = textures_asteroid[rand_index]
+	
 	# position
 	var x = get_viewport_rect().size.x + 50
 	var y = rand_range(50,get_viewport_rect().size.y - 50)
