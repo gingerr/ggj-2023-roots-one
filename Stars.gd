@@ -2,7 +2,7 @@ extends Node2D
 
 
 # Declare member variables here. Examples:
-const NUMBER_OF_STARS = 500
+const NUMBER_OF_STARS = 10000
 const singleton_vector = Vector2(1, 1)
 const singleton_color = Color(1, 1, 1)
 const horzontal_movement_speed = 100
