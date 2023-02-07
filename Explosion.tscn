@@ -3,8 +3,8 @@
 [ext_resource path="res://OneShotParticle.gd" type="Script" id=1]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0.258454, 0.548309, 0.852657, 0.949275 )
-colors = PoolColorArray( 1, 1, 1, 1, 0.9375, 0.814552, 0.150634, 1, 1, 0, 0, 1, 0.503906, 0, 0, 1 )
+offsets = PoolRealArray( 0.258454, 0.548309, 0.76257, 0.893855, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.9375, 0.814552, 0.150634, 1, 1, 0, 0, 1, 0.501961, 0, 0, 1, 0, 0, 0, 0.25098 )
 
 [node name="Explosion" type="CPUParticles2D"]
 pause_mode = 2
@@ -19,7 +19,10 @@ lifetime_randomness = 1.0
 direction = Vector2( 0, 0 )
 spread = 180.0
 gravity = Vector2( -12, 0 )
-initial_velocity = 26.09
-initial_velocity_random = 0.78
+initial_velocity = 30.0
+initial_velocity_random = 0.8
+radial_accel = -10.0
+scale_amount = 4.0
+scale_amount_random = 1.0
 color_ramp = SubResource( 1 )
 script = ExtResource( 1 )
