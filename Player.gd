@@ -11,7 +11,7 @@ export var muzzle_velocity: int = 350
 onready var muzzle: Position2D = $Muzzle
 
 const max_speed     = 300
-const acceleration  = 10
+const acceleration  = 1000
 var   current_speed = Vector2(0, 0)
 
 var bullet_factory = preload("res://Bullet.tscn")
@@ -33,29 +33,29 @@ func _process(delta):
 	
 	# accelerate and decelerate
 	if Input.is_action_pressed("ui_left"):
-		current_speed.x = max(-max_speed, current_speed.x - acceleration)
+		current_speed.x = max(-max_speed, current_speed.x - acceleration * delta)
 		$thrust_front_left.visible = true 
 		$thrust_front_right.visible = true 
 	if Input.is_action_pressed("ui_up"):
-		current_speed.y = max(-max_speed, current_speed.y - acceleration)
+		current_speed.y = max(-max_speed, current_speed.y - acceleration * delta)
 		$thrust_right.visible = true
 	if Input.is_action_pressed("ui_right"):
-		current_speed.x = min(max_speed, current_speed.x + acceleration)
+		current_speed.x = min(max_speed, current_speed.x + acceleration * delta)
 		$thrust_back_left.visible = true 
 		$thrust_back_right.visible = true 
 	if Input.is_action_pressed("ui_down"):
-		current_speed.y = min(max_speed, current_speed.y + acceleration)
+		current_speed.y = min(max_speed, current_speed.y + acceleration * delta)
 		$thrust_left.visible = true
 	
 	# bounce on scren side
 	if position.x < 50:
-		current_speed.x = abs(current_speed.x)
+		current_speed.x = abs(current_speed.x / 2)
 	elif position.x > get_viewport_rect().size.x - 50:
-		current_speed.x = -abs(current_speed.x)
+		current_speed.x = -abs(current_speed.x / 2)
 	if position.y < 50:
-		current_speed.y = abs(current_speed.y)
+		current_speed.y = abs(current_speed.y / 2)
 	elif position.y > get_viewport_rect().size.y - 50:
-		current_speed.y = -abs(current_speed.y)
+		current_speed.y = -abs(current_speed.y / 2)
 	position += current_speed * delta;
 	
 
