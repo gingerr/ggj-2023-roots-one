@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://resources/spaceship1.png" type="Texture" id=2]
 [ext_resource path="res://BehaviorHovering.gd" type="Script" id=3]
 [ext_resource path="res://resources/blue-thruster-effect-clipart-md.png" type="Texture" id=4]
 [ext_resource path="res://resources/red-thruster-effect-clipart-md.png" type="Texture" id=5]
+[ext_resource path="res://resources/epstein_drive.mp3" type="AudioStream" id=6]
+[ext_resource path="res://resources/photon-sound.mp3" type="AudioStream" id=7]
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( -2.27374e-13, -1 )
@@ -60,3 +62,31 @@ position = Vector2( 68.8889, 8.88867 )
 rotation = 3.14159
 scale = Vector2( 0.025, 0.025 )
 texture = ExtResource( 4 )
+
+[node name="ThrusterSoundBack" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, 65 )
+stream = ExtResource( 6 )
+volume_db = -15.0
+
+[node name="ThrusterSoundFront" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, -65 )
+stream = ExtResource( 6 )
+volume_db = -15.0
+pitch_scale = 1.15
+
+[node name="ThrusterSoundLeft" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -100, 0 )
+stream = ExtResource( 6 )
+volume_db = -15.0
+pitch_scale = 1.2
+
+[node name="ThrusterSoundRight" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 100, 0 )
+stream = ExtResource( 6 )
+volume_db = -15.0
+pitch_scale = 1.25
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+pitch_scale = 0.75

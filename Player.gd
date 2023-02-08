@@ -36,16 +36,36 @@ func _process(delta):
 		current_speed.x = max(-max_speed, current_speed.x - acceleration * delta)
 		$thrust_front_left.visible = true 
 		$thrust_front_right.visible = true 
+		if !$ThrusterSoundFront.playing:
+			$ThrusterSoundFront.play()
+	else:
+		$ThrusterSoundFront.stop()
+		
 	if Input.is_action_pressed("ui_up"):
 		current_speed.y = max(-max_speed, current_speed.y - acceleration * delta)
 		$thrust_right.visible = true
+		if !$ThrusterSoundRight.playing:
+			$ThrusterSoundRight.play()
+	else:
+		$ThrusterSoundRight.stop()
+		
 	if Input.is_action_pressed("ui_right"):
 		current_speed.x = min(max_speed, current_speed.x + acceleration * delta)
 		$thrust_back_left.visible = true 
 		$thrust_back_right.visible = true 
+		if !$ThrusterSoundBack.playing:
+			$ThrusterSoundBack.play()
+	else:
+		$ThrusterSoundBack.stop()
+		
 	if Input.is_action_pressed("ui_down"):
 		current_speed.y = min(max_speed, current_speed.y + acceleration * delta)
 		$thrust_left.visible = true
+		if !$ThrusterSoundLeft.playing:
+			$ThrusterSoundLeft.play()
+	else:
+		$ThrusterSoundLeft.stop()
+		
 	
 	# bounce on scren side
 	if position.x < 50:
@@ -102,5 +122,4 @@ func hideThrusters():
 	$thrust_back_right.visible = false 
 	$thrust_front_left.visible = false 
 	$thrust_front_right.visible = false 
-	
 	

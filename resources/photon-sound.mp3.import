@@ -11,5 +11,5 @@ dest_files=[ "res://.import/photon-sound.mp3-afb59ea6053cd1f9f694386fed1b4db8.mp
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
