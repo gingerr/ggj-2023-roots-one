@@ -7,8 +7,7 @@
 [node name="BackgroundLayer" type="CanvasLayer"]
 layer = -1
 
-[node name="Stars" type="Node2D" parent="."]
-z_index = -4096
+[node name="Stars" type="Control" parent="."]
 script = ExtResource( 2 )
 
 [node name="Purple Nebula" type="Sprite" parent="."]

@@ -57,6 +57,7 @@ window/size/width=1400
 window/size/height=800
 window/size/resizable=false
 window/size/fullscreen=true
+window/vsync/use_vsync=false
 
 [global]
 
