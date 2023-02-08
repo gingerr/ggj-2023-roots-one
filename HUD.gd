@@ -44,7 +44,8 @@ func setHealth(value: int):
 		health = value
 		updateHUD()
 
-func playExplosion():
+func playExplosion(position: Vector2):
+	$ExplosionSound.global_position = position
 	$ExplosionSound.play()
 
 func updateHUD():

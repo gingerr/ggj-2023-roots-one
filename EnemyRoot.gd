@@ -75,7 +75,7 @@ func set_text(value: String):
 
 
 func explode():
-	HUD.playExplosion()
+	HUD.playExplosion(self.global_position)
 	var explosion = explosionPreload.instance()
 	explosion.global_position = self.global_position
 	explosion.scale = Vector2(5, 5)
