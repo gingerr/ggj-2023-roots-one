@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "BoomBox",
+"language": "GDScript",
+"path": "res://BoomBox.gd"
+}, {
 "base": "Area2D",
 "class": "Bullet",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://Utils.gd"
 } ]
 _global_script_class_icons={
+"BoomBox": "",
 "Bullet": "",
 "EnemyRoot": "",
 "Player": "",
@@ -48,8 +54,8 @@ config/windows_native_icon="res://resources/shRooter.ico"
 
 [autoload]
 
+ResourceLoader="*res://ResourceLoader.gd"
 HUD="*res://HUD.tscn"
-BoomBox="*res://BoomBox.tscn"
 
 [display]
 

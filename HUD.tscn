@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://resources/retro-gaming.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://resources/retro-gaming.tres" type="DynamicFont" id=2]
 [ext_resource path="res://HUD.gd" type="Script" id=3]
-[ext_resource path="res://resources/explosion1.mp3" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=4]
 outline_size = 1
@@ -118,7 +117,3 @@ custom_styles/normal = SubResource( 7 )
 text = "Sanity"
 align = 1
 valign = 1
-
-[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
-volume_db = -10.0

@@ -15,15 +15,17 @@ const intensity_map_with_speed = {
 	4 : 1.0 * horzontal_movement_speed
 }
 
-# arrays for stars per brightness
-var stars_0_2 		= []
-var stars_0_4 		= []
-var stars_0_6 		= []
-var stars_0_8 		= []
-var stars_1_0 		= []
+# arrays for stars per brightness / Data shared between reuses of backgroundLayer
+const stars_0_2 		= []
+const stars_0_4 		= []
+const stars_0_6 		= []
+const stars_0_8 		= []
+const stars_1_0 		= []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if (stars_0_2.size() > 0):
+		return
 	stars_0_2.resize(batch_size * 2)
 	stars_0_4.resize(batch_size * 2)
 	stars_0_6.resize(batch_size * 2)

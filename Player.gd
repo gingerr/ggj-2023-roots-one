@@ -114,7 +114,7 @@ func explode():
 	explosion.lifetime = 4
 	explosion.speed_scale = 0.5
 	get_tree().root.add_child(explosion)
-
+	
 func hideThrusters():
 	$thrust_left.visible = false
 	$thrust_right.visible = false
