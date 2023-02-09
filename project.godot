@@ -48,7 +48,6 @@ config/windows_native_icon="res://resources/shRooter.ico"
 
 [autoload]
 
-ResourceLoader="*res://ResourceLoader.gd"
 HUD="*res://HUD.tscn"
 
 [display]

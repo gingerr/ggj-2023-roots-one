@@ -3,7 +3,6 @@ extends Area2D
 
 const explosionPreload = preload("res://Explosion.tscn")
 const hintPreload = preload("res://Hint.tscn")
-const texture_root = 	preload("resources/sqroot.png")
 const textures_asteroid = Array ([
 	preload("resources/asteroid1.png"), 
 	preload("resources/asteroid2.png"),
@@ -21,7 +20,6 @@ var difficulty     = 0
 
 func _ready():
 	# init preloaded textures
-	$RootSprite.texture = texture_root
 	randomize()
 	var rand_index:int = randi() % textures_asteroid.size()
 	$AsteroidSprite.texture = textures_asteroid[rand_index]

@@ -24,9 +24,6 @@ texture = ExtResource( 2 )
 [node name="BehaviorHovering" type="Node" parent="."]
 script = ExtResource( 3 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 40.9999, -35.0001, 0.999772, -63, -33.0001, -36.9999, -66, 5.00024, -57.9998, 58.0002, 1.00024, 67, 42.0002, 62.9998, 69, 7.99975 )
-
 [node name="thrust_back_left" type="Sprite" parent="."]
 position = Vector2( -26.6664, 68.889 )
 rotation = 4.71239
@@ -84,3 +81,6 @@ position = Vector2( 100, 0 )
 stream = ExtResource( 6 )
 volume_db = -10.0
 pitch_scale = 1.25
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -48.8888, 37.778, -28.8885, 95.5557, 2.22246, 64.4444, 28.8892, 95.5555, 44.4446, 55.5554, 44.4445, 28.8887, 77.7778, 8.88861, 44.4444, -8.88905, 31.111, -40.0001, 22.2221, -26.6667, 2.22196, -73.3333, -20.0001, -33.3333, -31.1112, -35.5554, -44.4445, -11.111, -82.2222, 8.88919 )
