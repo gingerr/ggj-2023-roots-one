@@ -13,8 +13,8 @@ export var level 				= 1
 var spawn_timer 				= 3
 var level_timer 				= 0
 
-onready var squareRootFactory = preload("res://EnemyRoot.tscn")
-onready var gameOverPreload = preload("res://GameOver.tscn")
+const squareRootFactory = preload("res://EnemyRoot.tscn")
+const gameOverPreload = preload("res://GameOver.tscn")
 
 func _enter_tree():
 	HUD.setVisibility(true)
