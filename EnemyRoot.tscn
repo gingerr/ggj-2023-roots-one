@@ -16,7 +16,7 @@ font_data = ExtResource( 2 )
 radius = 22.9713
 
 [node name="EnemyRoot" type="Area2D"]
-scale = Vector2( 1.7, 1.7 )
+scale = Vector2( 2, 2 )
 z_index = -2
 script = ExtResource( 6 )
 
