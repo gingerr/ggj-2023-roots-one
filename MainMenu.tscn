@@ -197,7 +197,7 @@ margin_bottom = 31.0
 grow_horizontal = 0
 size_flags_vertical = 8
 text = "Global Game Jam 2023 @Bredex GmbH
-Version 20230902#1745"
+Version 20230902#1749"
 align = 1
 valign = 1
 autowrap = true
