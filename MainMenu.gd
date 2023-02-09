@@ -11,7 +11,7 @@ func _on_Exit_pressed():
 	get_tree().quit()
 
 func _ready():
-	Utils.default_font_color($HBoxContainer/VBoxContainer/copyright)
+	Utils.default_font_color($VBoxContainer/copyright)
 	visualize_selection()
 
 func _on_Options_pressed():
