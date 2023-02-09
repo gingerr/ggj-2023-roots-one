@@ -6,5 +6,7 @@ func _ready():
 	$Sound.play(0.1)
 
 func _process(delta):
-	if !emitting && $Sound.is_playing():
+	if !emitting && !$Sound.is_playing():
 		queue_free()
+	else:
+		yield()
