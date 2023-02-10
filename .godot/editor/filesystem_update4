@@ -1,10 +1,4 @@
 res://MainMenu.tscn
-res://Stars.gd
-res://HUD.gd
 res://BackgroundLayer.tscn
-res://Intro.gd
-res://EnemyRoot.gd
-res://Player.gd
-res://Game.gd
 res://HUD.tscn
-res://Utils.gd
+res://Intro.tscn
