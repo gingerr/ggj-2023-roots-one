@@ -2,15 +2,15 @@ class_name EnemyRoot
 extends Area2D
 
 const explosionPreload = preload("res://Explosion.tscn")
-const hintPreload = preload("res://Hint.tscn")
+const hintPreload = preload("res://asteroid/Hint.tscn")
 var textures_asteroid = Array ([
-	preload("resources/asteroid1.png"), 
-	preload("resources/asteroid2.png"),
-	preload("resources/asteroid3.png"),
-	preload("resources/asteroid4.png"),
-	preload("resources/asteroid5.png"),
-	preload("resources/asteroid6.png"),
-	preload("resources/asteroid7.png"),
+	preload("res://asteroid/res/asteroid1.png"), 
+	preload("res://asteroid/res/asteroid2.png"),
+	preload("res://asteroid/res/asteroid3.png"),
+	preload("res://asteroid/res/asteroid4.png"),
+	preload("res://asteroid/res/asteroid5.png"),
+	preload("res://asteroid/res/asteroid6.png"),
+	preload("res://asteroid/res/asteroid7.png"),
 	])
 var spin_speed     = 0.3
 var spin_direction = 1

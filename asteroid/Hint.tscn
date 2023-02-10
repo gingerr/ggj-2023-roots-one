@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://sbbp36vtvjid"]
+
+[ext_resource type="Script" path="res://asteroid/Hint.gd" id="1_8g6w4"]
+
+[node name="Hint" type="Area2D"]
+process_mode = 2
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_8g6w4")
+
+[node name="label" type="Label" parent="."]
+offset_left = -228.0
+offset_top = -232.0
+offset_right = 794.0
+offset_bottom = 405.0
+text = "196"

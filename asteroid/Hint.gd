@@ -7,6 +7,6 @@ func set_text(text):
 
 func _process(delta):
 	transparency -= 0.5 * delta
-	$label.set("custom_colors/font_color", Color(1 ,0, 0, transparency))
+	$label.set("theme_override_colors/font_color", Color(1 ,0, 0, transparency))
 	if (transparency < 0):
 		queue_free()

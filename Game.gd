@@ -13,7 +13,7 @@ var max_root_number 			= intial_root_number
 var spawn_timer 				= 3
 var level_timer 				= 0
 
-const squareRootFactory = preload("res://EnemyRoot.tscn")
+const squareRootFactory = preload("res://asteroid/EnemyRoot.tscn")
 const gameOverPreload = preload("res://GameOver.tscn")
 
 func _enter_tree():
