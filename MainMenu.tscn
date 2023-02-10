@@ -75,21 +75,25 @@ alignment = 1
 
 [node name="Difficulty" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i37k5")
 text = "Difficulty"
 
 [node name="Easy" type="CheckBox" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_i37k5")
 text = "Easy"
 
 [node name="Normal" type="CheckBox" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_i37k5")
 text = "Normal"
 
 [node name="Hard" type="CheckBox" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_i37k5")
 text = "Hard"
 
 [node name="BackToMain" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu"]
@@ -105,6 +109,7 @@ size_flags_vertical = 10
 [node name="copyright" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_i37k5")
 text = "Global Game Jam 2023 @Bredex GmbH
 Version 20230902#1845"
 horizontal_alignment = 1
