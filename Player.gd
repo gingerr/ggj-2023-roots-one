@@ -1,14 +1,14 @@
 class_name Player
-extends KinematicBody2D
+extends CharacterBody2D
 
 signal shoot
 signal dead
 
 var health: int
 
-export var muzzle_velocity: int = 350
+@export var muzzle_velocity: int = 350
 
-onready var muzzle: Position2D = $Muzzle
+@onready var muzzle: Marker2D = $Muzzle
 
 const max_speed     = 300
 const acceleration  = 1000
@@ -67,7 +67,7 @@ func _process(delta):
 		$ThrusterSoundLeft.stop()
 		
 	
-	# bounce on scren side
+	# bounce checked scren side
 	if position.x < 50:
 		current_speed.x = abs(current_speed.x / 2)
 	elif position.x > get_viewport_rect().size.x - 50:
@@ -84,13 +84,11 @@ func _input(event: InputEvent) -> void:
 		return
 		
 	if Input.is_action_pressed("ui_accept"):
-		#action_shoot():
-		shoot()
+		action_shoot()
 		emit_signal("shoot", Bullet, rotation, position)
 
-#func action_shoot():
-func shoot():
-	var b = bullet_factory.instance()
+func action_shoot():
+	var b = bullet_factory.instantiate()
 	b.global_position = muzzle.global_position
 	get_tree().root.add_child(b)
 	
@@ -110,7 +108,7 @@ func change_health(value: int):
 func explode():
 	hideThrusters()
 	emit_signal('dead')
-	var explosion = explosionPreload.instance()
+	var explosion = explosionPreload.instantiate()
 	explosion.global_position = self.global_position
 	explosion.scale = Vector2(5, 5)
 	explosion.lifetime = 4

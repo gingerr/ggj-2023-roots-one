@@ -3,7 +3,7 @@ extends Area2D
 
 const explosionPreload = preload("res://Explosion.tscn")
 const hintPreload = preload("res://Hint.tscn")
-const textures_asteroid = Array ([
+var textures_asteroid = Array ([
 	preload("resources/asteroid1.png"), 
 	preload("resources/asteroid2.png"),
 	preload("resources/asteroid3.png"),
@@ -26,7 +26,7 @@ func _ready():
 	
 	# position
 	var x = get_viewport_rect().size.x + 50
-	var y = rand_range(50,get_viewport_rect().size.y - 50)
+	var y = randf_range(50,get_viewport_rect().size.y - 50)
 	position = Vector2(x, y)
 
 	# spin
@@ -37,7 +37,7 @@ func _ready():
 	# speed
 	# the bigger the screen, the fast to horizontal speed
 	velocity.x = -get_viewport_rect().size.x / 30
-	velocity.y = rand_range(0, velocity.x /3) * pow(-1, randi() % 2)
+	velocity.y = randf_range(0, velocity.x /3) * pow(-1, randi() % 2)
 	
 	var boostSpeed = randf() + 1
 	velocity *= boostSpeed
@@ -73,14 +73,14 @@ func set_text(value: String):
 
 
 func explode():
-	var explosion = explosionPreload.instance()
+	var explosion = explosionPreload.instantiate()
 	explosion.global_position = self.global_position
 	explosion.scale = Vector2(5, 5)
 	get_parent().add_child(explosion)
 	queue_free();
 	
 	if is_enemy_good():
-		var hint = hintPreload.instance()
+		var hint = hintPreload.instantiate()
 		hint.position = self.global_position
 		hint.position.x -= 30   
 		hint.set_text("= " + str(sqrt(difficulty)))
@@ -99,10 +99,10 @@ func _on_area_entered(area : Area2D):
 			get_node("/root/Game/Player").change_health(-1)
 		else:
 			HUD.increaseScore(1)
-		get_tree().set_input_as_handled()
+		get_viewport().set_input_as_handled()
 	elif "EnemyRoot" in area.get_name():
 		collide(area, self)
-		get_tree().set_input_as_handled()
+		get_viewport().set_input_as_handled()
 			
 func _on_player_colission(body: Node):
 	# hit player and despawn
@@ -112,7 +112,7 @@ func _on_player_colission(body: Node):
 		body.current_speed.x = -body.current_speed.x / 2
 		body.current_speed.y = -body.current_speed.y / 2
 		
-	# despawn on left screen side
+	# despawn checked left screen side
 	if "DeathZone" in body.get_name():
 		if !is_enemy_good():
 			explode()
@@ -134,7 +134,7 @@ func collide(a, b):
 		var collisionScale = dotProduct / distSquared;
 		var xCollision = xDist * collisionScale;
 		var yCollision = yDist * collisionScale;
-		# The Collision vector is the speed difference projected on the
+		# The Collision vector is the speed difference projected checked the
 		# Dist vector,
 		# thus it is the component of the speed difference needed for
 		# the collision.

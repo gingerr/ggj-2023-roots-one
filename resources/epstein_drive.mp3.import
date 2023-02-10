@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/epstein_drive.mp3-a8b143344383f0b4191e0e3e39ccedbd.mp3str"
+uid="uid://bqclchid7ycv5"
+path="res://.godot/imported/epstein_drive.mp3-a8b143344383f0b4191e0e3e39ccedbd.mp3str"
 
 [deps]
 
 source_file="res://resources/epstein_drive.mp3"
-dest_files=[ "res://.import/epstein_drive.mp3-a8b143344383f0b4191e0e3e39ccedbd.mp3str" ]
+dest_files=["res://.godot/imported/epstein_drive.mp3-a8b143344383f0b4191e0e3e39ccedbd.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

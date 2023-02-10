@@ -9,18 +9,13 @@ func _ready():
 
 func _input(event: InputEvent):
 	if event.get('pressed') and event.pressed:
-		get_tree().change_scene("res://Game.tscn")
+		get_tree().change_scene_to_file("res://Game.tscn")
 
 func load_text_file(path):
-	#var file = FileAccess.open(path, FileAccess.READ)
-	#if file.get_error() != OK:
-	#	printerr("Could not open file, error code ", file.get_error())
-	var f = File.new()
-	var err = f.open(path, File.READ)
-	if err != OK:
-		printerr("Could not open file, error code ", err)
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file.get_error() != OK:
+		printerr("Could not open file, error code ", file.get_error())
 		return ""
 		
-	var stext = f.get_as_text()
-	f.close()
+	var stext = file.get_as_text()
 	return stext

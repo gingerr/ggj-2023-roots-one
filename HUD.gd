@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-export var topHeight: int
-export var bottomHeight: int
-export var time: float
-export var score: int
+@export var topHeight: int
+@export var bottomHeight: int
+@export var time: float
+@export var score: int
 var health: int
 var level = 1
 var maxHealth: int
@@ -54,7 +54,7 @@ func updateHUD():
 	bar.max_value = max(maxHealth, 1)
 	bar.value = health
 	var percentage = float(health) / float(max(maxHealth, 1))
-	bar.get("custom_styles/fg").set_bg_color(Color (1.0 - percentage, percentage, 0))
+	#bar.get("custom_styles/fg").set_bg_color(Color (1.0 - percentage, percentage, 0))
 	
 func getTimeString() -> String:
 	var minutes := time / 60

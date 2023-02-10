@@ -8,7 +8,7 @@ extends Node2D
 
 static func playExplosionAt(position: Vector2, parent):
 	var factory = load(\"res://BoomBox.tscn\")
-	var player = factory.instance()
+	var player = factory.instantiate()
 	player._playExplosionAt(position)
 	parent.root.add_child(player)
 
@@ -19,10 +19,10 @@ func _playExplosionAt(position: Vector2):
 "
 
 [node name="BoomBox" type="Node2D"]
-pause_mode = 2
+process_mode = 2
 script = SubResource( 1 )
 
 [node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
-pause_mode = 2
+process_mode = 2
 stream = ExtResource( 2 )
 volume_db = -10.0

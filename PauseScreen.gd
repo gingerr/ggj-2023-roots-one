@@ -9,5 +9,5 @@ func _input(event: InputEvent):
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		get_tree().paused = false;
 		self.visible = false
-		get_tree().set_input_as_handled()
+		get_viewport().set_input_as_handled()
 	

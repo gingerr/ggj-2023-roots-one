@@ -34,8 +34,8 @@ func _ready():
 	var batch_index = 0;
 	var array = get_array_by_star_index(0);
 	for i in range(star_number):
-		var pos_X = rand_range(1, get_viewport_rect().size.x)
-		var pos_Y = rand_range(1, get_viewport_rect().size.y)
+		var pos_X = randf_range(1, get_viewport_rect().size.x)
+		var pos_Y = randf_range(1, get_viewport_rect().size.y)
 
 		if (batch_index == batch_size):
 			batch_index = 0
@@ -79,14 +79,14 @@ func _physics_process(delta):
 		from.x -= delta * speed
 		if (from.x <= 0):
 			from.x = screen_size.x
-			from.y = rand_range(1, screen_size.y)
+			from.y = randf_range(1, screen_size.y)
 		var to = array[2 * batch_index + 1]
 		to.x = from.x + star_width
 		to.y = from.y
 		array[2 * batch_index] 		= from
 		array[2 * batch_index + 1] 	= to
 		batch_index += 1
-	update()
+	queue_redraw()
 
 func _draw():
 	draw_multiline(stars_0_2, Color(0.2, 0.2, 0.2), 1.0) 

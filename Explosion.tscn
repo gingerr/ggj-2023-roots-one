@@ -5,15 +5,15 @@
 [ext_resource path="res://OneShotParticle.gd" type="Script" id=3]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0.258454, 0.548309, 0.76257, 0.893855, 1 )
-colors = PoolColorArray( 1, 1, 1, 1, 0.9375, 0.814552, 0.150634, 1, 1, 0, 0, 1, 0.501961, 0, 0, 1, 0, 0, 0, 0.25098 )
+offsets = PackedFloat32Array( 0.258454, 0.548309, 0.76257, 0.893855, 1 )
+colors = PackedColorArray( 1, 1, 1, 1, 0.9375, 0.814552, 0.150634, 1, 1, 0, 0, 1, 0.501961, 0, 0, 1, 0, 0, 0, 0.25098 )
 
 [sub_resource type="Gradient" id=2]
-offsets = PoolRealArray( 0, 0.641361, 0.997382, 1 )
-colors = PoolColorArray( 0.258824, 0.258824, 0.258824, 0, 0.40625, 0.40625, 0.40625, 1, 0.666085, 0.209569, 0.0309327, 1, 0.6875, 0, 0, 1 )
+offsets = PackedFloat32Array( 0, 0.641361, 0.997382, 1 )
+colors = PackedColorArray( 0.258824, 0.258824, 0.258824, 0, 0.40625, 0.40625, 0.40625, 1, 0.666085, 0.209569, 0.0309327, 1, 0.6875, 0, 0, 1 )
 
 [node name="Explosion" type="CPUParticles2D"]
-pause_mode = 2
+process_mode = 2
 physics_interpolation_mode = 2
 amount = 256
 lifetime = 1.5
@@ -33,7 +33,7 @@ color_ramp = SubResource( 1 )
 script = ExtResource( 1 )
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
-pause_mode = 2
+process_mode = 2
 stream = ExtResource( 2 )
 volume_db = -10.0
 

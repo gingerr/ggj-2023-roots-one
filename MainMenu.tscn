@@ -1,206 +1,109 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://b68ijydfwr25h"]
 
-[ext_resource path="res://resources/retro-gaming.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://MainMenu.gd" type="Script" id=2]
-[ext_resource path="res://BackgroundLayer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://resources/splash.png" type="Texture" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-size = 100
-extra_spacing_top = 20
-extra_spacing_bottom = 20
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 30
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxEmpty" id=12]
-
-[sub_resource type="StyleBoxEmpty" id=13]
-
-[sub_resource type="DynamicFont" id=5]
-size = 30
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 30
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxEmpty" id=10]
-
-[sub_resource type="StyleBoxEmpty" id=11]
-
-[sub_resource type="DynamicFont" id=6]
-size = 30
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 30
-font_data = ExtResource( 1 )
-
-[sub_resource type="ButtonGroup" id=9]
-
-[sub_resource type="DynamicFont" id=8]
-size = 30
-font_data = ExtResource( 1 )
+[ext_resource type="Script" path="res://MainMenu.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://cw4lbm65xulms" path="res://BackgroundLayer.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://bn74t5dcotx3i" path="res://resources/splash.png" id="4"]
 
 [node name="MainMenu" type="MarginContainer"]
-pause_mode = 2
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+script = ExtResource("2")
 
-[node name="BackgroundLayer" parent="." instance=ExtResource( 3 )]
+[node name="BackgroundLayer" parent="." instance=ExtResource("3")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 1400.0
-margin_bottom = 800.0
+layout_mode = 2
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-margin_left = 414.0
-margin_right = 798.0
-margin_bottom = 800.0
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 7
-texture = ExtResource( 4 )
+texture = ExtResource("4")
 stretch_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 802.0
-margin_right = 986.0
-margin_bottom = 800.0
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
 [node name="Name" type="Label" parent="HBoxContainer/VBoxContainer"]
 visible = false
-margin_top = 243.0
-margin_right = 1400.0
-margin_bottom = 411.0
-custom_fonts/font = SubResource( 1 )
+layout_mode = 2
 text = "shRooter"
-align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 353.0
-margin_right = 184.0
-margin_bottom = 447.0
+layout_mode = 2
 
 [node name="Selection" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer"]
-margin_right = 184.0
-margin_bottom = 94.0
+layout_mode = 2
 alignment = 1
 
 [node name="NewGame" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/Selection"]
-margin_right = 184.0
-margin_bottom = 45.0
+layout_mode = 2
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
-custom_styles/hover = SubResource( 12 )
-custom_styles/focus = SubResource( 13 )
 text = "New Game"
 flat = true
 
 [node name="Options" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/Selection"]
 visible = false
-margin_top = 49.0
-margin_right = 1400.0
-margin_bottom = 94.0
+layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 5 )
 text = "Options"
 flat = true
 
 [node name="Exit" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/Selection"]
-margin_top = 49.0
-margin_right = 184.0
-margin_bottom = 94.0
+layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 3 )
-custom_styles/hover = SubResource( 10 )
-custom_styles/focus = SubResource( 11 )
 text = "Exit"
 flat = true
 
 [node name="OptionsMenu" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer"]
 visible = false
-margin_right = 579.0
-margin_bottom = 96.0
+layout_mode = 2
 
 [node name="DifficultyOpt" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu"]
-margin_right = 1400.0
-margin_bottom = 47.0
+layout_mode = 2
 alignment = 1
 
 [node name="Difficulty" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
-margin_left = 410.0
-margin_top = 4.0
-margin_right = 588.0
-margin_bottom = 43.0
-custom_fonts/font = SubResource( 6 )
+layout_mode = 2
 text = "Difficulty"
 
 [node name="Easy" type="CheckBox" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
-margin_left = 592.0
-margin_right = 712.0
-margin_bottom = 47.0
+layout_mode = 2
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 7 )
-group = SubResource( 9 )
 text = "Easy"
 
 [node name="Normal" type="CheckBox" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
-margin_left = 716.0
-margin_right = 868.0
-margin_bottom = 47.0
+layout_mode = 2
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 7 )
-pressed = true
-group = SubResource( 9 )
 text = "Normal"
 
 [node name="Hard" type="CheckBox" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
-margin_left = 872.0
-margin_right = 989.0
-margin_bottom = 47.0
+layout_mode = 2
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 7 )
-group = SubResource( 9 )
 text = "Hard"
 
 [node name="BackToMain" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu"]
-margin_top = 51.0
-margin_right = 1400.0
-margin_bottom = 96.0
+layout_mode = 2
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 8 )
 text = "Back"
 flat = true
 
 [node name="VBoxContainer" type="MarginContainer" parent="."]
-margin_top = 769.0
-margin_right = 1400.0
-margin_bottom = 800.0
+layout_mode = 2
 size_flags_vertical = 10
 
 [node name="copyright" type="Label" parent="VBoxContainer"]
-margin_right = 1400.0
-margin_bottom = 31.0
-grow_horizontal = 0
+layout_mode = 2
 size_flags_vertical = 8
 text = "Global Game Jam 2023 @Bredex GmbH
 Version 20230902#1845"
-align = 1
-valign = 1
-autowrap = true
 
 [connection signal="gui_input" from="HBoxContainer/VBoxContainer" to="." method="_on_VBoxContainer_gui_input"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Selection/NewGame" to="." method="_on_NewGame_pressed"]

@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://BehaviorHovering.gd" type="Script" id=1]
-[ext_resource path="res://resources/retro-gaming.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://resources/sqroot.png" type="Texture" id=3]
-[ext_resource path="res://resources/asteroid1.png" type="Texture" id=4]
+[ext_resource path="res://resources/retro-gaming.ttf" type="FontFile" id=2]
+[ext_resource path="res://resources/sqroot.png" type="Texture2D" id=3]
+[ext_resource path="res://resources/asteroid1.png" type="Texture2D" id=4]
 [ext_resource path="res://EnemyRoot.gd" type="Script" id=6]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="FontFile" id=4]
 size = 12
 outline_size = 1
 outline_color = Color( 0.258824, 0.258824, 0.258824, 1 )
@@ -20,19 +20,19 @@ scale = Vector2( 2, 2 )
 z_index = -2
 script = ExtResource( 6 )
 
-[node name="AsteroidSprite" type="Sprite" parent="."]
+[node name="AsteroidSprite" type="Sprite2D" parent="."]
 texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = -8.82353
-margin_top = -7.05882
-margin_right = 17.1765
-margin_bottom = 8.94118
+offset_left = -8.82353
+offset_top = -7.05882
+offset_right = 17.1765
+offset_bottom = 8.94118
 custom_fonts/font = SubResource( 4 )
 text = "196"
 align = 1
 
-[node name="RootSprite" type="Sprite" parent="."]
+[node name="RootSprite" type="Sprite2D" parent="."]
 position = Vector2( -5.23529, 0 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )

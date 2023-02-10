@@ -1,119 +1,69 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://usambunpywmg"]
 
-[ext_resource path="res://resources/retro-gaming.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://resources/retro-gaming.tres" type="DynamicFont" id=2]
-[ext_resource path="res://HUD.gd" type="Script" id=3]
-
-[sub_resource type="DynamicFont" id=4]
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.188235, 0.619608, 0.207843, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="DynamicFont" id=6]
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxTexture" id=7]
+[ext_resource type="Script" path="res://HUD.gd" id="3"]
 
 [node name="HUD" type="CanvasLayer"]
-follow_viewport_enable = true
-script = ExtResource( 3 )
+follow_viewport_enabled = true
+script = ExtResource("3")
 
 [node name="MainContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 5.0
-margin_bottom = 5.0
-mouse_filter = 2
+offset_left = 5.0
+offset_bottom = 5.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-custom_constants/margin_right = 5
-custom_constants/margin_top = 5
-custom_constants/margin_left = 5
-custom_constants/margin_bottom = 5
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainContainer"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 1390.0
-margin_bottom = 800.0
+layout_mode = 2
 mouse_filter = 2
 
 [node name="Top" type="HBoxContainer" parent="MainContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_right = 1385.0
-margin_bottom = 21.0
-mouse_filter = 2
+layout_mode = 2
 size_flags_vertical = 0
+mouse_filter = 2
 
 [node name="Fps" type="Label" parent="MainContainer/VBoxContainer/Top"]
 unique_name_in_owner = true
-margin_right = 459.0
-margin_bottom = 21.0
+layout_mode = 2
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 4 )
 text = "FPS"
 
 [node name="Score" type="Label" parent="MainContainer/VBoxContainer/Top"]
 unique_name_in_owner = true
-margin_left = 663.0
-margin_right = 722.0
-margin_bottom = 21.0
+layout_mode = 2
 size_flags_horizontal = 6
-custom_fonts/font = ExtResource( 2 )
 text = "Score"
-align = 1
 
 [node name="Time" type="Label" parent="MainContainer/VBoxContainer/Top"]
 unique_name_in_owner = true
-margin_left = 1344.0
-margin_right = 1385.0
-margin_bottom = 21.0
+layout_mode = 2
 size_flags_horizontal = 10
-custom_fonts/font = ExtResource( 2 )
 text = "Time"
 
 [node name="Middle" type="HBoxContainer" parent="MainContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 25.0
-margin_right = 1385.0
-margin_bottom = 769.0
-mouse_filter = 2
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="Bottom" type="CenterContainer" parent="MainContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 773.0
-margin_right = 1385.0
-margin_bottom = 795.0
+layout_mode = 2
 
 [node name="Bar" type="ProgressBar" parent="MainContainer/VBoxContainer/Bottom"]
 unique_name_in_owner = true
-margin_left = 542.0
-margin_right = 842.0
-margin_bottom = 22.0
-rect_min_size = Vector2( 300, 22 )
+custom_minimum_size = Vector2(300, 22)
+layout_mode = 2
 size_flags_vertical = 3
-custom_styles/fg = SubResource( 5 )
 step = 1.0
-percent_visible = false
+show_percentage = false
 
 [node name="Health" type="Label" parent="MainContainer/VBoxContainer/Bottom"]
 unique_name_in_owner = true
-margin_left = 661.0
-margin_right = 723.0
-margin_bottom = 21.0
-custom_fonts/font = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
+layout_mode = 2
 text = "Sanity"
-align = 1
-valign = 1

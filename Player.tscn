@@ -1,59 +1,59 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://resources/spaceship1.png" type="Texture" id=2]
+[ext_resource path="res://resources/spaceship1.png" type="Texture2D" id=2]
 [ext_resource path="res://BehaviorHovering.gd" type="Script" id=3]
-[ext_resource path="res://resources/blue-thruster-effect-clipart-md.png" type="Texture" id=4]
-[ext_resource path="res://resources/red-thruster-effect-clipart-md.png" type="Texture" id=5]
+[ext_resource path="res://resources/blue-thruster-effect-clipart-md.png" type="Texture2D" id=4]
+[ext_resource path="res://resources/red-thruster-effect-clipart-md.png" type="Texture2D" id=5]
 [ext_resource path="res://resources/epstein_drive.mp3" type="AudioStream" id=6]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="CharacterBody2D"]
 position = Vector2( -2.27374e-13, -1 )
 rotation = 1.5708
 scale = Vector2( 0.45, 0.45 )
 z_index = 1
 script = ExtResource( 1 )
 
-[node name="Muzzle" type="Position2D" parent="."]
+[node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2( 5, -65.714 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 texture = ExtResource( 2 )
 
 [node name="BehaviorHovering" type="Node" parent="."]
 script = ExtResource( 3 )
 
-[node name="thrust_back_left" type="Sprite" parent="."]
+[node name="thrust_back_left" type="Sprite2D" parent="."]
 position = Vector2( -26.6664, 68.889 )
 rotation = 4.71239
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 5 )
 
-[node name="thrust_back_right" type="Sprite" parent="."]
+[node name="thrust_back_right" type="Sprite2D" parent="."]
 position = Vector2( 28.8892, 68.8888 )
 rotation = 4.71239
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 5 )
 
-[node name="thrust_front_left" type="Sprite" parent="."]
+[node name="thrust_front_left" type="Sprite2D" parent="."]
 position = Vector2( -26.6667, -26.6671 )
 rotation = 1.5708
 scale = Vector2( 0.025, 0.025 )
 texture = ExtResource( 4 )
 
-[node name="thrust_front_right" type="Sprite" parent="."]
+[node name="thrust_front_right" type="Sprite2D" parent="."]
 position = Vector2( 31.1111, -26.6667 )
 rotation = 1.5708
 scale = Vector2( 0.025, 0.025 )
 texture = ExtResource( 4 )
 
-[node name="thrust_left" type="Sprite" parent="."]
+[node name="thrust_left" type="Sprite2D" parent="."]
 position = Vector2( -68.8887, 8.88916 )
 scale = Vector2( 0.025, 0.025 )
 texture = ExtResource( 4 )
 
-[node name="thrust_right" type="Sprite" parent="."]
+[node name="thrust_right" type="Sprite2D" parent="."]
 position = Vector2( 68.8889, 8.88867 )
 rotation = 3.14159
 scale = Vector2( 0.025, 0.025 )
@@ -83,4 +83,4 @@ volume_db = -10.0
 pitch_scale = 1.25
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -48.8888, 37.778, -28.8885, 95.5557, 2.22246, 64.4444, 28.8892, 95.5555, 44.4446, 55.5554, 44.4445, 28.8887, 77.7778, 8.88861, 44.4444, -8.88905, 31.111, -40.0001, 22.2221, -26.6667, 2.22196, -73.3333, -20.0001, -33.3333, -31.1112, -35.5554, -44.4445, -11.111, -82.2222, 8.88919 )
+polygon = PackedVector2Array( -48.8888, 37.778, -28.8885, 95.5557, 2.22246, 64.4444, 28.8892, 95.5555, 44.4446, 55.5554, 44.4445, 28.8887, 77.7778, 8.88861, 44.4444, -8.88905, 31.111, -40.0001, 22.2221, -26.6667, 2.22196, -73.3333, -20.0001, -33.3333, -31.1112, -35.5554, -44.4445, -11.111, -82.2222, 8.88919 )
