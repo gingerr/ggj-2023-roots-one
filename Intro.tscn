@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5nntagl755lv"]
+[gd_scene load_steps=7 format=3 uid="uid://c5nntagl755lv"]
 
 [ext_resource type="PackedScene" uid="uid://cw4lbm65xulms" path="res://BackgroundLayer.tscn" id="2"]
 [ext_resource type="Script" path="res://Intro.gd" id="3"]
@@ -14,19 +14,14 @@ width = 900
 height = 600
 use_hdr = true
 
-[sub_resource type="Gradient" id="Gradient_6l40p"]
-colors = PackedColorArray(0, 0, 0, 0.392157, 0, 0, 0, 0.392157)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qsvfu"]
-gradient = SubResource("Gradient_6l40p")
-fill_from = Vector2(0, 0.0275229)
+[sub_resource type="LabelSettings" id="LabelSettings_qk7gr"]
 
 [node name="CenterContainer" type="CenterContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 6
+size_flags_vertical = 6
 script = ExtResource("3")
 
 [node name="BackgroundLayer" parent="." instance=ExtResource("2")]
@@ -37,17 +32,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
-visible = false
 self_modulate = Color(1, 1, 1, 0.254902)
 material = SubResource("4")
 texture = SubResource("3")
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
-self_modulate = Color(1, 1, 1, 0.466667)
-layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 3
-texture = SubResource("GradientTexture2D_qsvfu")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1000, 500)
 
 [node name="Label" type="Label" parent="VBoxContainer"]
+layout_direction = 2
 layout_mode = 2
+size_flags_vertical = 3
+label_settings = SubResource("LabelSettings_qk7gr")
+visible_characters_behavior = 1
