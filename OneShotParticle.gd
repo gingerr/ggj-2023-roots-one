@@ -10,5 +10,3 @@ func _ready():
 func _process(delta):
 	if !emitting && (!$Sound || !$Sound.is_playing()):
 		queue_free()
-	else:
-		yield()
