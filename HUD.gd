@@ -26,10 +26,6 @@ func _ready():
 
 func _process(delta: float):
 	time += delta
-	if shield < 100.0:
-		shield += 10 * delta
-	else:
-		shield = 100.0
 	updateHUD()
 	
 func setVisibility(value: bool):
@@ -56,6 +52,12 @@ func setHealth(value: int):
 	if (value >= 0):
 		health = value
 		updateHUD()
+
+func set_shield(value : float):
+	shield = value
+
+func get_shield() -> float: 
+	return shield
 
 func updateHUD():
 	get_node('%Fps').set_text("FPS: " + str(Engine.get_frames_per_second()))

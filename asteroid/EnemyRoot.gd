@@ -64,6 +64,9 @@ func _process(delta):
 		velocity.y = -abs(velocity.y)
 	if position.x < -50 && is_enemy_good():
 		queue_free()
+	elif (position.x > get_viewport_rect().size.x):
+		velocity.x = -abs(velocity.x)
+
 	
 	rotate(spin_speed * delta * spin_direction)
 
