@@ -77,7 +77,6 @@ func explode():
 	explosion.global_position = self.global_position
 	explosion.scale = Vector2(5, 5)
 	get_parent().add_child(explosion)
-	queue_free();
 	
 	if is_enemy_good():
 		var hint = hintPreload.instantiate()
@@ -85,6 +84,7 @@ func explode():
 		hint.position.x -= 30   
 		hint.set_text("= " + str(sqrt(difficulty)))
 		get_parent().add_child(hint)
+	queue_free();
 
 func is_enemy_good():
 	if int(sqrt(difficulty)) == sqrt(difficulty):
