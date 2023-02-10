@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://c0m76r1w4o5jk"]
 
-[ext_resource path="res://resources/explosion1.mp3" type="AudioStream" id=2]
+[ext_resource type="AudioStream" uid="uid://dey38hf7wofvr" path="res://resources/explosion1.mp3" id="2"]
 
-[sub_resource type="GDScript" id=1]
-script/source = "class_name BoomBox
+[sub_resource type="GDScript" id="1"]
+script/source = "lass_name BoomBox
 extends Node2D
 
 static func playExplosionAt(position: Vector2, parent):
@@ -20,9 +20,9 @@ func _playExplosionAt(position: Vector2):
 
 [node name="BoomBox" type="Node2D"]
 process_mode = 2
-script = SubResource( 1 )
+script = SubResource("1")
 
 [node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
 process_mode = 2
-stream = ExtResource( 2 )
+stream = ExtResource("2")
 volume_db = -10.0

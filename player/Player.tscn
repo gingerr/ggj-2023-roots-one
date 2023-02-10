@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyhpusor68uft"]
+[gd_scene load_steps=10 format=3 uid="uid://8gh1jbasvysx"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://b2kg2f3g0isx6" path="res://resources/spaceship1.png" id="2"]
-[ext_resource type="Script" path="res://BehaviorHovering.gd" id="3"]
-[ext_resource type="Texture2D" uid="uid://chq5aw0dmtou1" path="res://resources/blue-thruster-effect-clipart-md.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://dxq1hgv2jrdq1" path="res://resources/red-thruster-effect-clipart-md.png" id="5"]
-[ext_resource type="AudioStream" uid="uid://bqclchid7ycv5" path="res://resources/epstein_drive.mp3" id="6"]
-[ext_resource type="Texture2D" uid="uid://ewdhlih5tkei" path="res://player/res/forecefield.png" id="7_dbjyv"]
+[ext_resource type="Script" path="res://player/Player.gd" id="1_okgou"]
+[ext_resource type="Texture2D" uid="uid://b2kg2f3g0isx6" path="res://player/spaceship1.png" id="2_uvfhs"]
+[ext_resource type="Script" path="res://BehaviorHovering.gd" id="3_3sh8d"]
+[ext_resource type="Texture2D" uid="uid://dxq1hgv2jrdq1" path="res://resources/red-thruster-effect-clipart-md.png" id="4_q52qo"]
+[ext_resource type="Texture2D" uid="uid://chq5aw0dmtou1" path="res://resources/blue-thruster-effect-clipart-md.png" id="5_otbre"]
+[ext_resource type="AudioStream" uid="uid://bqclchid7ycv5" path="res://resources/epstein_drive.mp3" id="6_iug6o"]
+[ext_resource type="Texture2D" uid="uid://ewdhlih5tkei" path="res://player/res/forecefield.png" id="7_v5aau"]
 
 [sub_resource type="GDScript" id="GDScript_83fug"]
 script/source = "class_name ShieldArea
@@ -70,73 +70,73 @@ z_index = 1
 position = Vector2(-2.27374e-13, -1)
 rotation = 1.5708
 scale = Vector2(0.45, 0.45)
-script = ExtResource("1")
+script = ExtResource("1_okgou")
 
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(5, -65.714)
 
 [node name="ShipBody" type="Sprite2D" parent="."]
 z_index = 1
-texture = ExtResource("2")
+texture = ExtResource("2_uvfhs")
 
 [node name="BehaviorHovering" type="Node" parent="."]
-script = ExtResource("3")
+script = ExtResource("3_3sh8d")
 
 [node name="thrust_back_left" type="Sprite2D" parent="."]
 position = Vector2(-26.6664, 68.889)
 rotation = 4.71239
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("5")
+texture = ExtResource("4_q52qo")
 
 [node name="thrust_back_right" type="Sprite2D" parent="."]
 position = Vector2(28.8892, 68.8888)
 rotation = 4.71239
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("5")
+texture = ExtResource("4_q52qo")
 
 [node name="thrust_front_left" type="Sprite2D" parent="."]
 position = Vector2(-26.6667, -26.6671)
 rotation = 1.5708
 scale = Vector2(0.025, 0.025)
-texture = ExtResource("4")
+texture = ExtResource("5_otbre")
 
 [node name="thrust_front_right" type="Sprite2D" parent="."]
 position = Vector2(31.1111, -26.6667)
 rotation = 1.5708
 scale = Vector2(0.025, 0.025)
-texture = ExtResource("4")
+texture = ExtResource("5_otbre")
 
 [node name="thrust_left" type="Sprite2D" parent="."]
 position = Vector2(-68.8887, 8.88916)
 scale = Vector2(0.025, 0.025)
-texture = ExtResource("4")
+texture = ExtResource("5_otbre")
 
 [node name="thrust_right" type="Sprite2D" parent="."]
 position = Vector2(68.8889, 8.88867)
 rotation = 3.14159
 scale = Vector2(0.025, 0.025)
-texture = ExtResource("4")
+texture = ExtResource("5_otbre")
 
 [node name="ThrusterSoundBack" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 65)
-stream = ExtResource("6")
+stream = ExtResource("6_iug6o")
 volume_db = -10.0
 
 [node name="ThrusterSoundFront" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, -65)
-stream = ExtResource("6")
+stream = ExtResource("6_iug6o")
 volume_db = -10.0
 pitch_scale = 1.15
 
 [node name="ThrusterSoundLeft" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-100, 0)
-stream = ExtResource("6")
+stream = ExtResource("6_iug6o")
 volume_db = -10.0
 pitch_scale = 1.2
 
 [node name="ThrusterSoundRight" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(100, 0)
-stream = ExtResource("6")
+stream = ExtResource("6_iug6o")
 volume_db = -10.0
 pitch_scale = 1.25
 
@@ -151,7 +151,7 @@ script = SubResource("GDScript_83fug")
 
 [node name="ShieldBody" type="Sprite2D" parent="ShieldArea"]
 self_modulate = Color(1, 1, 1, 0.443137)
-texture = ExtResource("7_dbjyv")
+texture = ExtResource("7_v5aau")
 
 [node name="ShieldBodyCollision" type="CollisionShape2D" parent="ShieldArea"]
 position = Vector2(4.00543e-05, 1.11111)

@@ -14,7 +14,7 @@ const max_speed     = 300
 const acceleration  = 1000
 var   current_speed = Vector2(0, 0)
 
-var bullet_factory = preload("res://Bullet.tscn")
+var bullet_factory = preload("res://player/Bullet.tscn")
 var explosionPreload = preload("res://Explosion.tscn")
 
 # Called when the node enters the scene tree for the first time.

@@ -15,7 +15,7 @@ var textures_asteroid = Array ([
 var spin_speed     = 0.3
 var spin_direction = 1
 
-var velocity       = Vector2(-50, 0)
+var velocity       = Vector2(0, 0)
 var difficulty     = 0
 
 func _ready():
@@ -36,7 +36,7 @@ func _ready():
 	
 	# speed
 	# the bigger the screen, the fast to horizontal speed
-	velocity.x = -get_viewport_rect().size.x / 30
+	velocity.x = -get_viewport_rect().size.x / 25
 	velocity.y = randf_range(0, velocity.x /3) * pow(-1, randi() % 2)
 	
 	var boostSpeed = randf() + 1
