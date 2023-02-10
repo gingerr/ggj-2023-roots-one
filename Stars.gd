@@ -16,16 +16,14 @@ const intensity_map_with_speed = {
 }
 
 # arrays for stars per brightness / Data shared between reuses of backgroundLayer
-const stars_0_2 		= []
-const stars_0_4 		= []
-const stars_0_6 		= []
-const stars_0_8 		= []
-const stars_1_0 		= []
+var stars_0_2 		= []
+var stars_0_4 		= []
+var stars_0_6 		= []
+var stars_0_8 		= []
+var stars_1_0 		= []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if (stars_0_2.size() > 0):
-		return
 	stars_0_2.resize(batch_size * 2)
 	stars_0_4.resize(batch_size * 2)
 	stars_0_6.resize(batch_size * 2)
@@ -91,8 +89,8 @@ func _physics_process(delta):
 	update()
 
 func _draw():
-	draw_multiline(stars_0_2, Color(0.2, 0.2, 0.2), 1.0, false) 
-	draw_multiline(stars_0_4, Color(0.4, 0.4, 0.4), 1.0, false) 
-	draw_multiline(stars_0_6, Color(0.6, 0.6, 0.6), 1.0, false) 
-	draw_multiline(stars_0_8, Color(0.8, 0.8, 0.8), 1.0, false) 
-	draw_multiline(stars_1_0, Color(1.0, 1.0, 1.0), 1.0, false) 
+	draw_multiline(stars_0_2, Color(0.2, 0.2, 0.2), 1.0) 
+	draw_multiline(stars_0_4, Color(0.4, 0.4, 0.4), 1.0) 
+	draw_multiline(stars_0_6, Color(0.6, 0.6, 0.6), 1.0) 
+	draw_multiline(stars_0_8, Color(0.8, 0.8, 0.8), 1.0) 
+	draw_multiline(stars_1_0, Color(1.0, 1.0, 1.0), 1.0)
