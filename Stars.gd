@@ -1,6 +1,6 @@
 extends Control
 
-const star_number 		= 500
+const star_number 		= 2000
 const star_width 		= 2.0
 const batch_number 		= 5
 const batch_size 		= star_number / batch_number
