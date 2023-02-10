@@ -83,7 +83,7 @@ func _input(event: InputEvent) -> void:
 	if (health <= 0):
 		return
 		
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept"):
 		action_shoot()
 		emit_signal("shoot", Bullet, rotation, position)
 
