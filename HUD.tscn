@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://HUD.gd" id="3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xd2c"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mfp3"]
 bg_color = Color(0.188235, 0.619608, 0.207843, 1)
@@ -12,6 +13,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c55ut"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxm5a"]
 bg_color = Color(0.188235, 0.619608, 0.207843, 1)

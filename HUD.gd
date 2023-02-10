@@ -17,13 +17,20 @@ func _ready():
 	Utils.default_font_color(get_node('%Score'))
 	Utils.default_font_color(get_node('%Time'))
 
+	var bar_shield: ProgressBar = $MainContainer/VBoxContainer/Bottom/Shield/ShieldBar
+	bar_shield.get("theme_override_styles/background").bg_color = Color (0.2, 0.2, 0.2, 0.5)
+	bar_shield.max_value = 100
+
+	var bar_sanity: ProgressBar = $MainContainer/VBoxContainer/Bottom/Sanity/SanityBar
+	bar_sanity.get("theme_override_styles/background").bg_color = Color (0.2, 0.2, 0.2, 0.5)
+
 func _process(delta: float):
 	time += delta
-	updateHUD()
 	if shield < 100.0:
 		shield += 10 * delta
 	else:
 		shield = 100.0
+	updateHUD()
 	
 func setVisibility(value: bool):
 	$MainContainer.visible = value
@@ -37,6 +44,7 @@ func increaseScore(value: int):
 
 func setMaxHealth(value: int):
 	maxHealth = value
+	shield = 0
 	updateHUD()
 
 func setLevel(value: int):
@@ -57,14 +65,12 @@ func updateHUD():
 	var bar_sanity: ProgressBar = $MainContainer/VBoxContainer/Bottom/Sanity/SanityBar
 	bar_sanity.max_value = max(maxHealth, 1)
 	bar_sanity.value = health
-	var percentage = float(health) / float(max(maxHealth, 1))
-	bar_sanity.get("theme_override_styles/fill").bg_color = Color (0.5 - percentage, 0.5 * percentage, 0)
-	bar_sanity.get("theme_override_styles/background").bg_color = Color (0.2, 0.2, 0.2, 0.5)
+	var percentage_health = float(health) / float(max(maxHealth, 1))
+	bar_sanity.get("theme_override_styles/fill").bg_color = Color (0.5 - percentage_health, 0.5 * percentage_health, 0, 0.5)
 	
 	var bar_shield: ProgressBar = $MainContainer/VBoxContainer/Bottom/Shield/ShieldBar
-	bar_shield.get("theme_override_styles/fill").bg_color = Color (0.5, 0.5, 0.8 * percentage)
-	bar_shield.get("theme_override_styles/background").bg_color = Color (0.2, 0.2, 0.2, 0.5)
-	bar_shield.max_value = 100
+	var percentage_shield = float(shield) / 100.0
+	bar_shield.get("theme_override_styles/fill").bg_color = Color (0.5 * percentage_shield, 0.5 * percentage_shield, 0.6 + 0.4 * percentage_shield, 0.5)
 	bar_shield.value = shield
 	
 	if shield == 100.0:
