@@ -1,16 +1,19 @@
-extends PanelContainer
+extends CanvasLayer
 
 var timer_done = false
 
 func _ready():
 	$AudioStreamPlayer.play()
+	Utils.default_font_color($CenterContainer/VBoxContainer/Countdown)
+	Utils.default_font_color($CenterContainer/VBoxContainer/Label)
 
 func _process(delta):
 	get_tree().paused = true;
+	print(123)
 	if !timer_done:
-		$VBoxContainer/Countdown.text = "Your score:\n" + str(HUD.get_score()) + " points\n\n  Waiting for " + String(round($Timer.time_left)) + " seconds  \n"
+		$CenterContainer/VBoxContainer/Countdown.text = "Your score:\n" + str(HUD.get_score()) + " points\n\n  Waiting for " + str(round($Timer.time_left)) + " seconds  \n"
 	else:
-		$VBoxContainer/Countdown.text = "Your score:\n" + str(HUD.get_score()) + " points\n\n  <any key to continue>  \n"	
+		$CenterContainer/VBoxContainer/Countdown.text = "Your score:\n" + str(HUD.get_score()) + " points\n\n  <any key to continue>  \n"	
 
 func _input(event: InputEvent):
 	if timer_done and event.get('pressed') and event.pressed:

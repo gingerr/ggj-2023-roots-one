@@ -3,7 +3,11 @@
 [ext_resource type="Script" path="res://MainMenu.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://cw4lbm65xulms" path="res://BackgroundLayer.tscn" id="3"]
 [ext_resource type="Texture2D" uid="uid://bn74t5dcotx3i" path="res://resources/splash.png" id="4"]
+<<<<<<< HEAD
 [ext_resource type="FontFile" uid="uid://cmu3u3xa3sj0r" path="res://resources/retro-gaming.ttf" id="4_i37k5"]
+=======
+[ext_resource type="FontFile" uid="uid://cmu3u3xa3sj0r" path="res://resources/retro-gaming.ttf" id="4_r6stx"]
+>>>>>>> dd78f55 (.)
 
 [node name="MainMenu" type="MarginContainer"]
 anchors_preset = 15
@@ -45,7 +49,11 @@ alignment = 1
 [node name="NewGame" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/Selection"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+<<<<<<< HEAD
 theme_override_fonts/font = ExtResource("4_i37k5")
+=======
+theme_override_fonts/font = ExtResource("4_r6stx")
+>>>>>>> dd78f55 (.)
 text = "New Game"
 flat = true
 
@@ -61,7 +69,11 @@ flat = true
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+<<<<<<< HEAD
 theme_override_fonts/font = ExtResource("4_i37k5")
+=======
+theme_override_fonts/font = ExtResource("4_r6stx")
+>>>>>>> dd78f55 (.)
 text = "Exit the game"
 flat = true
 
