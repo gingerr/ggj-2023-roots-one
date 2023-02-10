@@ -3,8 +3,8 @@ extends Node
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	var text = load_text_file('res://resources/story.tres')
-	$VBoxContainer/Label.set_text(text)
-	Utils.default_font_color($VBoxContainer/Label)
+	$MarginContainer/VBoxContainer/Label.set_text(text)
+	Utils.default_font_color($MarginContainer/VBoxContainer/Label)
 
 func _input(event: InputEvent):
 	if event.get('pressed') and event.pressed:
