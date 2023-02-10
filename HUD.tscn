@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://usambunpywmg"]
+[gd_scene load_steps=3 format=3 uid="uid://usambunpywmg"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxm5a"]
+bg_color = Color(0, 0.92549, 0.454902, 1)
 
 [node name="HUD" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -30,18 +33,21 @@ mouse_filter = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
 text = "FPS"
 
 [node name="Score" type="Label" parent="MainContainer/VBoxContainer/Top"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 16
 text = "Score"
 
 [node name="Time" type="Label" parent="MainContainer/VBoxContainer/Top"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 16
 text = "Time"
 
 [node name="Middle" type="HBoxContainer" parent="MainContainer/VBoxContainer"]
@@ -60,10 +66,13 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 22)
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_kxm5a")
 step = 1.0
+value = 50.0
 show_percentage = false
 
 [node name="Health" type="Label" parent="MainContainer/VBoxContainer/Bottom"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "Sanity"

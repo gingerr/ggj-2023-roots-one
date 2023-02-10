@@ -9,7 +9,6 @@ func _ready():
 
 func _process(delta):
 	get_tree().paused = true;
-	print(123)
 	if !timer_done:
 		$CenterContainer/VBoxContainer/Countdown.text = "Your score:\n" + str(HUD.get_score()) + " points\n\n  Waiting for " + str(round($Timer.time_left)) + " seconds  \n"
 	else:

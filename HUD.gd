@@ -54,7 +54,7 @@ func updateHUD():
 	bar.max_value = max(maxHealth, 1)
 	bar.value = health
 	var percentage = float(health) / float(max(maxHealth, 1))
-	bar.set("theme_override_colors/fg", Color (1.0 - percentage, percentage, 0))
+	bar.set("theme_override_colors/bg_color", Color (1.0 - percentage, percentage, 0))
 	
 func getTimeString() -> String:
 	var minutes := time / 60
