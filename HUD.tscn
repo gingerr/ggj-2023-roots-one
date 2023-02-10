@@ -1,6 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://usambunpywmg"]
+[gd_scene load_steps=4 format=3 uid="uid://usambunpywmg"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mfp3"]
+bg_color = Color(0.188235, 0.619608, 0.207843, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxm5a"]
 bg_color = Color(0.188235, 0.619608, 0.207843, 1)
@@ -61,12 +68,36 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="Bottom" type="CenterContainer" parent="MainContainer/VBoxContainer"]
+[node name="Bottom" type="HBoxContainer" parent="MainContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="Shield" type="CenterContainer" parent="MainContainer/VBoxContainer/Bottom"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Bar" type="ProgressBar" parent="MainContainer/VBoxContainer/Bottom"]
+[node name="ShieldBar" type="ProgressBar" parent="MainContainer/VBoxContainer/Bottom/Shield"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 22)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_8mfp3")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="Health" type="Label" parent="MainContainer/VBoxContainer/Bottom/Shield"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Shield"
+
+[node name="Sanity" type="CenterContainer" parent="MainContainer/VBoxContainer/Bottom"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SanityBar" type="ProgressBar" parent="MainContainer/VBoxContainer/Bottom/Sanity"]
 custom_minimum_size = Vector2(300, 22)
 layout_mode = 2
 size_flags_vertical = 3
@@ -75,8 +106,7 @@ step = 1.0
 value = 50.0
 show_percentage = false
 
-[node name="Health" type="Label" parent="MainContainer/VBoxContainer/Bottom"]
-unique_name_in_owner = true
+[node name="Health" type="Label" parent="MainContainer/VBoxContainer/Bottom/Sanity"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Sanity"

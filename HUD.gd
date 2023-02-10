@@ -21,7 +21,7 @@ func _process(delta: float):
 	updateHUD()
 	
 func setVisibility(value: bool):
-	get_node("MainContainer").visible = value
+	$MainContainer.visible = value
 	
 func get_score():
 	return score
@@ -48,12 +48,15 @@ func updateHUD():
 	get_node('%Fps').set_text("FPS: " + str(Engine.get_frames_per_second()))
 	get_node('%Score').set_text('Score: ' + str(score) + ' (Level ' + str(level) + ')')
 	get_node('%Time').set_text('Time: ' + getTimeString())
-	var bar: ProgressBar = get_node('%Bar')
 	
-	bar.max_value = max(maxHealth, 1)
-	bar.value = health
+	var bar_sanity: ProgressBar = $MainContainer/VBoxContainer/Bottom/Sanity/SanityBar
+	bar_sanity.max_value = max(maxHealth, 1)
+	bar_sanity.value = health
 	var percentage = float(health) / float(max(maxHealth, 1))
-	bar.get("theme_override_styles/fill").bg_color = Color (1.0 - percentage, percentage, 0)
+	bar_sanity.get("theme_override_styles/fill").bg_color = Color (0.5 - percentage, 0.5 * percentage, 0)
+	
+	var bar_shield: ProgressBar = $MainContainer/VBoxContainer/Bottom/Shield/ShieldBar
+	bar_shield.get("theme_override_styles/fill").bg_color = Color (0.5, 0.5, 0.8 * percentage)
 	
 func getTimeString() -> String:
 	var minutes := time / 60
@@ -66,7 +69,7 @@ func resetGameValues():
 	updateHUD()
 	
 func setTopBottomHeight():
-	var topSize = get_node('%Top').get_combined_minimum_size();
-	var bottomSize = get_node('%Bottom').get_combined_minimum_size();
+	var topSize = $MainContainer/VBoxContainer/Top.get_combined_minimum_size();
+	var bottomSize = $MainContainer/VBoxContainer/Bottom.get_combined_minimum_size();
 	topHeight = topSize.y;
 	bottomHeight = bottomSize.y;
