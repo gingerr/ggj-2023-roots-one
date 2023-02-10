@@ -19,7 +19,7 @@ alignment = 1
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 7
+size_flags_vertical = 4
 texture = ExtResource("4")
 stretch_mode = 4
 
@@ -59,7 +59,7 @@ flat = true
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
-text = "Exit"
+text = "Exit the game"
 flat = true
 
 [node name="OptionsMenu" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer"]
@@ -104,6 +104,7 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "Global Game Jam 2023 @Bredex GmbH
 Version 20230902#1845"
+horizontal_alignment = 1
 
 [connection signal="gui_input" from="HBoxContainer/VBoxContainer" to="." method="_on_VBoxContainer_gui_input"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Selection/NewGame" to="." method="_on_NewGame_pressed"]
