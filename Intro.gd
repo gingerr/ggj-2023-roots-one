@@ -12,6 +12,9 @@ func _input(event: InputEvent):
 		get_tree().change_scene("res://Game.tscn")
 
 func load_text_file(path):
+	#var file = FileAccess.open(path, FileAccess.READ)
+	#if file.get_error() != OK:
+	#	printerr("Could not open file, error code ", file.get_error())
 	var f = File.new()
 	var err = f.open(path, File.READ)
 	if err != OK:

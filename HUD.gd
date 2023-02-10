@@ -45,8 +45,8 @@ func setHealth(value: int):
 		updateHUD()
 
 func updateHUD():
-	get_node('%Fps').set_text("FPS: " + String(Engine.get_frames_per_second()))
-	get_node('%Score').set_text('Score: ' + String(score) + ' (Level ' + String(level) + ')')
+	get_node('%Fps').set_text("FPS: " + str(Engine.get_frames_per_second()))
+	get_node('%Score').set_text('Score: ' + str(score) + ' (Level ' + str(level) + ')')
 	get_node('%Time').set_text('Time: ' + getTimeString())
 	var bar: ProgressBar = get_node('%Bar')
 	

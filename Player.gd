@@ -83,10 +83,12 @@ func _input(event: InputEvent) -> void:
 	if (health <= 0):
 		return
 		
-	if event is InputEventKey and event.pressed and event.scancode == KEY_SPACE:
+	if Input.is_action_pressed("ui_accept"):
+		#action_shoot():
 		shoot()
 		emit_signal("shoot", Bullet, rotation, position)
 
+#func action_shoot():
 func shoot():
 	var b = bullet_factory.instance()
 	b.global_position = muzzle.global_position
