@@ -7,3 +7,4 @@ res://EnemyRoot.gd
 res://Player.gd
 res://Game.gd
 res://HUD.tscn
+res://Utils.gd
