@@ -7,6 +7,7 @@ extends CanvasLayer
 var health: int
 var level = 1
 var maxHealth: int
+var shield = 0
 
 func _ready():
 	setTopBottomHeight()
@@ -19,6 +20,10 @@ func _ready():
 func _process(delta: float):
 	time += delta
 	updateHUD()
+	if shield < 100.0:
+		shield += 10 * delta
+	else:
+		shield = 100.0
 	
 func setVisibility(value: bool):
 	$MainContainer.visible = value
@@ -54,9 +59,18 @@ func updateHUD():
 	bar_sanity.value = health
 	var percentage = float(health) / float(max(maxHealth, 1))
 	bar_sanity.get("theme_override_styles/fill").bg_color = Color (0.5 - percentage, 0.5 * percentage, 0)
+	bar_sanity.get("theme_override_styles/background").bg_color = Color (0.2, 0.2, 0.2, 0.5)
 	
 	var bar_shield: ProgressBar = $MainContainer/VBoxContainer/Bottom/Shield/ShieldBar
 	bar_shield.get("theme_override_styles/fill").bg_color = Color (0.5, 0.5, 0.8 * percentage)
+	bar_shield.get("theme_override_styles/background").bg_color = Color (0.2, 0.2, 0.2, 0.5)
+	bar_shield.max_value = 100
+	bar_shield.value = shield
+	
+	if shield == 100.0:
+		$MainContainer/VBoxContainer/Bottom/Shield/ShieldLabel.text = "Shield (ready)"
+	else:
+		$MainContainer/VBoxContainer/Bottom/Shield/ShieldLabel.text = "Shield (" + str(int(shield)) + " %)"
 	
 func getTimeString() -> String:
 	var minutes := time / 60
