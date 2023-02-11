@@ -78,7 +78,6 @@ func set_text(value: String):
 func explode():
 	var explosion = explosionPreload.instantiate()
 	explosion.global_position = self.global_position
-	explosion.scale = Vector2(5, 5)
 	get_parent().add_child(explosion)
 	
 	if is_enemy_good():
