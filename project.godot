@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="shRooter"
-run/main_scene="res://MainMenu.tscn"
+run/main_scene="res://pregame/MainMenu.tscn"
 config/features=PackedStringArray("4.0")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://resources/splash.png"

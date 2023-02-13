@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bybrirkrn2j8q"
-path="res://.godot/imported/nebulaBig.png-9c523c1368517ff371b2e86e48b71718.ctex"
+uid="uid://cwu3adlygfiwh"
+path="res://.godot/imported/nebulaSmall.png-fbfd98afbd9f98aa112ef99350f0baee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/nebulaBig.png"
-dest_files=["res://.godot/imported/nebulaBig.png-9c523c1368517ff371b2e86e48b71718.ctex"]
+source_file="res://background/res/nebulaSmall.png"
+dest_files=["res://.godot/imported/nebulaSmall.png-fbfd98afbd9f98aa112ef99350f0baee.ctex"]
 
 [params]
 

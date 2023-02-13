@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var bullet_tex3 = preload("res://resources/nebulaSmall.png")
+var bullet_tex3 = preload("res://background/res/nebulaSmall.png")
 
 var velocity = Vector2(-15, 0)
 

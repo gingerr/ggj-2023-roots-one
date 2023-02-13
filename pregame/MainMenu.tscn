@@ -1,17 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://b68ijydfwr25h"]
+[gd_scene load_steps=5 format=3 uid="uid://b85jf271jjeos"]
 
-[ext_resource type="Script" path="res://MainMenu.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://cw4lbm65xulms" path="res://BackgroundLayer.tscn" id="3"]
-[ext_resource type="Texture2D" uid="uid://bn74t5dcotx3i" path="res://resources/splash.png" id="4"]
-[ext_resource type="FontFile" uid="uid://cmu3u3xa3sj0r" path="res://resources/retro-gaming.ttf" id="4_i37k5"]
+[ext_resource type="Script" path="res://pregame/MainMenu.gd" id="1_v44vl"]
+[ext_resource type="PackedScene" uid="uid://cw4lbm65xulms" path="res://BackgroundLayer.tscn" id="2_xsfg4"]
+[ext_resource type="Texture2D" uid="uid://bn74t5dcotx3i" path="res://resources/splash.png" id="3_il2vg"]
+[ext_resource type="FontFile" uid="uid://cmu3u3xa3sj0r" path="res://resources/retro-gaming.ttf" id="4_5od04"]
 
 [node name="MainMenu" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource("2")
+script = ExtResource("1_v44vl")
 
-[node name="BackgroundLayer" parent="." instance=ExtResource("3")]
+[node name="BackgroundLayer" parent="." instance=ExtResource("2_xsfg4")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -21,7 +21,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("4")
+texture = ExtResource("3_il2vg")
 stretch_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
@@ -45,7 +45,7 @@ alignment = 1
 [node name="NewGame" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/Selection"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_fonts/font = ExtResource("4_i37k5")
+theme_override_fonts/font = ExtResource("4_5od04")
 theme_override_font_sizes/font_size = 40
 text = "New Game"
 flat = true
@@ -63,7 +63,7 @@ flat = true
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
-theme_override_fonts/font = ExtResource("4_i37k5")
+theme_override_fonts/font = ExtResource("4_5od04")
 theme_override_font_sizes/font_size = 40
 text = "Exit the game"
 flat = true
@@ -78,25 +78,25 @@ alignment = 1
 
 [node name="Difficulty" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_i37k5")
+theme_override_fonts/font = ExtResource("4_5od04")
 text = "Difficulty"
 
 [node name="Easy" type="CheckBox" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_fonts/font = ExtResource("4_i37k5")
+theme_override_fonts/font = ExtResource("4_5od04")
 text = "Easy"
 
 [node name="Normal" type="CheckBox" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_fonts/font = ExtResource("4_i37k5")
+theme_override_fonts/font = ExtResource("4_5od04")
 text = "Normal"
 
 [node name="Hard" type="CheckBox" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_fonts/font = ExtResource("4_i37k5")
+theme_override_fonts/font = ExtResource("4_5od04")
 text = "Hard"
 
 [node name="BackToMain" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu"]
@@ -112,7 +112,7 @@ size_flags_vertical = 10
 [node name="copyright" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("4_i37k5")
+theme_override_fonts/font = ExtResource("4_5od04")
 text = "Global Game Jam 2023 @Bredex GmbH
 Version 20230211#0115"
 horizontal_alignment = 1
