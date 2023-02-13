@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chq5aw0dmtou1"
-path="res://.godot/imported/blue-thruster-effect-clipart-md.png-1267a629abd1c020c870ccf70b21c66f.ctex"
+uid="uid://dxq1hgv2jrdq1"
+path="res://.godot/imported/red-thruster-effect-clipart-md.png-9155f5b4b0e11b1230bc04bbe932e6a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/blue-thruster-effect-clipart-md.png"
-dest_files=["res://.godot/imported/blue-thruster-effect-clipart-md.png-1267a629abd1c020c870ccf70b21c66f.ctex"]
+source_file="res://player/res/red-thruster-effect-clipart-md.png"
+dest_files=["res://.godot/imported/red-thruster-effect-clipart-md.png-9155f5b4b0e11b1230bc04bbe932e6a4.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ryo4ewfqpeeu"]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="AudioStream" uid="uid://dey38hf7wofvr" path="res://resources/explosion1.mp3" id="2"]
+[ext_resource type="AudioStream" uid="uid://dey38hf7wofvr" path="res://game/res/explosion1.mp3" id="2"]
 
 [sub_resource type="Gradient" id="1"]
 offsets = PackedFloat32Array(0.258454, 0.548309, 0.76257, 0.893855, 1)

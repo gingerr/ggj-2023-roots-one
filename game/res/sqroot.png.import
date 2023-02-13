@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckgxcq2drlq1k"
-path="res://.godot/imported/sqroot.png-14565b7a11e087c43e18e0735d536c2b.ctex"
+path="res://.godot/imported/sqroot.png-23b24d4ee7201d7e7df64bd3268c0852.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sqroot.png"
-dest_files=["res://.godot/imported/sqroot.png-14565b7a11e087c43e18e0735d536c2b.ctex"]
+source_file="res://game/res/sqroot.png"
+dest_files=["res://.godot/imported/sqroot.png-23b24d4ee7201d7e7df64bd3268c0852.ctex"]
 
 [params]
 

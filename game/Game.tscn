@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3]
 
 [ext_resource type="PackedScene" path="res://player/Player.tscn" id="1"]
-[ext_resource type="AudioStream" uid="uid://d3bfukd5ep1qb" path="res://resources/spacedeb.mp3" id="2"]
+[ext_resource type="AudioStream" uid="uid://d3bfukd5ep1qb" path="res://game/res/spacedeb.mp3" id="2"]
 [ext_resource type="Script" path="res://game/Game.gd" id="3"]
 [ext_resource type="Script" path="res://game/DeathZone.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://c4qdkjgpo0i5h" path="res://background/BackgroundLayer.tscn" id="5"]
