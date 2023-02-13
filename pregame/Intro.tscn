@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtv3cuc7krmpm"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://pregame/Intro.gd" id="1_jvpon"]
-[ext_resource type="PackedScene" uid="uid://cw4lbm65xulms" path="res://BackgroundLayer.tscn" id="2_8g1tg"]
+[ext_resource type="PackedScene" uid="uid://c4qdkjgpo0i5h" path="res://background/BackgroundLayer.tscn" id="2_8g1tg"]
 
 [sub_resource type="CanvasItemMaterial" id="4"]
 

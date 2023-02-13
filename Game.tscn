@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bo4vdd14eto4u"]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="PackedScene" uid="uid://8gh1jbasvysx" path="res://player/Player.tscn" id="1"]
 [ext_resource type="AudioStream" uid="uid://d3bfukd5ep1qb" path="res://resources/spacedeb.mp3" id="2"]
 [ext_resource type="Script" path="res://Game.gd" id="3"]
 [ext_resource type="Script" path="res://DeathZone.gd" id="4"]
-[ext_resource type="PackedScene" uid="uid://cw4lbm65xulms" path="res://BackgroundLayer.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://c4qdkjgpo0i5h" path="res://background/BackgroundLayer.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://d24qvpg4arer2" path="res://BloomyWorld.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://cqa3isnebn47y" path="res://PauseScreen.tscn" id="7"]
 
