@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqa3isnebn47y"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://PauseScreen.gd" id="2"]
+[ext_resource type="Script" path="res://game/PauseScreen.gd" id="2"]
 [ext_resource type="FontFile" uid="uid://cmu3u3xa3sj0r" path="res://resources/retro-gaming.ttf" id="2_51nfg"]
 
 [node name="CanvasLayer" type="CanvasLayer"]

@@ -14,7 +14,7 @@ var spawn_timer 				= 3
 var level_timer 				= 0
 
 const squareRootFactory = preload("res://asteroid/EnemyRoot.tscn")
-const gameOverPreload = preload("res://GameOver.tscn")
+const gameOverPreload = preload("res://game/GameOver.tscn")
 
 func _enter_tree():
 	HUD.setVisibility(true)

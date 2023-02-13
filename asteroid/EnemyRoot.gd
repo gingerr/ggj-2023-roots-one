@@ -1,7 +1,7 @@
 class_name EnemyRoot
 extends Area2D
 
-const explosionPreload = preload("res://Explosion.tscn")
+const explosionPreload = preload("res://game/Explosion.tscn")
 const hintPreload = preload("res://asteroid/Hint.tscn")
 var textures_asteroid = Array ([
 	preload("res://asteroid/res/asteroid1.png"), 

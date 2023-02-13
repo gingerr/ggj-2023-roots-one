@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7764v0nmg3wo"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://asteroid/EnemyRoot.gd" id="1_he7jo"]
 [ext_resource type="Texture2D" uid="uid://bron2mx4ok2lr" path="res://asteroid/res/asteroid1.png" id="2_ahl6p"]
 [ext_resource type="Texture2D" uid="uid://ckgxcq2drlq1k" path="res://resources/sqroot.png" id="3_5kn7v"]
-[ext_resource type="Script" path="res://BehaviorHovering.gd" id="4_le3dx"]
+[ext_resource type="Script" path="res://game/BehaviorHovering.gd" id="4_le3dx"]
 
 [sub_resource type="CircleShape2D" id="5"]
 radius = 22.9713
