@@ -16,6 +16,7 @@ func _process(delta):
 
 func _input(event: InputEvent):
 	if timer_done and event.get('pressed') and event.pressed:
+		get_viewport().set_input_as_handled()
 		get_tree().paused = false;
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene_to_file("res://pregame/MainMenu.tscn")

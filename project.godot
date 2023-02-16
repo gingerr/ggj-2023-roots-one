@@ -44,7 +44,7 @@ vsync=true
 
 [gui]
 
-theme/custom="res://new_theme.tres"
+theme/custom="res://global_theme.tres"
 theme/custom_font="res://resources/retro-gaming.ttf"
 common/drop_mouse_on_gui_input_disabled=true
 
