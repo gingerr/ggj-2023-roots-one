@@ -1,5 +1,5 @@
 class_name Utils
-extends Node
+extends Resource
 
 static func randomBoolean():
 	if randi() % 2:

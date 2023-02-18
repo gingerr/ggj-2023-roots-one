@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://e545khgsfk05"]
 
 [ext_resource type="Script" path="res://pregame/MainMenu.gd" id="1_v44vl"]
 [ext_resource type="PackedScene" uid="uid://c4qdkjgpo0i5h" path="res://background/BackgroundLayer.tscn" id="2_xsfg4"]

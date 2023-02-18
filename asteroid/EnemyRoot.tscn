@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://x25pkma11iy6"]
 
 [ext_resource type="Script" path="res://asteroid/EnemyRoot.gd" id="1_he7jo"]
 [ext_resource type="Texture2D" uid="uid://bron2mx4ok2lr" path="res://asteroid/res/asteroid1.png" id="2_ahl6p"]
