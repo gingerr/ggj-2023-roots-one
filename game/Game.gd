@@ -65,4 +65,7 @@ func _input(event: InputEvent) -> void:
 
 		
 func _on_Player_dead():
-	add_child(gameOverPreload.instantiate())
+	var gameOver = gameOverPreload.instantiate()
+	gameOver.score = HUD.score
+	gameOver.time = HUD.getTimeString()
+	add_child(gameOver)

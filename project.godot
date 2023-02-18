@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.0")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://resources/splash.png"
 boot_splash/fullsize=false
-config/icon="res://player/spaceship1.png"
+config/icon="res://player/res/spaceship1.png"
 config/windows_native_icon="res://resources/shRooter.ico"
 
 [autoload]
@@ -34,6 +34,7 @@ window/size/viewport_height=800
 window/size/mode=4
 window/size/resizable=false
 window/size/borderless=true
+window/dpi/allow_hidpi=false
 window/subwindows/embed_subwindows=false
 window/size/fullscreen=true
 window/vsync/use_vsync=true
