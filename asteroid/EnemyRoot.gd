@@ -86,7 +86,13 @@ func explode():
 		hint.position.x -= 30   
 		hint.set_text("= " + str(sqrt(difficulty)))
 		get_parent().add_child(hint)
-	queue_free();
+		$CollisionPolygon2D.free()
+		visible = false
+		$WrongHit.play(0)
+		await $WrongHit.finished
+		queue_free()
+	else:
+		queue_free()
 
 func is_enemy_good():
 	if int(sqrt(difficulty)) == sqrt(difficulty):
