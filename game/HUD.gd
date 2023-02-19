@@ -11,9 +11,9 @@ var shield = 0
 
 func _ready():
 	setTopBottomHeight()
-	Utils.default_font_color(get_node('%Fps'))
-	Utils.default_font_color(get_node('%Score'))
-	Utils.default_font_color(get_node('%Time'))
+	Utils.default_font_color(%Fps)
+	Utils.default_font_color(%Score)
+	Utils.default_font_color(%Time)
 
 	var bar_shield: ProgressBar = %ShieldBar
 	bar_shield.get("theme_override_styles/background").bg_color = Color (0.2, 0.2, 0.2, 0.5)

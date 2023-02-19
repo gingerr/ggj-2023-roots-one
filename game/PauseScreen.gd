@@ -1,8 +1,7 @@
 extends CanvasLayer
 
 func _ready():
-	var node: Label = get_node('%Label')
-	Utils.default_font_color(node)
+	Utils.default_font_color(%Label)
 
 func _input(event: InputEvent):
 	if self.visible && event.get('pressed') and event.pressed:

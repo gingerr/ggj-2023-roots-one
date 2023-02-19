@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://kgn7v4nrauhb"]
 
 [ext_resource type="AudioStream" uid="uid://dey38hf7wofvr" path="res://game/res/explosion1.mp3" id="2"]
 

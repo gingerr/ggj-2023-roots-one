@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://b4t8tfb1d3ir3"]
 
 [ext_resource type="Script" path="res://pregame/Intro.gd" id="1_jvpon"]
 [ext_resource type="PackedScene" uid="uid://c4qdkjgpo0i5h" path="res://background/BackgroundLayer.tscn" id="2_8g1tg"]
@@ -42,10 +42,12 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1000, 500)
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 24
+text = "A long time ago in a galaxy far away ..."
 horizontal_alignment = 1
 vertical_alignment = 1
 

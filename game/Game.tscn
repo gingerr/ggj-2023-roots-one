@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://game/DeathZone.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://c4qdkjgpo0i5h" path="res://background/BackgroundLayer.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://d24qvpg4arer2" path="res://game/BloomyWorld.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://game/PauseScreen.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://djvjaqnanlei6" path="res://game/PauseScreen.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://cp6exhklqnla7" path="res://game/HUD.tscn" id="8_1inqb"]
 
 [sub_resource type="CanvasItemMaterial" id="2"]
