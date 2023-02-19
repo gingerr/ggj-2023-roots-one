@@ -15,6 +15,8 @@
 script/source = "class_name ShieldArea
 extends Area2D
 
+signal shield_changed(value: float)
+
 const speed_charge = 10
 const speed_discharge = -30
 
@@ -50,13 +52,13 @@ func _process(delta):
 		else:
 			shield = 100.0
 		
-	HUD.set_shield(shield)
+	shield_changed.emit(shield)
 
 
 func on_asteroid_collision(area : Area2D):
 	if area is EnemyRoot:
 		var asteroid : EnemyRoot = area
-		if (HUD.get_shield() == 100.0):
+		if (shield == 100.0):
 			$ShieldActivate.play(0.1)
 			visible = true
 		if (visible):
@@ -180,3 +182,5 @@ volume_db = -10.0
 [node name="ShieldRecharged" type="AudioStreamPlayer" parent="ShieldArea"]
 stream = ExtResource("9_no4tc")
 pitch_scale = 1.5
+
+[connection signal="shield_changed" from="ShieldArea" to="." method="_on_shield_area_shield_changed"]

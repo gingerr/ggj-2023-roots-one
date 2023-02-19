@@ -19,10 +19,6 @@ boot_splash/fullsize=false
 config/icon="res://player/res/spaceship1.png"
 config/windows_native_icon="res://resources/shRooter.ico"
 
-[autoload]
-
-HUD="*res://game/HUD.tscn"
-
 [debug]
 
 settings/stdout/print_fps=true

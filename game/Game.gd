@@ -16,16 +16,9 @@ var level_timer 				= 0
 const squareRootFactory = preload("res://asteroid/EnemyRoot.tscn")
 const gameOverPreload = preload("res://game/GameOver.tscn")
 
-func _enter_tree():
-	HUD.setVisibility(true)
-	
-func _exit_tree():
-	HUD.setVisibility(false)
-
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	HUD.resetGameValues()
-	HUD.setLevel(level)
+	$HUD.setLevel(level)
 	
 func _process(delta):
 	spawn_timer += delta;
@@ -41,7 +34,7 @@ func _process(delta):
 
 func increaseLevel():
 	level +=1
-	HUD.setLevel(level)
+	$HUD.setLevel(level)
 	if level == 5:
 		spawn_amount += 1
 	elif level == 10:
@@ -53,8 +46,8 @@ func increaseLevel():
 
 func spawnEnemy():
 	var mob: EnemyRoot = squareRootFactory.instantiate()
-	mob.safeZoneTop = HUD.topHeight
-	mob.safeZoneBottom = HUD.bottomHeight
+	mob.safeZoneTop = $HUD.topHeight
+	mob.safeZoneBottom = $HUD.bottomHeight
 	mob.configure(max_root_number)
 	mob.scored.connect(_on_enemy_root_scored)
 	add_child(mob)
@@ -68,15 +61,19 @@ func _input(event: InputEvent) -> void:
 
 func _on_Player_dead():
 	var gameOver = gameOverPreload.instantiate()
-	gameOver.score = HUD.score
-	gameOver.time = HUD.getTimeString()
+	gameOver.score = $HUD.score
+	gameOver.time = $HUD.getTimeString()
+	$HUD.visible = false
 	add_child(gameOver)
 
 func _on_player_health_changed(value: int):
-	HUD.setHealth(value)
+	$HUD.setHealth(value)
 
 func _on_player_max_health_changed(value: int):
-	HUD.setMaxHealth(value)
+	$HUD.setMaxHealth(value)
 
 func _on_enemy_root_scored():
-	HUD.increaseScore(1)
+	$HUD.increaseScore(1)
+
+func _on_player_shield_changed(value: float):
+	$HUD.set_shield(value)

@@ -5,6 +5,7 @@ signal shoot
 signal dead
 signal health_changed(value: int)
 signal max_health_changed(value: int)
+signal shield_changed(value: float)
 
 var health: int
 
@@ -23,7 +24,7 @@ var explosionPreload = preload("res://game/Explosion.tscn")
 func _ready():
 	position.x = 100
 	position.y = get_viewport_rect().size.y / 2
-	change_health(10)
+	change_health(2)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -123,3 +124,5 @@ func hideThrusters():
 	$thrust_front_left.visible = false 
 	$thrust_front_right.visible = false 
 	
+func _on_shield_area_shield_changed(value: float):
+	shield_changed.emit(value)
