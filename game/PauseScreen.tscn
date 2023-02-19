@@ -36,3 +36,5 @@ text = "Game paused
 <any key to continue>"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

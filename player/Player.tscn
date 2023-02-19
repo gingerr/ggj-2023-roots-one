@@ -56,13 +56,13 @@ func _process(delta):
 
 func on_asteroid_collision(area : Area2D):
 	if area is EnemyRoot:
-		var asteroid : EnemyRoot = area
+		var asteroid: EnemyRoot = area
 		if (shield == 100.0):
 			$ShieldActivate.play(0.1)
 			visible = true
 		if (visible):
 			$ShieldContact.play(0.1)
-			var player = get_parent()
+			var player: Player = get_parent()
 			asteroid.velocity.x = player.current_speed.x
 			asteroid.velocity.y = player.current_speed.y
 			player.current_speed.x = -player.current_speed.x / 2

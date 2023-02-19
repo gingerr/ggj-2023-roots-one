@@ -17,8 +17,13 @@ const squareRootFactory = preload("res://asteroid/EnemyRoot.tscn")
 const gameOverPreload = preload("res://game/GameOver.tscn")
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$HUD.setLevel(level)
+	
+func _enter_tree():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
+func _exit_tree():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 func _process(delta):
 	spawn_timer += delta;
@@ -56,9 +61,7 @@ func spawnEnemy():
 func _input(event: InputEvent) -> void:
 	#if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		get_tree().paused = true
 		$PauseScreen.visible = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_Player_dead():
 	var gameOver = gameOverPreload.instantiate()
