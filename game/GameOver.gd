@@ -18,10 +18,10 @@ func _process(delta):
 	else:
 		%Countdown.text = "<any key to continue>"
 
-func _input(event: InputEvent):
-	if timer_done and event.get('pressed') and event.pressed:
+func _unhandled_input(event: InputEvent):
+	if timer_done and event.get('pressed'):
 		get_viewport().set_input_as_handled()
-		get_tree().paused = false;
+		get_tree().paused = false
 		get_tree().change_scene_to_file("res://pregame/MainMenu.tscn")
 		
 func _on_Timer_timeout():

@@ -82,11 +82,12 @@ func _process(delta):
 	position += current_speed * delta;
 	
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if (health <= 0):
-		return
+		pass
 		
 	if Input.is_action_just_pressed("ui_accept"):
+		get_viewport().set_input_as_handled()
 		action_shoot()
 		emit_signal("shoot", Bullet, rotation, position)
 

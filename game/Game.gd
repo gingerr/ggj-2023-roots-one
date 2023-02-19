@@ -58,9 +58,9 @@ func spawnEnemy():
 	mob.wrong_hit.connect(_on_enemy_root_wrong_hit)
 	add_child(mob)
 
-func _input(event: InputEvent) -> void:
-	#if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		get_viewport().set_input_as_handled()
 		$PauseScreen.visible = true
 
 func _on_Player_dead():

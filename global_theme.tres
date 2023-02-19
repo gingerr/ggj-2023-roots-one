@@ -1,3 +1,8 @@
-[gd_resource type="Theme" format=2]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://xx57pj6g4bm2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bpg1l"]
 
 [resource]
+Button/colors/font_focus_color = Color(1, 0.698039, 0, 1)
+Button/colors/font_hover_color = Color(1, 0.698039, 0, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_bpg1l")

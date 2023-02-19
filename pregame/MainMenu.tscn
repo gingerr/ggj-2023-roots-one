@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://e545khgsfk05"]
+[gd_scene load_steps=6 format=3 uid="uid://e545khgsfk05"]
 
 [ext_resource type="Script" path="res://pregame/MainMenu.gd" id="1_v44vl"]
 [ext_resource type="PackedScene" uid="uid://c4qdkjgpo0i5h" path="res://background/BackgroundLayer.tscn" id="2_xsfg4"]
 [ext_resource type="Texture2D" uid="uid://bn74t5dcotx3i" path="res://resources/splash.png" id="3_il2vg"]
 [ext_resource type="FontFile" uid="uid://cmu3u3xa3sj0r" path="res://resources/retro-gaming.ttf" id="4_5od04"]
+[ext_resource type="Theme" uid="uid://xx57pj6g4bm2" path="res://global_theme.tres" id="4_ji7ok"]
 
 [node name="MainMenu" type="MarginContainer"]
 anchors_preset = 15
@@ -39,36 +40,40 @@ text = "shRooter"
 layout_mode = 2
 
 [node name="Selection" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
 [node name="NewGame" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/Selection"]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_fonts/font = ExtResource("4_5od04")
+theme = ExtResource("4_ji7ok")
 theme_override_font_sizes/font_size = 40
 text = "New Game"
 flat = true
 
 [node name="Options" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/Selection"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
-focus_mode = 0
 mouse_default_cursor_shape = 2
+theme = ExtResource("4_ji7ok")
 theme_override_font_sizes/font_size = 40
 text = "Options"
 flat = true
 
 [node name="Exit" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/Selection"]
+unique_name_in_owner = true
 layout_mode = 2
-focus_mode = 0
 mouse_default_cursor_shape = 2
-theme_override_fonts/font = ExtResource("4_5od04")
+theme = ExtResource("4_ji7ok")
 theme_override_font_sizes/font_size = 40
 text = "Exit the game"
 flat = true
 
 [node name="OptionsMenu" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
@@ -84,24 +89,29 @@ text = "Difficulty"
 [node name="Easy" type="CheckBox" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("4_ji7ok")
 theme_override_fonts/font = ExtResource("4_5od04")
 text = "Easy"
 
 [node name="Normal" type="CheckBox" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("4_ji7ok")
 theme_override_fonts/font = ExtResource("4_5od04")
 text = "Normal"
 
 [node name="Hard" type="CheckBox" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/DifficultyOpt"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("4_ji7ok")
 theme_override_fonts/font = ExtResource("4_5od04")
 text = "Hard"
 
 [node name="BackToMain" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu"]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("4_ji7ok")
 text = "Back"
 flat = true
 
@@ -112,13 +122,17 @@ size_flags_vertical = 10
 [node name="copyright" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 0.698039, 0, 1)
 theme_override_fonts/font = ExtResource("4_5od04")
 text = "Global Game Jam 2023 @Bredex GmbH
 Version 20230211#0115"
 horizontal_alignment = 1
 
 [connection signal="gui_input" from="HBoxContainer/VBoxContainer" to="." method="_on_VBoxContainer_gui_input"]
+[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/MarginContainer/Selection/NewGame" to="." method="_on_new_game_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Selection/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/MarginContainer/Selection/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Selection/Options" to="." method="_on_Options_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/MarginContainer/Selection/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Selection/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/OptionsMenu/BackToMain" to="." method="_on_BackToMain_pressed"]

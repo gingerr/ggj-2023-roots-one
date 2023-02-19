@@ -5,8 +5,9 @@ func _ready():
 	Utils.default_font_color(%Label)
 	%Label.set_text(text)
 
-func _input(event: InputEvent):
-	if event.get('pressed') and event.pressed:
+func _unhandled_input(event: InputEvent):
+	if event.get('pressed'):
+		get_viewport().set_input_as_handled()
 		get_tree().change_scene_to_file("res://game/Game.tscn")
 		
 
