@@ -17,17 +17,18 @@ script = ExtResource("1_he7jo")
 texture = ExtResource("2_ahl6p")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -8.82353
+offset_left = -8.32353
 offset_top = -7.05882
-offset_right = 17.1765
-offset_bottom = 8.94118
+offset_right = 24.6765
+offset_bottom = 16.9412
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 16
 text = "196"
 
 [node name="RootSprite" type="Sprite2D" parent="."]
-position = Vector2(-5.23529, 0)
+modulate = Color(1, 0.698039, 0, 1)
+position = Vector2(-6.23529, 0)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_5kn7v")
 
