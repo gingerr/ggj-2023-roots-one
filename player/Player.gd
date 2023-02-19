@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 signal shoot
 signal dead
+signal health_changed(value: int)
+signal max_health_changed(value: int)
 
 var health: int
 
@@ -92,15 +94,13 @@ func action_shoot():
 	b.global_position = muzzle.global_position
 	get_tree().root.add_child(b)
 	
-func get_health() -> int:
-	return health
-
 func change_health(value: int):
 	if(value > 0 && (health == 0 || health == null)):
-		HUD.setMaxHealth(value)
+		max_health_changed.emit(value)
 	
 	health += value
-	HUD.setHealth(health)
+	health_changed.emit(health)
+
 	if health == 0:
 		explode()
 		visible = false

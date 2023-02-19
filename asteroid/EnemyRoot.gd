@@ -1,8 +1,14 @@
 class_name EnemyRoot
 extends Area2D
 
+signal scored
+
 const explosionPreload = preload("res://game/Explosion.tscn")
 const hintPreload = preload("res://asteroid/Hint.tscn")
+
+@export var safeZoneTop: int
+@export var safeZoneBottom: int
+
 var textures_asteroid = Array ([
 	preload("res://asteroid/res/asteroid1.png"), 
 	preload("res://asteroid/res/asteroid2.png"),
@@ -58,9 +64,9 @@ func configure(difficulty_level):
 func _process(delta):
 	# calulate new position
 	position += velocity * delta
-	if (position.y - 50 < HUD.topHeight):
+	if (position.y - 50 < safeZoneTop):
 		velocity.y = abs(velocity.y)
-	elif position.y + 50 > get_viewport_rect().size.y - HUD.bottomHeight:
+	elif position.y + 50 > get_viewport_rect().size.y - safeZoneBottom:
 		velocity.y = -abs(velocity.y)
 	if position.x < -50 && is_enemy_good():
 		queue_free()
@@ -106,7 +112,7 @@ func _on_area_entered(area : Area2D):
 		if is_enemy_good():
 			get_node("/root/Game/Player").change_health(-1)
 		else:
-			HUD.increaseScore(1)
+			scored.emit()
 		get_viewport().set_input_as_handled()
 	elif "EnemyRoot" in area.get_name():
 		collide(area, self)
@@ -126,7 +132,7 @@ func _on_player_colission(body: Node):
 			explode()
 			get_node("/root/Game/Player").change_health(-1)
 		else:
-			HUD.increaseScore(1)
+			scored.emit()
 			
 func collide(a, b):
 	var xDist = a.position.x - b.position.x

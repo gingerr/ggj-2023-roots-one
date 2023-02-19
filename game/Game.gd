@@ -52,8 +52,11 @@ func increaseLevel():
 	
 
 func spawnEnemy():
-	var mob = squareRootFactory.instantiate()
+	var mob: EnemyRoot = squareRootFactory.instantiate()
+	mob.safeZoneTop = HUD.topHeight
+	mob.safeZoneBottom = HUD.bottomHeight
 	mob.configure(max_root_number)
+	mob.scored.connect(_on_enemy_root_scored)
 	add_child(mob)
 
 func _input(event: InputEvent) -> void:
@@ -63,9 +66,17 @@ func _input(event: InputEvent) -> void:
 		$PauseScreen.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-		
 func _on_Player_dead():
 	var gameOver = gameOverPreload.instantiate()
 	gameOver.score = HUD.score
 	gameOver.time = HUD.getTimeString()
 	add_child(gameOver)
+
+func _on_player_health_changed(value: int):
+	HUD.setHealth(value)
+
+func _on_player_max_health_changed(value: int):
+	HUD.setMaxHealth(value)
+
+func _on_enemy_root_scored():
+	HUD.increaseScore(1)

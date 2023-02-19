@@ -53,3 +53,5 @@ process_mode = 2
 visible = false
 
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
+[connection signal="health_changed" from="Player" to="." method="_on_player_health_changed"]
+[connection signal="max_health_changed" from="Player" to="." method="_on_player_max_health_changed"]
