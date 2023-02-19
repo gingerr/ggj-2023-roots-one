@@ -2,6 +2,7 @@ class_name EnemyRoot
 extends Area2D
 
 signal scored
+signal wrong_hit
 
 const explosionPreload = preload("res://game/Explosion.tscn")
 const hintPreload = preload("res://asteroid/Hint.tscn")
@@ -110,7 +111,7 @@ func _on_area_entered(area : Area2D):
 		area.queue_free()
 		explode()
 		if is_enemy_good():
-			get_node("/root/Game/Player").change_health(-1)
+			wrong_hit.emit()
 		else:
 			scored.emit()
 		get_viewport().set_input_as_handled()
@@ -129,8 +130,8 @@ func _on_player_colission(body: Node):
 	# despawn checked left screen side
 	if "DeathZone" in body.get_name():
 		if !is_enemy_good():
+			wrong_hit.emit()
 			explode()
-			get_node("/root/Game/Player").change_health(-1)
 		else:
 			scored.emit()
 			

@@ -50,6 +50,7 @@ func spawnEnemy():
 	mob.safeZoneBottom = $HUD.bottomHeight
 	mob.configure(max_root_number)
 	mob.scored.connect(_on_enemy_root_scored)
+	mob.wrong_hit.connect(_on_enemy_root_wrong_hit)
 	add_child(mob)
 
 func _input(event: InputEvent) -> void:
@@ -74,6 +75,9 @@ func _on_player_max_health_changed(value: int):
 
 func _on_enemy_root_scored():
 	$HUD.increaseScore(1)
+
+func _on_enemy_root_wrong_hit():
+	$Player.change_health(-1)
 
 func _on_player_shield_changed(value: float):
 	$HUD.set_shield(value)
