@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4feee6p7u23t"]
+[gd_scene load_steps=12 format=3 uid="uid://b4feee6p7u23t"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_okgou"]
 [ext_resource type="Texture2D" uid="uid://b2kg2f3g0isx6" path="res://player/res/spaceship1.png" id="2_tq6ni"]
-[ext_resource type="Script" path="res://game/BehaviorHovering.gd" id="3_3sh8d"]
 [ext_resource type="Texture2D" uid="uid://dxq1hgv2jrdq1" path="res://player/res/red-thruster-effect-clipart-md.png" id="4_q52qo"]
 [ext_resource type="Texture2D" uid="uid://chq5aw0dmtou1" path="res://player/res/blue-thruster-effect-clipart-md.png" id="5_otbre"]
 [ext_resource type="AudioStream" uid="uid://bqclchid7ycv5" path="res://player/res/epstein_drive.mp3" id="6_iug6o"]
@@ -89,9 +88,6 @@ position = Vector2(5, -65.714)
 [node name="ShipBody" type="Sprite2D" parent="."]
 z_index = 1
 texture = ExtResource("2_tq6ni")
-
-[node name="BehaviorHovering" type="Node" parent="."]
-script = ExtResource("3_3sh8d")
 
 [node name="thrust_back_left" type="Sprite2D" parent="."]
 position = Vector2(-26.6664, 68.889)

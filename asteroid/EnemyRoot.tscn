@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0ic836gv47et"]
+[gd_scene load_steps=6 format=3 uid="uid://d0ic836gv47et"]
 
 [ext_resource type="Script" path="res://asteroid/EnemyRoot.gd" id="1_he7jo"]
 [ext_resource type="Texture2D" uid="uid://bron2mx4ok2lr" path="res://asteroid/res/asteroid1.png" id="2_ahl6p"]
 [ext_resource type="Texture2D" uid="uid://ckgxcq2drlq1k" path="res://game/res/sqroot.png" id="3_5kn7v"]
-[ext_resource type="Script" path="res://game/BehaviorHovering.gd" id="4_le3dx"]
 [ext_resource type="AudioStream" uid="uid://dx2iqqbsngfyo" path="res://asteroid/res/wrong-hit.mp3" id="5_1a5fu"]
 
 [sub_resource type="CircleShape2D" id="5"]
@@ -31,9 +30,6 @@ texture = ExtResource("3_5kn7v")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 shape = SubResource("5")
-
-[node name="BehaviorHovering" type="Node" parent="."]
-script = ExtResource("4_le3dx")
 
 [node name="WrongHit" type="AudioStreamPlayer" parent="."]
 process_mode = 3
