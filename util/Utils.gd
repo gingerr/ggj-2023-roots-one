@@ -6,13 +6,11 @@ static func randomBoolean():
 		return true
 	return false
 	
-static func default_font_color(label : Label):
-	label.set("theme_override_colors/font_color", Color(1,0.7,0.0))
-
-static func button_selected(label : Button):
-	label.set("theme_override_colors/font_color", Color(1.0,0.7,0.0))
-	label.set("theme_override_colors/font_hover_color", Color(1.0,0.7,0.0))
-
-static func button_not_selected(label : Button):
-	label.set("theme_override_colors/font_color", Color(1,1,1))
-	label.set("theme_override_colors/font_hover_color", Color(1,1,1))
+static func load_text_file(path):
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file.get_error() != OK:
+		printerr("Could not open file, error code ", file.get_error())
+		return ""
+		
+	var stext = file.get_as_text()
+	return stext

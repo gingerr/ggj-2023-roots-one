@@ -1,8 +1,14 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://xx57pj6g4bm2"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://xx57pj6g4bm2"]
+
+[ext_resource type="FontFile" uid="uid://cmu3u3xa3sj0r" path="res://resources/retro-gaming.ttf" id="1_48rnp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bpg1l"]
 
 [resource]
+default_font = ExtResource("1_48rnp")
+default_font_size = 24
 Button/colors/font_focus_color = Color(1, 0.698039, 0, 1)
 Button/colors/font_hover_color = Color(1, 0.698039, 0, 1)
 Button/styles/focus = SubResource("StyleBoxEmpty_bpg1l")
+LabelOrange/base_type = &"Label"
+LabelOrange/colors/font_color = Color(1, 0.698039, 0, 1)

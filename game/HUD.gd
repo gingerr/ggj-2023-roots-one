@@ -11,16 +11,8 @@ var shield = 0
 
 func _ready():
 	setTopBottomHeight()
-	Utils.default_font_color(%Fps)
-	Utils.default_font_color(%Score)
-	Utils.default_font_color(%Time)
-
-	var bar_shield: ProgressBar = %ShieldBar
-	bar_shield.get("theme_override_styles/background").bg_color = Color (0.2, 0.2, 0.2, 0.5)
-	bar_shield.max_value = 100
-
-	var bar_sanity: ProgressBar = %SanityBar
-	bar_sanity.get("theme_override_styles/background").bg_color = Color (0.2, 0.2, 0.2, 0.5)
+	%ShieldBar.get("theme_override_styles/background").bg_color = Color (0.2, 0.2, 0.2, 0.5)
+	%SanityBar.get("theme_override_styles/background").bg_color = Color (0.2, 0.2, 0.2, 0.5)
 
 func _process(delta: float):
 	time += delta
@@ -53,16 +45,14 @@ func updateHUD():
 	%Score.set_text('Score: ' + str(score) + ' (Level ' + str(level) + ')')
 	%Time.set_text('Time: ' + getTimeString())
 	
-	var bar_sanity: ProgressBar = %SanityBar
-	bar_sanity.max_value = max(maxHealth, 1)
-	bar_sanity.value = health
+	%SanityBar.max_value = max(maxHealth, 1)
+	%SanityBar.value = health
 	var percentage_health = float(health) / float(max(maxHealth, 1))
-	bar_sanity.get("theme_override_styles/fill").bg_color = Color (0.5 - percentage_health, 0.5 * percentage_health, 0, 0.5)
+	%SanityBar.get("theme_override_styles/fill").bg_color = Color (0.5 - percentage_health, 0.5 * percentage_health, 0, 1)
 	
-	var bar_shield: ProgressBar = %ShieldBar
 	var percentage_shield = float(shield) / 100.0
-	bar_shield.get("theme_override_styles/fill").bg_color = Color (0.5 * percentage_shield, 0.5 * percentage_shield, 0.6 + 0.4 * percentage_shield, 0.5)
-	bar_shield.value = shield
+	%ShieldBar.get("theme_override_styles/fill").bg_color = Color (0.5 * percentage_shield, 0.5 * percentage_shield, 0.6 + 0.4 * percentage_shield, 1)
+	%ShieldBar.value = shield
 	
 	if shield == 100.0:
 		%ShieldLabel.text = "Shield (ready)"

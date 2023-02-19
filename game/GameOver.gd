@@ -7,7 +7,6 @@ var timer_done = false
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$AudioStreamPlayer.play()
-	Utils.default_font_color(%Title)
 	%Score.text = "Your score:\n" + str(score) + " points"
 	%Time.text = "Your time:\n" + time
 

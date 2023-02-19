@@ -1,8 +1,7 @@
 extends Node
 
 func _ready():
-	var text = load_text_file('res://pregame/res/story.tres')
-	Utils.default_font_color(%Label)
+	var text = Utils.load_text_file('res://pregame/res/story.tres')
 	%Label.set_text(text)
 
 func _unhandled_input(event: InputEvent):
