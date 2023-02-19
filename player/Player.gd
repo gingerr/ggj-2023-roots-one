@@ -113,8 +113,8 @@ func explode():
 	var explosion = explosionPreload.instantiate()
 	explosion.global_position = self.global_position
 	explosion.scale = Vector2(5, 5)
-	explosion.lifetime = 4
-	explosion.speed_scale = 0.5
+	explosion.lifetime = 2
+	explosion.speed_scale = 0.25
 	get_tree().root.add_child(explosion)
 	
 func hideThrusters():
