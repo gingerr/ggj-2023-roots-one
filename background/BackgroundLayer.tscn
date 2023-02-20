@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cwu3adlygfiwh" path="res://background/res/nebulaSmall.png" id="2_uskju"]
 [ext_resource type="Script" path="res://background/Nebula.gd" id="3_bw12f"]
 [ext_resource type="Script" path="res://background/ParticleStars.gd" id="4_5pxbr"]
+[ext_resource type="Gradient" uid="uid://dk5gi0eg1gv6c" path="res://background/star_colors_gradient.tres" id="4_svwdm"]
 
 [node name="BackgroundLayer" type="CanvasLayer"]
 layer = -1
@@ -58,8 +59,10 @@ scale_amount_max = 2.0
 split_scale = true
 scale_curve_x = null
 scale_curve_y = null
+color_initial_ramp = ExtResource("4_svwdm")
 
 [node name="Stars08" type="CPUParticles2D" parent="ParticleStars"]
+modulate = Color(1, 1, 1, 0.8)
 position = Vector2(2.08165e-12, 2.08165e-12)
 amount = 400
 lifetime = 12.0
@@ -75,9 +78,10 @@ scale_amount_max = 2.0
 split_scale = true
 scale_curve_x = null
 scale_curve_y = null
-color = Color(0.803922, 0.803922, 0.803922, 1)
+color_initial_ramp = ExtResource("4_svwdm")
 
 [node name="Stars06" type="CPUParticles2D" parent="ParticleStars"]
+modulate = Color(1, 1, 1, 0.6)
 position = Vector2(2.08165e-12, 2.08165e-12)
 amount = 400
 lifetime = 16.0
@@ -93,9 +97,10 @@ scale_amount_max = 2.0
 split_scale = true
 scale_curve_x = null
 scale_curve_y = null
-color = Color(0.603922, 0.603922, 0.603922, 1)
+color_initial_ramp = ExtResource("4_svwdm")
 
 [node name="Stars04" type="CPUParticles2D" parent="ParticleStars"]
+modulate = Color(1, 1, 1, 0.4)
 position = Vector2(2.08165e-12, 2.08165e-12)
 amount = 400
 lifetime = 24.0
@@ -111,9 +116,10 @@ scale_amount_max = 2.0
 split_scale = true
 scale_curve_x = null
 scale_curve_y = null
-color = Color(0.4, 0.4, 0.4, 1)
+color_initial_ramp = ExtResource("4_svwdm")
 
 [node name="Stars02" type="CPUParticles2D" parent="ParticleStars"]
+modulate = Color(1, 1, 1, 0.2)
 position = Vector2(2.08165e-12, 2.08165e-12)
 amount = 400
 lifetime = 48.0
@@ -129,4 +135,4 @@ scale_amount_max = 2.0
 split_scale = true
 scale_curve_x = null
 scale_curve_y = null
-color = Color(0.2, 0.2, 0.2, 1)
+color_initial_ramp = ExtResource("4_svwdm")
