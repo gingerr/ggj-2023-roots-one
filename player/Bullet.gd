@@ -3,9 +3,6 @@ extends Area2D
 
 var velocity = Vector2(1000, 0)
 
-func _ready():
-	$ShootSound.play(0.1)
-
 func _physics_process(delta):
 	position += velocity * delta
 

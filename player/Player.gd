@@ -92,6 +92,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		emit_signal("shoot", Bullet, rotation, position)
 
 func action_shoot():
+	$ShootSound.play(0.1)
 	var b = bullet_factory.instantiate()
 	b.global_position = muzzle.global_position
 	get_tree().root.add_child(b)

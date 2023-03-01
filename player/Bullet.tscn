@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2pya8nmg1odm"]
+[gd_scene load_steps=3 format=3 uid="uid://d2pya8nmg1odm"]
 
 [ext_resource type="Script" path="res://player/Bullet.gd" id="1_3quuj"]
 [ext_resource type="Texture2D" uid="uid://dewicotgq2p8x" path="res://player/res/bullet_with_glow.png" id="2_wky0v"]
-[ext_resource type="AudioStream" uid="uid://ci2w5483bytu5" path="res://player/res/photon-sound.mp3" id="3_nsr3h"]
 
 [node name="Bullet" type="Area2D"]
 scale = Vector2(0.9, 0.9)
@@ -11,11 +10,6 @@ script = ExtResource("1_3quuj")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
 texture = ExtResource("2_wky0v")
-
-[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_nsr3h")
-volume_db = -10.0
-pitch_scale = 0.75
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0.555561, 0.993057)
