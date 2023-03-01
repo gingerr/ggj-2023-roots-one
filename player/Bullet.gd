@@ -16,5 +16,6 @@ func _process(delta):
 	rotation = velocity.angle()
 
 func is_outside_view_bounds():
-	return position.x>DisplayServer.screen_get_size().x or position.x<0.0\
-		or position.y>DisplayServer.screen_get_size().y or position.y<0.0
+	var viewportSize: Vector2 = get_viewport_rect().size
+	return position.x>viewportSize.x or position.x<0.0\
+		or position.y>viewportSize.y or position.y<0.0
