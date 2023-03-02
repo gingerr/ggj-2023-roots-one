@@ -10,6 +10,7 @@ func _on_visibility_changed():
 		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		if get_parent():
 			get_tree().paused = false
+			if not DisplayServer.is_touchscreen_available():
+				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

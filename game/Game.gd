@@ -20,7 +20,9 @@ func _ready():
 	$HUD.setLevel(level)
 	
 func _enter_tree():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	if not DisplayServer.is_touchscreen_available():
+		$MobileControls.hide()
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 func _exit_tree():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -84,3 +86,6 @@ func _on_enemy_root_wrong_hit():
 
 func _on_player_shield_changed(value: float):
 	$HUD.set_shield(value)
+
+func _on_mobile_shoot_button_pressed():
+	$Player.action_shoot()

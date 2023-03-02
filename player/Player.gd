@@ -89,13 +89,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		get_viewport().set_input_as_handled()
 		action_shoot()
-		emit_signal("shoot", Bullet, rotation, position)
 
 func action_shoot():
 	$ShootSound.play(0.1)
 	var b = bullet_factory.instantiate()
 	b.global_position = muzzle.global_position
 	get_tree().root.add_child(b)
+	emit_signal("shoot", Bullet, rotation, position)
 	
 func change_health(value: int):
 	if(value > 0 && (health == 0 || health == null)):
