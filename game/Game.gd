@@ -18,7 +18,7 @@ const gameOverPreload = preload("res://game/GameOver.tscn")
 
 func _ready():
 	$HUD.setLevel(level)
-	
+
 func _enter_tree():
 	if not DisplayServer.is_touchscreen_available():
 		$MobileControls.hide()

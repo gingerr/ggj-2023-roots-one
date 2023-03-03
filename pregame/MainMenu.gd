@@ -2,6 +2,11 @@ extends MarginContainer
 
 func _ready():
 	%NewGame.grab_focus()
+	var highScore = HighScore.getScore()
+	if (highScore):
+		%HighScore.text = "HighScore: " + str(highScore)
+	else:
+		%HighScore.visible = false
 
 func _on_NewGame_pressed():
 	get_tree().paused = false

@@ -31,13 +31,10 @@ layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "shRooter"
-
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_bottom = 64
 
 [node name="Selection" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
@@ -113,6 +110,15 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("4_ji7ok")
 text = "Back"
 flat = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HighScore" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "HighScore: 123"
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="MarginContainer" parent="."]
 layout_mode = 2
