@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://djvjaqnanlei6" path="res://game/PauseScreen.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://cp6exhklqnla7" path="res://game/HUD.tscn" id="8_1inqb"]
 [ext_resource type="PackedScene" uid="uid://buyvavyuwmccw" path="res://joystick/virtual_joystick.tscn" id="8_i2rhs"]
-[ext_resource type="Theme" uid="uid://xx57pj6g4bm2" path="res://global_theme.tres" id="9_42wr5"]
 
 [sub_resource type="CanvasItemMaterial" id="2"]
 
@@ -20,6 +19,8 @@ gradient = SubResource("3")
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(64, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_621lr"]
 
 [node name="Game" type="CanvasLayer"]
 script = ExtResource("3")
@@ -65,28 +66,32 @@ offset_right = 328.0
 offset_bottom = -120.0
 joystick_mode = 1
 
-[node name="ShootButton" type="Button" parent="MobileControls"]
-modulate = Color(1, 1, 1, 0.75)
+[node name="ShootButtonLabel" type="Label" parent="MobileControls"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.74902)
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -384.0
-offset_top = -248.0
-offset_right = -200.0
-offset_bottom = -178.0
+offset_left = -398.0
+offset_top = -260.0
+offset_right = -164.0
+offset_bottom = -175.0
 grow_horizontal = 0
 grow_vertical = 0
-focus_mode = 0
-theme = ExtResource("9_42wr5")
-theme_override_font_sizes/font_size = 48
-action_mode = 0
+theme_override_font_sizes/font_size = 64
 text = "Shoot"
-flat = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="MobileControls/ShootButtonLabel"]
+position = Vector2(118, 44)
+scale = Vector2(15, 5)
+shape = SubResource("RectangleShape2D_621lr")
+action = "ui_accept"
 
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="health_changed" from="Player" to="." method="_on_player_health_changed"]
 [connection signal="max_health_changed" from="Player" to="." method="_on_player_max_health_changed"]
 [connection signal="shield_changed" from="Player" to="." method="_on_player_shield_changed"]
-[connection signal="pressed" from="MobileControls/ShootButton" to="." method="_on_mobile_shoot_button_pressed"]
+[connection signal="pressed" from="MobileControls/ShootButtonLabel/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="MobileControls/ShootButtonLabel/TouchScreenButton" to="." method="_on_touch_screen_button_released"]

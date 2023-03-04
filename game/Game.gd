@@ -87,5 +87,8 @@ func _on_enemy_root_wrong_hit():
 func _on_player_shield_changed(value: float):
 	$HUD.set_shield(value)
 
-func _on_mobile_shoot_button_pressed():
-	$Player.action_shoot()
+func _on_touch_screen_button_pressed():
+	%ShootButtonLabel.set_theme_type_variation("LabelOrange")
+
+func _on_touch_screen_button_released():
+	%ShootButtonLabel.set_theme_type_variation("")
