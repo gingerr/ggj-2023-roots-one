@@ -1,18 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4t8tfb1d3ir3"]
+[gd_scene load_steps=3 format=3 uid="uid://b4t8tfb1d3ir3"]
 
 [ext_resource type="Script" path="res://pregame/Intro.gd" id="1_jvpon"]
 [ext_resource type="PackedScene" uid="uid://c4qdkjgpo0i5h" path="res://background/BackgroundLayer.tscn" id="2_8g1tg"]
-
-[sub_resource type="CanvasItemMaterial" id="4"]
-
-[sub_resource type="Gradient" id="5"]
-colors = PackedColorArray(0.144531, 0.110092, 0.110092, 1, 0.480469, 0.437302, 0.437302, 1)
-
-[sub_resource type="GradientTexture2D" id="3"]
-gradient = SubResource("5")
-width = 900
-height = 600
-use_hdr = true
 
 [node name="CenterContainer" type="CanvasLayer"]
 script = ExtResource("1_jvpon")
@@ -24,31 +13,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 clip_contents = true
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 4
 alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-visible = false
-self_modulate = Color(1, 1, 1, 0.254902)
-material = SubResource("4")
-position = Vector2(688, 400)
-texture = SubResource("3")
-region_enabled = true
-region_rect = Rect2(0, 0, 1000, 500)
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 theme_type_variation = &"LabelOrange"
+bbcode_enabled = true
 text = "A long time ago in a galaxy far away ..."
-horizontal_alignment = 1
-vertical_alignment = 1
+fit_content = true
+scroll_active = false
 
 [node name="BackgroundLayer" parent="." instance=ExtResource("2_8g1tg")]
