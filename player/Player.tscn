@@ -74,7 +74,7 @@ func on_asteroid_collision(area : Area2D):
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3yima"]
-radius = 95.4521
+radius = 104.468
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -153,7 +153,6 @@ polygon = PackedVector2Array(-48.8888, 37.778, -28.8885, 95.5557, 2.22246, 64.44
 
 [node name="ShieldArea" type="Area2D" parent="."]
 unique_name_in_owner = true
-visible = false
 position = Vector2(0, 10)
 script = SubResource("GDScript_83fug")
 
