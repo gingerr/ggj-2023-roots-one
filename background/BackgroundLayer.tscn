@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4qdkjgpo0i5h"]
+[gd_scene load_steps=8 format=3 uid="uid://c4qdkjgpo0i5h"]
 
 [ext_resource type="Script" path="res://background/BackgroundLayer.gd" id="1_l3kwm"]
 [ext_resource type="Texture2D" uid="uid://cwu3adlygfiwh" path="res://background/res/nebulaSmall.png" id="2_uskju"]
 [ext_resource type="Script" path="res://background/Nebula.gd" id="3_bw12f"]
 [ext_resource type="Script" path="res://background/ParticleStars.gd" id="4_5pxbr"]
 [ext_resource type="Gradient" uid="uid://dk5gi0eg1gv6c" path="res://background/star_colors_gradient.tres" id="4_svwdm"]
+[ext_resource type="Shader" path="res://background/BackgroundLayer.gdshader" id="6_kp17n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jfv0q"]
+shader = ExtResource("6_kp17n")
+shader_parameter/overlay = Vector3(0.5, 0.5, 0.5)
 
 [node name="BackgroundLayer" type="CanvasLayer"]
 layer = -1
@@ -132,5 +137,11 @@ scale_curve_x = null
 scale_curve_y = null
 color_initial_ramp = ExtResource("4_svwdm")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 process_mode = 3
+material = SubResource("ShaderMaterial_jfv0q")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

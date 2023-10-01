@@ -1,6 +1,7 @@
 extends MarginContainer
 
 func _ready():
+	$BackgroundLayer.colorModulate(Color.WHITE)
 	%NewGame.grab_focus()
 	var highScore = HighScore.getScore()
 	if (highScore):
