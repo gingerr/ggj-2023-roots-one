@@ -119,7 +119,7 @@ func _on_area_entered(area : Area2D):
 		collide(area, self)
 		get_viewport().set_input_as_handled()
 			
-func _on_player_collision(body: Node):
+func _on_body_entered(body: Node):
 	# hit player and despawn
 	if (body is Player):
 		explode()
