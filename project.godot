@@ -12,7 +12,7 @@ config_version=5
 
 config/name="shRooter"
 run/main_scene="res://pregame/MainMenu.tscn"
-config/features=PackedStringArray("4.0")
+config/features=PackedStringArray("4.1")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://resources/splash.png"
 boot_splash/fullsize=false
@@ -27,10 +27,10 @@ settings/stdout/print_fps=true
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/dpi/allow_hidpi=false
 window/subwindows/embed_subwindows=false
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/dpi/allow_hidpi=false
 window/size/fullscreen=true
 window/vsync/use_vsync=true
 

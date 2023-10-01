@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 signal shoot
 signal dead
-signal health_changed(value: int)
+signal health_changed(value: int, change: int, visualize: bool)
 signal max_health_changed(value: int)
 signal shield_changed(value: float)
 
@@ -98,11 +98,13 @@ func action_shoot():
 	emit_signal("shoot", Bullet, rotation, position)
 	
 func change_health(value: int):
+	var visualize: bool = true
 	if(value > 0 && (health == 0 || health == null)):
 		max_health_changed.emit(value)
+		visualize = false
 	
 	health += value
-	health_changed.emit(health)
+	health_changed.emit(health, value, visualize)
 
 	if health == 0:
 		explode()

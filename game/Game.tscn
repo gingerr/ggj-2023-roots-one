@@ -89,9 +89,14 @@ scale = Vector2(15, 5)
 shape = SubResource("RectangleShape2D_621lr")
 action = "ui_accept"
 
+[node name="PickupSpawnTimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="health_changed" from="Player" to="." method="_on_player_health_changed"]
 [connection signal="max_health_changed" from="Player" to="." method="_on_player_max_health_changed"]
 [connection signal="shield_changed" from="Player" to="." method="_on_player_shield_changed"]
 [connection signal="pressed" from="MobileControls/ShootButtonLabel/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="released" from="MobileControls/ShootButtonLabel/TouchScreenButton" to="." method="_on_touch_screen_button_released"]
+[connection signal="timeout" from="PickupSpawnTimer" to="." method="_on_pickup_spawn_timer_timeout"]

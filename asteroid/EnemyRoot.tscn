@@ -41,4 +41,4 @@ stream = ExtResource("5_1a5fu")
 volume_db = -5.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="body_entered" from="." to="." method="_on_player_colission"]
+[connection signal="body_entered" from="." to="." method="_on_player_collision"]

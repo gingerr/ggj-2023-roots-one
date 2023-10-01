@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7k3wy8j0mdfi"]
+
+[ext_resource type="Script" path="res://pickups/sanity.gd" id="1_nre1m"]
+[ext_resource type="Texture2D" uid="uid://ckgxcq2drlq1k" path="res://game/res/sqroot.png" id="1_p8fkv"]
+[ext_resource type="AudioStream" uid="uid://drsteog41cmmt" path="res://pickups/shield-recharging-107016.mp3" id="3_npaea"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysh8m"]
+radius = 17.0294
+
+[sub_resource type="Gradient" id="Gradient_ssg5n"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_psisd"]
+
+[node name="sanity" type="RigidBody2D"]
+gravity_scale = 2.66454e-15
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_nre1m")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -8.32353
+offset_top = -7.05882
+offset_right = 24.6765
+offset_bottom = 16.9412
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 16
+text = "+1"
+
+[node name="RootSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0.698039, 0, 1)
+position = Vector2(-6.23529, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_p8fkv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ysh8m")
+
+[node name="EOLParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 2048
+one_shot = true
+explosiveness = 0.8
+randomness = 1.0
+emission_shape = 2
+emission_sphere_radius = 16.0
+direction = Vector2(2.08165e-12, 2.08165e-12)
+spread = 180.0
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_max = 1000.0
+scale_amount_min = 0.0
+scale_amount_max = 3.0
+color = Color(0.584314, 1, 0, 1)
+color_ramp = SubResource("Gradient_ssg5n")
+color_initial_ramp = SubResource("Gradient_psisd")
+
+[node name="ConstantParticles" type="CPUParticles2D" parent="."]
+amount = 16
+speed_scale = 0.15
+randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 16.0
+direction = Vector2(1, 2.08165e-12)
+spread = 180.0
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_max = 500.0
+scale_amount_min = 0.0
+scale_amount_max = 3.0
+color = Color(0.584314, 1, 0, 1)
+color_ramp = SubResource("Gradient_ssg5n")
+color_initial_ramp = SubResource("Gradient_psisd")
+
+[node name="EOLAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_npaea")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

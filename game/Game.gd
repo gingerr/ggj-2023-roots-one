@@ -14,12 +14,14 @@ var spawn_timer 				= 3
 var level_timer 				= 0
 
 const squareRootFactory = preload("res://asteroid/EnemyRoot.tscn")
+const sanityFactory = preload("res://pickups/sanity.tscn")
 const gameOverPreload = preload("res://game/GameOver.tscn")
 
 func _ready():
 	$HUD.setLevel(level)
 
 func _enter_tree():
+	$BackgroundLayer.colorModulate(Color.WHITE)
 	if not DisplayServer.is_touchscreen_available():
 		$MobileControls.hide()
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -72,8 +74,12 @@ func _on_Player_dead():
 	$HUD.visible = false
 	add_child(gameOver)
 
-func _on_player_health_changed(value: int):
+func _on_player_health_changed(value: int, change: int, visualize: bool):
+	var player: Player = $Player
 	$HUD.setHealth(value)
+	if visualize:
+		var color: Color = Color.GREEN if change > 0 else Color.RED
+		$BackgroundLayer.flash(color, value == 0)
 
 func _on_player_max_health_changed(value: int):
 	$HUD.setMaxHealth(value)
@@ -92,3 +98,7 @@ func _on_touch_screen_button_pressed():
 
 func _on_touch_screen_button_released():
 	%ShootButtonLabel.set_theme_type_variation("")
+
+func _on_pickup_spawn_timer_timeout():
+	var pickup = sanityFactory.instantiate()
+	add_child(pickup)
