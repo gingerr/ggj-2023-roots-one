@@ -93,6 +93,14 @@ action = "ui_accept"
 wait_time = 60.0
 autostart = true
 
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 2.222
+autostart = true
+
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="health_changed" from="Player" to="." method="_on_player_health_changed"]
 [connection signal="max_health_changed" from="Player" to="." method="_on_player_max_health_changed"]
@@ -100,3 +108,5 @@ autostart = true
 [connection signal="pressed" from="MobileControls/ShootButtonLabel/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="released" from="MobileControls/ShootButtonLabel/TouchScreenButton" to="." method="_on_touch_screen_button_released"]
 [connection signal="timeout" from="PickupSpawnTimer" to="." method="_on_pickup_spawn_timer_timeout"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]

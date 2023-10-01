@@ -1,17 +1,12 @@
 extends CanvasLayer
 
 # difficulty configuration
-const intial_root_number 		= 100;
-const level_interval_in_seconds = 10
-var spawn_interval_in_seconds 	= 5
+const initial_root_number 		= 100
+const second_wave_enemy_spawn_wait_time = 5
 
 var spawn_amount 				= 2
-var max_root_number 			= intial_root_number
+var max_root_number 			= initial_root_number
 @export var level 				= 1
-
-# timer variables
-var spawn_timer 				= 3
-var level_timer 				= 0
 
 const squareRootFactory = preload("res://asteroid/EnemyRoot.tscn")
 const sanityFactory = preload("res://pickups/sanity.tscn")
@@ -28,18 +23,6 @@ func _enter_tree():
 	
 func _exit_tree():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
-func _process(delta):
-	spawn_timer += delta;
-	level_timer += delta;
-	if (spawn_timer > spawn_interval_in_seconds):
-		spawn_timer = 0;
-		max_root_number = intial_root_number + level * 10
-		for i in range(spawn_amount):
-			call_deferred("spawnEnemy")
-	if (level_timer > level_interval_in_seconds):
-		level_timer = 0;
-		increaseLevel()
 
 func increaseLevel():
 	level +=1
@@ -47,11 +30,15 @@ func increaseLevel():
 	if level == 5:
 		spawn_amount += 1
 	elif level == 10:
-		spawn_interval_in_seconds -= 1
+		$EnemySpawnTimer.wait_time -= 1
 	elif level == 15:
 		spawn_amount += 1
-		spawn_interval_in_seconds += 1
+		$EnemySpawnTimer.wait_time += 1
 	
+func spawnEnemyWave():
+	max_root_number = initial_root_number + level * 10
+	for i in range(spawn_amount):
+		call_deferred("spawnEnemy")
 
 func spawnEnemy():
 	var mob: EnemyRoot = squareRootFactory.instantiate()
@@ -102,3 +89,13 @@ func _on_touch_screen_button_released():
 func _on_pickup_spawn_timer_timeout():
 	var pickup = sanityFactory.instantiate()
 	add_child(pickup)
+
+func _on_level_timer_timeout():
+	increaseLevel()
+
+func _on_enemy_spawn_timer_timeout():
+	spawnEnemyWave()
+	
+	# when the game starts we have a initial shorter timing
+	if $EnemySpawnTimer.wait_time == 2.222:
+		$EnemySpawnTimer.wait_time = second_wave_enemy_spawn_wait_time
